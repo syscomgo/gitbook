@@ -1,149 +1,104 @@
 ---
-description: 透過組織圖尋找使用者的主管或是組織底下特定職務的使用者
+description: 組織図を使用して、ユーザーの上司または組織の下で特定の位置にいるユーザーを見つけます
 ---
 
-# 組織圖
+# 組織図
 
-## 同系職務
+## フェローシップ
 
-以「**使用者帳號/員工代號」**在組織圖的預設組織位置，**往上搜尋**對應的職務對象，如主管：
+組織図のデフォルトの組織位置で「ユーザーアカウント/従業員コード」を使用して、スーパーバイザーなどの対応するジョブオブジェクトを検索します。
 
 * Method：POST
 * URL：/rest/organization/api/root-position/get/
-* 輸入參數\(postbody\)：範例格式如下。
+* 入力パラメータ\(postbody\)：形式の例は次のとおりです。
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+すべてのAPIを使用する前に、セキュリティコード（security）を取得する必要があります。取得方法については、セキュリティコードの取得を参照してください。
 {% endhint %}
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "<セキュリティコード>",
 	"omflow_restapi" : 1,
-	"username" : <使用者帳號>,
-	"ad_no" : <員工編號>,
-	"position" : <職務名稱/權責名稱>
+	"username" : <ユーザーアカウント>,
+	"ad_no" : <従業員ID>,
+	"position" : <職名>
 }
 ```
 
-* secuity：必填，安全碼。
-* omflow\_restapi：必填，1。
-* username：使用者帳號\(與員工編號**二擇一**即可\)。
-* ad\_no：員工編號\(與使用者帳號**二擇一**即可\)。
-* position：必填，職務名稱或權責名稱，實際名稱可參考「[職務、權責名稱查詢](zu-zhi-tu.md#zhi-wu-quan-ze-ming-chen-cha-xun)」。
+* secuity：必須のセキュリティコード。
+* omflow\_restapi：必須，1。
+* username：ユーザーアカウント（従業員番号のあるものを選択してください）。
+* ad\_no：従業員ID（ユーザーアカウントから1つ選択できます）。
+* position：必填，職務名稱或權責名稱，實際名稱可參考「[職務、權責名稱查詢]()」。
 
-API回傳範例如下：
+APIの戻り例は次のとおりです。
 
 ```text
 {
     "status": 200,
-    "message": "查詢成功。",
+    "message": "検索に成功。",
     "result": {
-        "user_ad_no": <使用者員工編號>,
-        "username": <使用者帳號>,
-        "org_no": <使用者組織代號>
+        "user_ad_no": <ユーザー従業員番号>,
+        "username": <ユーザーアカウント>,
+        "org_no": <ユーザー組織コード>
     }
 }
 ```
 
+## 組織的立場
 
-
-## 組織職務
-
-以「**組織代號」**在組織圖的位置，**往下搜尋**對應的職務對象：
+組織図の位置にある「組織コード」を使用して、対応するジョブオブジェクトを検索します。
 
 * Method：POST
 * URL：/rest/organization/api/organization-position/get/
-* 輸入參數\(postbody\)：範例格式如下。
+* 入力パラメーター（postbody）：フォーマット例は次のとおりです。
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+すべてのAPIを使用する前に、セキュリティコード（security）を取得する必要があります。取得方法については、セキュリティコードの取得を参照してください。
 {% endhint %}
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "<セキュリティコード>",
 	"omflow_restapi" : 1,
-	"org_no" : <組織代號>,
-	"position" : <職務名稱/權責名稱>
+	"org_no" : <組織コード>,
+	"position" : <職名/責任の名>
 }
 ```
 
-* secuity：必填，安全碼。
-* omflow\_restapi：必填，1。
-* org\_no：選填，組織代號。\(與組織名稱、組織編號**三擇一**填入\)
-* org\_name：選填，組織名稱。\(與組織代號、組織編號**三擇一**填入\)
-* org\_id：選填，組織編號。\(與組織名稱、組織代號**三擇一**填入\)
-* position：必填，職務名稱或權責名稱，實際名稱可參考「[職務、權責名稱查詢](zu-zhi-tu.md#zhi-wu-quan-ze-ming-chen-cha-xun)」。
+* secuity：必須のセキュリティコード。
+* omflow\_restapi：必須，1。
+* org\_no：オプションの組織コード。 （org\_no、org\_name、およびorg\_idのいずれかを選択してください）
+* org\_name：オプションの組織名。 （org\_no、org\_name、およびorg\_idのいずれかを選択してください）
+* org\_id：オプション、組織番号。 （org\_no、org\_name、およびorg\_idのいずれかを選択してください）
+* position：必須の役職または権限と責任の名前。実際の名前は「役職、権限、責任の名前のクエリ」を参照できます。
 
-API回傳範例如下：
+APIの戻り例は次のとおりです。
 
 ```text
 {
     "status": 200,
-    "message": "查詢成功。",
+    "message": "検索に成功。",
     "result": {
-        "user_ad_no": <使用者員工編號>,
-        "username": <使用者帳號>,
-        "org_no": <使用者組織代號>
+        "user_ad_no": <ユーザー従業員番号>,
+        "username": <ユーザーアカウント>,
+        "org_no": <メッセンジャー組織コード>
     }
 }
 ```
 
-## 職務、權責名稱查詢
+## 役職、権限、責任の名前のクエリ
 
-參考組織圖
+参照組織図
 
-![&#x4F4D;&#x7F6E;&#xFF1A;&#x4E3B;&#x9078;&#x55AE;&amp;gt;&#x4EBA;&#x54E1;&#x7BA1;&#x7406;&amp;gt;&#x7D44;&#x7E54;&#x5716;&amp;gt;&#x4F01;&#x696D;&#x7D44;&#x7E54;&amp;gt;&#x8077;&#x52D9;&#x9EDE;\(&#x624B;&#x63D0;&#x7BB1;&#x5716;&#x793A;\)](../.gitbook/assets/image%20%2856%29.png)
+![&#x5834;&#x6240;&#xFF1A;&#x30E1;&#x30A4;&#x30F3;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&amp;gt;&#x4EBA;&#x4E8B;&#x7BA1;&#x7406;&amp;gt;&#x7D44;&#x7E54;&#x56F3;&amp;gt;&#x4F01;&#x696D;&#x7D44;&#x7E54;&amp;gt;&#x30B8;&#x30E7;&#x30D6;&#x30DD;&#x30A4;&#x30F3;&#x30C8;&#xFF08;&#x30B9;&#x30FC;&#x30C4;&#x30B1;&#x30FC;&#x30B9;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#xFF09;](../.gitbook/assets/image%20%2856%29.png)
 
-![&#x5C0D;&#x8077;&#x52D9;&#x9EDE;&#x9EDE;&#x64CA;&#x300C;&#x9F52;&#x8F2A;&#x300D;&#x5716;&#x793A;&#xFF0C;&#x5373;&#x53EF;&#x770B;&#x5230;&#x5176;&#x8077;&#x52D9;&#x540D;&#x7A31;&#x53CA;&#x6B0A;&#x8CAC;&#x540D;&#x7A31;](../.gitbook/assets/image%20%288%29.png)
+![&#x30B8;&#x30E7;&#x30D6;&#x306E;&#x300C;&#x6B6F;&#x8ECA;&#x300D;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x3068;&#x3001;&#x30B8;&#x30E7;&#x30D6;&#x306E;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x3068;&#x6A29;&#x9650;&#x306E;&#x540D;&#x524D;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;](../.gitbook/assets/image%20%288%29.png)
 
-參考職務管理
+参照ジョブ管理
 
-![&#x4F4D;&#x7F6E;&#xFF1A;&#x4E3B;&#x9078;&#x55AE; &amp;gt; &#x4EBA;&#x54E1;&#x7BA1;&#x7406; &amp;gt; &#x8077;&#x52D9;&#x7BA1;&#x7406;](../.gitbook/assets/image%20%2812%29.png)
+![&#x5834;&#x6240;&#xFF1A;&#x30E1;&#x30A4;&#x30F3;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&amp;gt;&#x4EBA;&#x4E8B;&#x7BA1;&#x7406;&amp;gt;&#x30B8;&#x30E7;&#x30D6;&#x7BA1;&#x7406;](../.gitbook/assets/image%20%2812%29.png)
 
-![&#x5C0D;&#x4EFB;&#x4E00;&#x8077;&#x52D9;&#x9EDE;&#x64CA;&#x300C;&#x7DE8;&#x8F2F;&#x300D;&#x6309;&#x9215;&#xFF0C;&#x5373;&#x53EF;&#x770B;&#x5230;&#x6240;&#x5305;&#x542B;&#x7684;&#x6B0A;&#x8CAC;&#x540D;&#x7A31;](../.gitbook/assets/image%20%2861%29.png)
-
-
-
-## 組織圖匯出
-
-匯出組織圖元件架構：
-
-* Method：POST
-* URL：/rest/organization/api/organization/load/
-* 輸入參數\(postbody\)：範例格式如下。
-
-{% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
-{% endhint %}
-
-```text
-{
-	"security" : "<安全碼>",
-	"omflow_restapi" : 1
-}
-```
-
-* secuity：必填，安全碼。
-* omflow\_restapi：必填，1。
-
-API回傳範例如下：
-
-```text
-{
-    "status": 200,
-    "message": "讀取成功。",
-    "result": {
-        "value": [<組織圖物件>,<組織圖物件>,...],
-        "status": False,
-        "org_approver": {
-             "group" : <組織圖審核組織>,
-             "user" : <組織圖審核人>
-         }
-    }
-}
-```
-
-
+![&#x4EFB;&#x610F;&#x306E;&#x4F4D;&#x7F6E;&#x306E;\[&#x7DE8;&#x96C6;\]&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x3068;&#x3001;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;&#x6A29;&#x5229;&#x3068;&#x8CAC;&#x4EFB;&#x306E;&#x540D;&#x524D;&#x3092;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;](../.gitbook/assets/image%20%2861%29.png)
 

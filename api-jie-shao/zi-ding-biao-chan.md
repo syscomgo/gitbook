@@ -1,21 +1,21 @@
 ---
-description: 所有已上架的自訂表單皆可使用此API查詢相關資料。
+description: リストされているすべてのカスタムフォームは、このAPIを使用して関連情報をクエリできます。
 ---
 
-# 查詢表單
+# フォーム検索
 
-## 查詢
+## 検索
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+すべてのAPIは、使用前にセキュリティコード（セキュリティ）とともに取得する必要があります。取得方法については、[コード](https://app.gitbook.com/@omflow-syscom/s/omflow-doc/v/japan/api-jie-shao/an-quan-ma)の取得を参照してください。
 {% endhint %}
 
 * Method：POST
 * URL：/rest/flowmanage/api/omdata/list/&lt;api路徑&gt;
-* 輸入參數\(postbody\)：範例格式如下。
+* 輸入參數\(postbody\)：形式の例は次のとおりです。
 
 {% hint style="info" %}
-api路徑請參閱[流程設計](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-can-shu-she-ding)。
+API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-doc/v/japan/5/6#xin-jian-bian-ji-liu-cheng-ye-mian-can-shu-she-ding)を参照してください。
 {% endhint %}
 
 ```text
@@ -32,10 +32,10 @@ api路徑請參閱[流程設計](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-ca
 ```
 
 {% hint style="info" %}
-參數詳細介紹請參閱[**API介紹&gt;我的任務**](wo-de-ren-wu.md#cha-xun)。
+パラメータの詳細については、[APIの紹介 &gt; 私の任務 ](https://app.gitbook.com/@omflow-syscom/s/omflow-doc/v/japan/api-jie-shao/wo-de-ren-wu)を参照してください。
 {% endhint %}
 
-成功時，回傳資料範例如下所示：
+成功した場合、返されるデータの例は以下のとおりです。
 
 ```text
 {
@@ -75,7 +75,7 @@ api路徑請參閱[流程設計](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-ca
 }
 ```
 
-失敗時，回傳資料範例如下：
+失敗した場合、返されるデータの例は以下のとおりです。
 
 ```text
 {

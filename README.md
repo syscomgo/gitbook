@@ -1,26 +1,26 @@
-# 目錄
+# 目次
 
-### 一、本目錄
+### 一、目次
 
-### 二、介紹
+### 二、紹介
 
-    [OMFLOW概觀](https://doc.omflow.com.tw/2/1) / [OMFLOW流程引擎](https://doc.omflow.com.tw/2/2) / [軟體及硬體需求](https://doc.omflow.com.tw/2/3) / [版本紀錄](https://doc.omflow.com.tw/2/4)
+   [OMFLOW概要](https://doc.omflow.com.tw/v/japan/2/1) / [OMFLOW エンジン](https://doc.omflow.com.tw/2/2) / [システム要求](https://doc.omflow.com.tw/v/japan/2/3) / [バージョンレコード](https://doc.omflow.com.tw/v/japan/2/4)
 
-### 三、軟體安裝
+### 三、インストール
 
-    [安裝在Windows](https://doc.omflow.com.tw/3/1) / [安裝在Linux](https://doc.omflow.com.tw/3/2) / [使用Docker](https://doc.omflow.com.tw/3/3) / [開源版安裝](https://doc.omflow.com.tw/3/4) / [啟用HTTPS](https://doc.omflow.com.tw/3/5)/ [變更資源中心網址](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md) / [建立pypi私有伺服器](3/jian-li-pypi-si-you-si-fu-qi.md)
+    [Windows](https://doc.omflow.com.tw/v/japan/3/1) / [Linux](https://doc.omflow.com.tw/v/japan/3/2) / [Docker](https://doc.omflow.com.tw/v/japan/3/3) / [オープンソース](https://doc.omflow.com.tw/v/japan/3/4) / [HTTPS啟用](https://doc.omflow.com.tw/v/japan/3/5)/[リソースセンターのURLを変更する](3/dtasentnourlwosuru.md)/[ pypiプライベートサーバーを設定する](3/pypipuraibtosbwosuru.md)  /  [よくある間違う](https://doc.omflow.com.tw/v/japan/3/yokuarui)
 
-### 四、快速上手
+### 四、クイックスタート
 
-    [初始設定](https://doc.omflow.com.tw/4/1) / [人員及組織](https://doc.omflow.com.tw/4/2) / [建立應用、流程](https://doc.omflow.com.tw/4/3)
+    [初期設定](https://doc.omflow.com.tw/v/japan/4/1) / [ユーザーとグループ](https://doc.omflow.com.tw/v/japan/4/2) / [アプリと流れの作成](https://doc.omflow.com.tw/v/japan/4/3)/  [更新內部流れ](https://doc.omflow.com.tw/v/japan/4/geng-xin-nei-jian-liu-cheng)
 
-### 五、功能手冊
+### 五、機能説明書
 
-    [首頁](https://doc.omflow.com.tw/5/1) / [我的任務](https://doc.omflow.com.tw/5/2) / [服務請求](https://doc.omflow.com.tw/5/3) / [服務管理](https://doc.omflow.com.tw/5/4) / [資料收集](https://doc.omflow.com.tw/5/5) / [應用管理](https://doc.omflow.com.tw/5/6) / [Apps](https://doc.omflow.com.tw/5/7) / [人員管理](https://doc.omflow.com.tw/5/8) / [系統設定](https://doc.omflow.com.tw/5/9) / [內建流程](https://doc.omflow.com.tw/5/10) / [報表](5/bao-biao.md)
+   [ホーム](https://doc.omflow.com.tw/v/japan/5/1) / [私の任務](https://doc.omflow.com.tw/v/japan/5/2) / [サービス要求](https://doc.omflow.com.tw/v/japan/5/3) / [サービス管理](https://doc.omflow.com.tw/v/japan/5/4) / [データ収集](https://doc.omflow.com.tw/v/japan/5/5) / [アプリ管理](https://doc.omflow.com.tw/v/japan/5/6) / [Apps](https://doc.omflow.com.tw/v/japan/5/7) / [ユーザー管理](https://doc.omflow.com.tw/v/japan/5/8) /    [システム設定](https://doc.omflow.com.tw/v/japan/5/9) / [內建流れ](https://doc.omflow.com.tw/v/japan/5/10)/[レポート](5/bao-gao-shu.md)
 
-### 六、API 介紹
+### 六、API 紹介
 
-    [安全碼](api-jie-shao/an-quan-ma.md) / [快速開單、推單](api-jie-shao/kuai-su-kai-chan-tui-chan.md) / [我的任務](api-jie-shao/wo-de-ren-wu.md) / [查詢表單](api-jie-shao/zi-ding-biao-chan.md)/ [事件](api-jie-shao/shi-jian.md)/ [組織圖](api-jie-shao/zu-zhi-tu.md)/ [使用者](api-jie-shao/shi-yong-zhe.md)/ [請假紀錄](api-jie-shao/qing-jia-ji-lu.md)
+[セキュリティコード](https://doc.omflow.com.tw/v/japan/api-jie-shao/an-quan-ma)[ ](https://doc.omflow.com.tw/v/japan/api-jie-shao/an-quan-ma)/ [クイック操作](https://doc.omflow.com.tw/v/japan/api-jie-shao/kuai-su-kai-chan-tui-chan) / [私の任務](https://doc.omflow.com.tw/v/japan/api-jie-shao/wo-de-ren-wu) / [フォーム検索](https://doc.omflow.com.tw/v/japan/api-jie-shao/zi-ding-biao-chan)/[イベント](api-jie-shao/ibento.md)/[組織図](api-jie-shao/zu-zhi-tu.md)/[ユーザー](api-jie-shao/yz.md)/[記録を残す](api-jie-shao/wosu.md)
 
 
 

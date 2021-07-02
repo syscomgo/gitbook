@@ -1,8 +1,8 @@
 # 組織
 
-## 一般搜尋
+## 一般的な検索
 
-查詢符合特定條件的組織資料
+特定の条件を満たす組織情報を照会する
 
 * Method：POST
 * URL：/rest/accounts/api/group/list/
