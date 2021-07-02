@@ -1,103 +1,99 @@
----
-description: 新增刪除註銷使用者的請假紀錄
----
+# Leave Record
 
-# 請假紀錄
+## Add
 
-## 新增
-
-新增使用者請假紀錄。
+Add leave records.
 
 * Method：POST
 * URL：/rest/api/leave-records/add/
-* 輸入參數\(postbody\)：範例格式如下。
+* postbody:
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+All apis must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
 {% endhint %}
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "",
 	"omflow_restapi" : 1,
-	"start" : <開始時間，必填>,
-	"end" : <結束時間，必填>,
-	"principal" : "<請假人，必填，可填入使用者帳號、暱稱、員編>",
-	"substitute" : "<代理人，必填，可填入使用者帳號、暱稱、員編>",
-	"identifier" : "<識別碼，選填，用來介接其他系統的請假單。>"
+	"start" : <start time, require>,
+	"end" : <end time, require>,
+	"principal" : "<require, Can fill in user username, nick_name, ad_no>",
+	"substitute" : "<require, Can fill in username, nick_name, ad_no>",
+	"identifier" : "<Used to interface with the leave form of other systems>"
 }
 ```
 
-API回傳範例如下：
+API Response:
 
 ```text
 {
     "status": 200,
     "message": "新增成功。",
-    "result": <請假紀錄id>
+    "result": <leave id>
 }
 ```
 
-## 列表
+## List
 
-列表使用者請假紀錄。
+List leave records.
 
 * Method：POST
 * URL：/rest/api/leave-records/list/
-* 輸入參數\(postbody\)：範例格式如下。
+* postbody:
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "",
 	"omflow_restapi" : 1,
-	"cancel" : <是否為註銷資料>, #請輸入0或1，若不填則全撈
-	"history" : <是否為歷史資料>, #請輸入0或1，若不填則全撈
-	"principal" : "<請假人，必填，可填入使用者帳號、暱稱、員編>",
-	"substitute" : "<代理人，必填，可填入使用者帳號、暱稱、員編>"
+	"cancel" : <cancel>, #0 or 1, if not fill in return all
+	"history" : <history>, #0 or 1, if not fill in return all
+	"principal" : "<require, Can fill in user username, nick_name, ad_no>",
+	"substitute" : "<require, Can fill in user username, nick_name, ad_no>"
 }
 ```
 
-API回傳範例如下：
+API Response:
 
 ```text
 {
     "status": 200,
     "message": "查詢成功。",
     "result": {
-        "now_time" : <系統現在時間>
+        "now_time" : <system now time>
         "leave_list" : [{
-            "principal_id" : <請假人id>
-            "principal_id__nick_name" : <請假人暱稱>
-            "substitute_id" : <代理人id>
-            "substitute_id__nick_name" : <代理人暱稱>
-            "starttime" : <開始時間>
-            "endtime" : <結束時間>
-            "cancel" : <是否為註銷資料>
-            "identifier" : <識別碼>
+            "principal_id" : ""
+            "principal_id__nick_name" : ""
+            "substitute_id" : ""
+            "substitute_id__nick_name" : ""
+            "starttime" : ""
+            "endtime" : ""
+            "cancel" : ""
+            "identifier" : ""
         },...]
     }
 }
 ```
 
-## 更新
+## Update
 
-更新使用者請假代理人。
+Update leave records.
 
 * Method：POST
 * URL：/rest/api/leave-records/update/
-* 輸入參數\(postbody\)：範例格式如下。
+* postbody:
 
 ```text
 {
 	"security" : "<安全碼>",
 	"omflow_restapi" : 1,
-	"leave_id" : <請假紀錄id，與識別碼二選一填入>,
-	"identifier" : <識別碼，與請假紀錄id二選一填入>,
-	"substitute" : "<代理人，必填，可填入使用者帳號、暱稱、員編>"
+	"leave_id" : <choose one to fill in with the identifier>,
+	"identifier" : <choose one to fill in with the leave_id>,
+	"substitute" : "<require, Can fill in user username, nick_name, ad_no>"
 }
 ```
 
-API回傳範例如下：
+API Response:
 
 ```text
 {
@@ -107,24 +103,24 @@ API回傳範例如下：
 }
 ```
 
-## 註銷
+## Cancel
 
-註銷使用者請假紀錄。
+Cancel leave records.
 
 * Method：POST
 * URL：/rest/api/leave-records/cancel/
-* 輸入參數\(postbody\)：範例格式如下。
+* postbody:
 
 ```text
 {
 	"security" : "<安全碼>",
 	"omflow_restapi" : 1,
-	"leave_id" : <請假紀錄id，與識別碼二選一填入>,
-	"identifier" : <識別碼，與請假紀錄id二選一填入>
+	"leave_id" : <choose one to fill in with the identifier>,
+	"identifier" : <choose one to fill in with the leave_id>
 }
 ```
 
-API回傳範例如下：
+API Response:
 
 ```text
 {
@@ -134,24 +130,24 @@ API回傳範例如下：
 }
 ```
 
-## 刪除
+## Delete
 
-刪除使用者請假紀錄。
+Delete leave records.
 
 * Method：POST
 * URL：/rest/api/leave-records/delete/
-* 輸入參數\(postbody\)：範例格式如下。
+* postbody:
 
 ```text
 {
 	"security" : "<安全碼>",
 	"omflow_restapi" : 1,
-	"leave_id" : <請假紀錄id，與識別碼二選一填入>,
-	"identifier" : <識別碼，與請假紀錄id二選一填入>
+	"leave_id" : <choose one to fill in with the identifier>,
+	"identifier" : <choose one to fill in with the leave_id>
 }
 ```
 
-API回傳範例如下：
+API Response:
 
 ```text
 {
@@ -160,8 +156,4 @@ API回傳範例如下：
     "result": None
 }
 ```
-
-## 
-
-
 

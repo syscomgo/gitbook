@@ -1,20 +1,20 @@
-# 使用者
+# User
 
-## 一般搜尋
+## General search
 
-查詢符合特定條件的使用者資料
+Query user data that meets specific conditions
 
 * Method：POST
 * URL：/rest/accounts/api/user/list/
-* 輸入參數\(postbody\)：範例格式如下。
+* postbody:
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+All API must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
 {% endhint %}
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "<code>",
 	"omflow_restapi" : 1,
 	"search_conditions" : [],
 	"search_columns" : [],
@@ -25,25 +25,25 @@
 }
 ```
 
-* search\_columns：選填，要查詢的**欄位名稱**。格式範例如下。
+* search\_columns：Optional, the name of the field to be queried. The format example is as follows.
 
   ```text
   "search_columns" : ["id", "username", "nick_name"]
   ```
 
 {% hint style="info" %}
-若未填 search\_columns ，會回傳查詢表單所有**欄位名稱、欄位值**。
+If search\_columns is not filled, all field names and field values of the query form will be returned.
 {% endhint %}
 
-* search\_conditions：選填，篩選出符合條件的資料。陣列中每個條件為JSON物件結構，每個條件之間為AND關係，預設為查詢所有資料。
-  * column：欄位名稱，可參考[_**回傳資料範例**_](shi-yong-zhe.md#yi-ban-sou-xun-hui-chuan-ge-shi)。
-  * condition：條件字元，分為下列五種。
-    * =：篩選出與value完全相同的資料。
-    * &gt;：篩選出大於value的資料。
-    * &lt;：篩選出小於value的資料。
-    * in：篩選出與value陣列中相同的資料。
-    * contains：篩選出包含value的資料。
-  * value：欄位值，依照 _****_[_**人員管理&gt;使用者管理&gt;使用者資料**_](../5/8.md#shi-yong-zhe-guan-li) _****_而填入對應值。
+* search\_conditions：Optional, filter out the data that meet the conditions. Each condition in the array is a JSON object structure, and each condition is an AND relationship. The default is to query all data.
+  * column：For the field name, please refer to the example of [returned data.](shi-yong-zhe.md#general-search-return-format)
+  * condition：Condition characters are divided into the following five types.
+    * =：Filter out the data exactly the same as value.
+    * &gt;：Filter out data greater than value.
+    * &lt;：Filter out data less than value.
+    * in：Filter out the same data as in the value array.
+    * contains：Filter out data that contains value.
+  * value：For the field value, fill in the corresponding value in accordance with [User Data](../5/8.md#user-management).
 
 ```text
 "search_conditions" :
@@ -58,65 +58,65 @@
         "condition" : ">",
         "value" : 3
     },
-    <其他條件>,...
+    <other conditions>,...
 ]
 ```
 
-* exclude\_conditions：選填，排除掉符合條件的資料，格式與search\_conditions相同，預設為不排除任何條件。
-* order\_columns：選填，依照指定欄位進行排序。需要逆向排序請在欄位名稱前方加上"-"號，預設為以 \["id"\] 進行排序。範例格式如下。
+* exclude\_conditions：Optional. Exclude data that meets the conditions. The format is the same as search\_conditions. The default is not to exclude any conditions.
+* order\_columns：Optional, sort according to the specified field. If you need to sort in reverse, please add a "-" sign in front of the field name. The default is to sort by \["id"\]. The example format is as follows.
 
   ```text
-  #正排序
+  #asc
   "order_columns" : ["id"]
 
-  #逆排序
+  #desc
   "order_columns" : ["-id"]
   ```
 
-* limit：選填，填入數字取得至第幾筆資料，預設為100筆。
-* start：選填，填入數字從第幾筆資料開始取得，預設為第 0 筆。
+* limit：Optional, fill in the number to get to the number of data, the default is 100.
+* start：Optional, fill in the number from the number of data to obtain, the default is the 0th.
 
 {% hint style="info" %}
-例1：start=0，limit=100，回傳100筆資料。
+example 1: start=0, limit=100, return 100 rows
 
-例2：start=1，limit=100，回傳99筆資料。
+example 2: start=1, limit=100, return 99 rows
 
-例3：start=100，limit=100，回傳0筆資料。
+example 3: start=100, limit=100, return 0 rows
 {% endhint %}
 
-## 一般搜尋回傳格式
+## General search return format
 
-API回傳範例如下：
+API Response:
 
 ```text
 {
     "status": 200,
-    "message": "查詢成功。",
+    "message": "success",
     "result": [
         {
-            "id": <使用者編號>,
-            "password": <加密過後的密碼>,
-            "last_login": <上次登入時間>,
-            "is_superuser": <是否為管理者>,
-            "username": <帳號>,
-            "first_name": <名字>,
-            "last_name": <姓氏>,
-            "is_active": <是否啟用>,
-            "email": <電子郵件>,
-            "nick_name": <顯示名稱>,
-            "birthday": <生日>,
-            "gender": <性別>,
-            "phone1": <電話>,
-            "phone2": <手機>,
-            "extension_no": <分機>,
-            "company": <公司名稱>,
-            "ad_flag": <是否整合ad>,
-            "ad_sid": <ad編號>,
-            "frequency": <前端刷新頻率>,
-            "updatetime": <更新時間>,
-            "delete": <是否刪除>,
-            "default_group": <預設組織>,
-            "ad_no": <員工編號>
+            "id": <user id>,
+            "password": <Encrypted password>,
+            "last_login": <last login time>,
+            "is_superuser": <is superuser>,
+            "username": <account>,
+            "first_name": <first name>,
+            "last_name": <last name>,
+            "is_active": <active>,
+            "email": <email>,
+            "nick_name": <nick name>,
+            "birthday": <birthday>,
+            "gender": <grnder>,
+            "phone1": <phone>,
+            "phone2": <cell phonr>,
+            "extension_no": <extension>,
+            "company": <company name>,
+            "ad_flag": <ad>,
+            "ad_sid": <ad sid>,
+            "frequency": <Front-end refresh rate>,
+            "updatetime": <update time>,
+            "delete": <delete>,
+            "default_group": <default organization>,
+            "ad_no": <employee ID>
         },...
     ]
 }
@@ -124,58 +124,54 @@ API回傳範例如下：
 
 
 
-## 組織搜尋
+## Organization Search
 
-使用「**組織代號**」來搜尋這些組織底下有哪些使用者。
+Use the **group\_no** to search for users under these organizations.
 
 * Method：POST
 * URL：/rest/accounts/api/user/list-by-group/
-* 輸入參數\(postbody\)：範例格式如下。
+* postbody:
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+All apis must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
 {% endhint %}
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "<code>",
 	"omflow_restapi" : 1,
-	"org_no" : [],
-	"org_name" : []
+	"group_no" : []
 }
 ```
 
-* secuity：必填，安全碼。
-* omflow\_restapi：必填，1。
-* org\_no：選填，組織代號，陣列內可放置多個組織代號。\(與組織名稱二擇一\)
-* org\_name：選填，組織名稱，陣列內可放置多個組織代號。\(與組織代號二擇一\)
+* security：Require
+* omflow\_restapi：Require, 1.
+* group\_no：Require, organization No，Multiple organization No can be placed in the array.
 
-API回傳範例如下：
+API Response:
 
 ```text
 {
     "status": 200,
-    "message": "讀取成功。",
+    "message": "success",
     "result": {
-        "<組織代號>": [
+        "<group_no>": [
             {
-                "user": <使用者編號>, #此為omflow資料庫使用之編號
-                "user__nick_name": <使用者顯示名稱>,
-                "user__username": <使用者帳號>,
-                "user__ad_no": <使用者員工編號>
+                "user": <user id>, #This is the number used by the omflow database
+                "user__nick_name": <user nick name>,
+                "user__username": <user account>,
+                "user__ad_no": <user ad_no>
             },...
         ],
-        "<組織代號>": [
+        "<group_no>": [
             {
-                "user": <使用者編號>, #此為omflow資料庫使用之編號
-                "user__nick_name": <使用者顯示名稱>,
-                "user__username": <使用者帳號>,
-                "user__ad_no": <使用者員工編號>
+                "user": <user id>, #This is the number used by the omflow database
+                "user__nick_name": <user nick name>,
+                "user__username": <user account>,
+                "user__ad_no": <user ad_no>
             },...
         ],
     }
 }
 ```
-
-
 

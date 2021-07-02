@@ -1,39 +1,37 @@
 ---
-description: >-
-  每當有異常狀況發生時，系統應先產生事件進行紀錄，並透過事件規則決定是否開立事故單。而異常狀況除了由Collector收集偵測以外，未受Collector監控的軟硬體也可透過
-  Rest API 發送產生或關閉事件，以下將介紹發送方式。
+description: this is translated by machine
 ---
 
-# 事件
+# Event
 
-## 產生事件
+## Create Event
 
-當異常狀況出現時可呼叫此API產生事件。
+When an abnormal situation occurs, this API can be called to generate an event.
 
 * Method：POST
 * URL：/rest/monitor/api/event/create/
-* Post body：如下
+* Post body：
 
 ```text
 {
-  "security": "<安全碼>",
-  "title": "<事件標題>",
-  "content": "<事件內容>",
-  "severity": "<嚴重等級，填入1-5>",
+  "security": "",
+  "title": "",
+  "content": "",
+  "severity": "1-5>",
   "omflow_restapi": 1,
-  "source2": "<來源>"
+  "source2": ""
 }
 ```
 
-上述 Post body 為轉換成事件的內容依據，其中嚴重等級分為五等級，分別為 1 \(Info\)、 2 \(Normal\)、 3 \(Warning\)、 4 \(Major\)、 5 \(Critical\)，舉例來說，若嚴重等級為 Warning 則 severity 參數填入3。另外source2為串聯同樣設備同樣事件的索引字串，在下個章節上會進一步說明。
+The above post body is the basis for the content to be converted into the event. The severity level is divided into five levels, namely 1 \(Info\), 2 \(Normal\), 3 \(Warning\), 4 \(Major\), 5 \(Critical\), for example, If the severity level is Warning, enter 3 in the severity parameter. In addition, source2 is the index string of the same event of the same device in series, which will be further explained in the next chapter.
 
 {% hint style="info" %}
-所有 API 使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+All apis must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method
 {% endhint %}
 
-## 關閉事件
+## Close Event
 
-當異常狀況排除時可呼叫此API關閉事件，系統會將所有符合指定source2字串的事件一併關閉。
+When the abnormal situation is eliminated, you can call this API to close the event, and the system will close all events that match the specified source2 string.
 
 * Method：POST
 * URL：/rest/monitor/api/event/close/
@@ -41,19 +39,21 @@ description: >-
 
 ```text
 {
-  "security": "<安全碼>",
+  "security": "",
   "omflow_restapi": 1,
-  "source2": "<來源>"
+  "source2": ""
 }
 ```
 
 {% hint style="info" %}
-所有 API 使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+All apis must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method
 {% endhint %}
 
-## 系統說明
+## System
 
-除了本網站說明事件API的使用方式外，在系統上也有說明。可前往主選單&gt;資料收集&gt;事件管理的「事件API」頁籤上檢視，如下圖：
+In addition to the use of the event API on this website, there are also instructions on the system. You can go to the main menu&gt;data collection&gt;event management to view it on the "event API" tab, as shown in the figure below:
 
 ![](../.gitbook/assets/image%20%2849%29.png)
+
+
 

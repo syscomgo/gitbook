@@ -1,22 +1,22 @@
 ---
-description: 使用API查詢我的任務清單。
+description: this is translated by machine
 ---
 
-# 我的任務
+# My Mission
 
-## 查詢
+## Query
 
 * Method：POST
 * URL：/rest/my-mission/api/my-mission/list/
-* 輸入參數\(postbody\)：範例格式如下。
+* Input parameters \(postbody\): The example format is as follows.
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+All apis must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
 {% endhint %}
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "<security>",
 	"omflow_restapi" : 1,
 	"search_columns" : [],
 	"search_conditions" : [],
@@ -27,27 +27,27 @@ description: 使用API查詢我的任務清單。
 }
 ```
 
-* secuity：必填，安全碼。
-* omflow\_restapi：必填，1。
-* search\_columns：選填，要查詢的**欄位名稱**。格式範例如下。
+* secuity：Required, security code.
+* omflow\_restapi：Required，1。
+* search\_columns：Optional, **the name of the field** to be queried. The format example is as follows.
 
   ```text
   "search_columns" : ["id", "status", "level"]
   ```
 
 {% hint style="info" %}
-若未填 search\_columns ，會回傳查詢表單所有**欄位名稱、欄位值**。
+If search\_columns is not filled, all **field names** and **field values** of the query form will be returned.
 {% endhint %}
 
-* search\_conditions：選填，篩選出符合條件的資料。陣列中每個條件為JSON物件結構，每個條件之間為AND關係，預設為查詢所有資料。
-  * column：欄位名稱，可參考[_**回傳資料範例**_](wo-de-ren-wu.md#hui-chuan-zi-liao)，若為**自訂表單**可參考[_開單API_](kuai-su-kai-chan-tui-chan.md#kai-chan)中的id值。
-  * condition：條件字元，分為下列五種。
-    * =：篩選出與value完全相同的資料。
-    * &gt;：篩選出大於value的資料。
-    * &lt;：篩選出小於value的資料。
-    * in：篩選出與value陣列中相同的資料。
-    * contains：篩選出包含value的資料。
-  * value：欄位值，依照 [_**應用管理 &gt; 應用設計 &gt; 表單設計**_](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-biao-chan-she-ji) 而填入對應值。
+* search\_conditions：Optional, filter out the data that meet the conditions. Each condition in the array is a JSON object structure, and each condition has an AND relationship. The default is to query all data.
+  * column：Field name, please refer to [_**Return data**_](wo-de-ren-wu.md#hui-chuan-zi-liao)，If it is a **custom form**, please refer to the id value in [_Create Data API_ ](kuai-su-kai-chan-tui-chan.md)_._
+  * condition：Condition characters are divided into the following five types.
+    * =：Filter out the data exactly the same as value.
+    * &gt;：Filter out data greater than value.
+    * &lt;：Filter out data less than value.
+    * in：Filter out the same data as in the value array.
+    * contains：Filter out data that contains value.
+  * value：Field value,Follow [_**APP Management &gt; Design APP &gt; Form Design**_](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-biao-chan-she-ji)  and fill in the corresponding values.
 
 ```text
 "search_conditions" :
@@ -66,31 +66,31 @@ description: 使用API查詢我的任務清單。
 ]
 ```
 
-* exclude\_conditions：選填，排除掉符合條件的資料，格式與search\_conditions相同，預設為不排除任何條件。
-* order\_columns：選填，依照指定欄位進行排序。需要逆向排序請在欄位名稱前方加上"-"號，預設為以 \["id"\] 進行排序。範例格式如下。
+* exclude\_conditions：Optional, exclude data that meets the conditions, the format is the same as search\_conditions, and the default is not to exclude any conditions.
+* order\_columns：Optional, sort according to the specified field. If you need to sort in reverse, please add a "-" sign in front of the field name. The default is to sort by \["id"\]. The example format is as follows.
 
   ```text
-  #正排序
+  #Positive Sort
   "order_columns" : ["id"]
 
-  #逆排序
+  #Reverse Sort
   "order_columns" : ["-id"]
   ```
 
-* limit：選填，填入數字取得至第幾筆資料，預設為100筆。
-* start：選填，填入數字從第幾筆資料開始取得，預設為第 0 筆。
+* limit：Optional, fill in the number to get to the number of data, the default is 100.
+* start：Optional, fill in the number from the first data to obtain, the default is  start from 0.
 
 {% hint style="info" %}
-例1：start=0，limit=100，回傳100筆資料。
+Example 1:start=0,limit=100,return 100 data.
 
-例2：start=1，limit=100，回傳99筆資料。
+Example 2:start=1,limit=100,return 99 data.
 
-例3：start=100，limit=100，回傳0筆資料。
+Example 3:start=100,limit=100,return 0 data.
 {% endhint %}
 
-## 回傳資料
+## Return data
 
-成功時，回傳資料範例如下所示：
+When successful, an example of the returned data is as follows:
 
 ```text
 {
@@ -124,7 +124,7 @@ description: 使用API查詢我的任務清單。
 }
 ```
 
-失敗時，回傳資料範例如下：
+When it fails, the example of returned data is as follows:
 
 ```text
 {

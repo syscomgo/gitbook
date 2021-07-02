@@ -1,40 +1,39 @@
 ---
-description: 當版本更新時，為能正確使用新功能，可能需要手動更新內建流程，以下為更新步驟：
+description: >-
+  When the version is updated, in order to use the new features correctly, it
+  may be necessary to manually update the default app. The following are the
+  update steps:
 ---
 
-# 更新內建流程
+# Update The Default APP
 
-## STEP1 進入應用設計
+## STEP1 Enter Application Design
 
-點擊 **主選單**＞**應用管理**＞**應用設計**，如下圖：
+Click Main Menu&gt;Application Management&gt;Application Design, as shown in the figure below:
 
 ![](../.gitbook/assets/image%20%2850%29.png)
 
-## STEP2 點擊「下載」
+## STEP2 Click「Download」
 
-點擊畫面右上角藍色「下載」按鈕，會跳出雲端流程介面，如下圖：
+Click the blue "Download" button in the upper right corner of the screen, and the cloud process interface will pop up.
 
 {% hint style="info" %}
-此功能需在有網路情況下才能進行，如沒有網路可跳轉至STEP4。
+his function can only be performed when there is a network. If there is no network, you can skip to STEP4.
 {% endhint %}
 
 ![](../.gitbook/assets/image%20%2824%29.png)
 
-點擊 OMFLOW default APP，對OMFLOW Default APP右側按下「匯入」按鈕。
+Click OMFLOW default APP, press the "Import" button on the right side of the OMFLOW Default APP.
 
 ![](../.gitbook/assets/image%20%2819%29.png)
 
-## STEP3 進行上架
+## STEP3 Deploy Application
 
-勾選想要進行更新的流程，並按下「上架」按鈕，即可進行更新，如下圖：
+Check the process that you want to update, and click the "Release" button to update.
 
 ![](../.gitbook/assets/image%20%2874%29.png)
 
-## STEP4 在安裝資料夾下匯入內建流程
+## STEP4 Import the default app under the installation folder
 
-若OMFLOW所處環境並沒有網路，也可至安裝資料夾下找到檔案。點擊「匯入」按鈕，找到OMFLOW安裝資料夾\omflow\default\_flow.omf。匯入後，即可接續STEP3進行上架。
-
-
-
-
+If OMFLOW is in an environment without a network, you can also find the files in the installation folder. Click the "Import" button and find the OMFLOW installation folder \omflow\default\_flow.omf. After importing, you can continue to STEP3 for listing.
 

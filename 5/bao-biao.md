@@ -1,22 +1,26 @@
 ---
-description: 將流程的表單資料已整理匯出
+description: The form data of the process has been organized and exported
 ---
 
-# 報表
+# Report
+
+
 
 ![](../.gitbook/assets/tu-pian-%20%2841%29.png)
 
-### 報表設定
+### Report Setting
 
-目前報表來源僅限App\(自訂應用\)，並選擇單獨流程產出報表，輸出筆數除預設選項也可直接輸入，顯示來位可自由新增、刪除、拖拉順序，重複選擇相同欄位不會輸出
+At present, the report source is limited to App \(customized application\), and you can select a separate process to output the report. The output number can be directly input in addition to the default option. The display position can be added, deleted, and dragged freely. Repeatedly select the same field Will not output
 
 ![](../.gitbook/assets/report%20%281%29.png)
 
-### 自用報表
+### 
 
-所有自己建立並儲存的報表皆為自用報表，設為公用也只會在自己的自用報表看到，報表不用儲存便可即時預覽並列印或匯出成CSV檔案。
+### Self-use Report
 
-### 公用報表
+All reports created and saved by yourself are self-use reports. If they are set to public, they will only be viewed in their own word-use reports. The reports can be previewed and printed in real time or exported as CSV files without saving.
 
-所有由其他使用者建立並設為公用的報表，公用報表可以讓所有無流程權限的使用者皆可以相同設定產出報表，如果有相同流程的使用權限，則可以複製並建立成自用報表進行編輯。
+### Public Report
+
+All reports created by other users and set as public. Public reports allow all users without process permissions to set the same output reports. If they have the same process permissions, they can be copied and created as self-use reports for editing.
 

@@ -1,14 +1,14 @@
-# 變更資料中心網址
+# Change data center URL
 
-伺服器會因為各項包含但不限於組織異動、設備架構異動、伺服器異常等因素，導致需要更換憑證、連接埠、網域、IP等等，該篇文章主要是說明哪些地方需要進行修改，才能讓資料中心正常運作。
+The server will need to change certificates, ports, domains, IPs, etc. due to various factors including but not limited to organizational changes, device structure changes, server abnormalities, etc. This article mainly explains what needs to be modified. In order for the data center to operate normally.
 
 ## Windows
 
-### 修改httpd.conf
+### Modify httpd.conf
 
-_檔案路徑：C:\Program Files\OMFLOW Server\Apache24\conf\httpd.conf_
+_File path: C:\Program Files\OMFLOW Server\Apache24\conf\httpd.conf_
 
-修改下列兩段設定中的&lt;IP&gt;與&lt;Port&gt;
+Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following two settings
 
 ```text
 # Listen: Allows you to bind Apache to specific IP addresses and/or
@@ -34,11 +34,11 @@ ServerName <IP>:<Port>
 
 
 
-### 修改settings.py
+### Modify settings.py
 
-_檔案路徑：C:\Program Files\OMFLOW Server\omflow\omflow\settings.py_
+_File path: C:\Program Files\OMFLOW Server\omflow\omflow\settings.py_
 
-修改**LOCAL**_**\_**_**IP**以及**LOCAL\_PORT**
+Modify **LOCAL**_**\_**_**IP** and **LOCAL\_PORT**
 
 ```text
 #omflow type(server/collector)
@@ -52,19 +52,19 @@ LOCAL_PROTOCOL = "http"
 
 
 
-### 重啟服務
+### Restart Service
 
 ![](../.gitbook/assets/zhong-qi-fu-wu-%20%281%29.png)
 
-### 更新collector報到位置
+### Update collector register IP
 
-重啟後登入OMFLOW
+restart and login OMFLOW
 
-首頁 &gt; 系統設定 &gt; 系統設定
+Home &gt; System Setting &gt; System Setting
 
 ![](../.gitbook/assets/tong-bu-collector.png)
 
-更新完成後，所有已經報到過的收集器，都會修改報到對象至新的位置。
+After the update is completed, all the collectors that have been reported to will modify the reported objects to the new IP.
 
 
 
@@ -72,11 +72,11 @@ LOCAL_PROTOCOL = "http"
 
 ### ubuntu
 
-### 修改django.conf
+### Modify django.conf
 
-_檔案路徑：_/etc/apache2/sites-available/django.conf
+_File path:_ /etc/apache2/sites-available/django.conf
 
-修改下列兩段設定中的&lt;IP&gt;與&lt;Port&gt;
+Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following two settings
 
 ```text
 <IfModule mod_ssl.c>
@@ -87,11 +87,11 @@ _檔案路徑：_/etc/apache2/sites-available/django.conf
 
 ```
 
-### 修改settings.py
+### Modify settings.py
 
-_檔案路徑：/opt/omflow/server/omflow/settings.py_
+_File path: /opt/omflow/server/omflow/settings.py_
 
-修改**LOCAL**_**\_**_**IP**以及**LOCAL\_PORT**
+Modify **LOCAL**_**\_**_**IP** and **LOCAL\_PORT**
 
 ```text
 #omflow type(server/collector)
@@ -103,30 +103,30 @@ LOCAL_PROTOCOL = "http"
 
 ```
 
-### 重啟服務
+### Restart service
 
 ```text
 systemctl stop omflow_server
 systemctl start omflow_server
 ```
 
-### 更新collector報到位置
+### Update collector register IP
 
-重啟後登入OMFLOW
+Restart and login OMFLOW
 
-首頁 &gt; 系統設定 &gt; 系統設定
+Home &gt; System Setting &gt; System Setting
 
 ![](../.gitbook/assets/tong-bu-collector.png)
 
-更新完成後，所有已經報到過的收集器，都會修改報到對象至新的位置。
+After the update is completed, all the collectors that have been reported to will modify the reported objects to the new IP.
 
 ### centos
 
-### 修改httpd.conf
+### Modify httpd.conf
 
-_檔案路徑：/etc/httpd/conf/httpd.conf_
+_File path: /etc/httpd/conf/httpd.conf_
 
-修改下列兩段設定中的&lt;IP&gt;與&lt;Port&gt;
+Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following setting.
 
 ```text
 # Change this to Listen on specific IP addresses as shown below to 
@@ -136,11 +136,11 @@ _檔案路徑：/etc/httpd/conf/httpd.conf_
 Listen <IP>:<Port>
 ```
 
-### 修改django.conf
+### Modify django.conf
 
-_檔案路徑：_/etc/httpd/conf.d/django.conf
+_File path:_ /etc/httpd/conf.d/django.conf
 
-修改下列兩段設定中的&lt;IP&gt;與&lt;Port&gt;
+Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following setting.
 
 ```text
 <IfModule mod_ssl.c>
@@ -151,11 +151,11 @@ _檔案路徑：_/etc/httpd/conf.d/django.conf
 
 ```
 
-### 修改settings.py
+### Modify settings.py
 
-_檔案路徑：/opt/omflow/server/omflow/settings.py_
+_File path: /opt/omflow/server/omflow/settings.py_
 
-修改**LOCAL**_**\_**_**IP**以及**LOCAL\_PORT**
+Modify **LOCAL**_**\_**_**IP** and **LOCAL\_PORT**
 
 ```text
 #omflow type(server/collector)
@@ -167,20 +167,20 @@ LOCAL_PROTOCOL = "http"
 
 ```
 
-### 重啟服務
+### Restart Service
 
 ```text
 systemctl stop omflow_server
 systemctl start omflow_server
 ```
 
-### 更新collector報到位置
+### Update collector register IP
 
-重啟後登入OMFLOW
+Restart and login OMFLOW
 
-首頁 &gt; 系統設定 &gt; 系統設定
+Home &gt; System Setting &gt; System Setting
 
 ![](../.gitbook/assets/tong-bu-collector.png)
 
-更新完成後，所有已經報到過的收集器，都會修改報到對象至新的位置。
+After the update is completed, all the collectors that have been reported to will modify the reported objects to the new IP.
 

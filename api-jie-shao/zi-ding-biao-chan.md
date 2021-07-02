@@ -1,26 +1,26 @@
 ---
-description: 所有已上架的自訂表單皆可使用此API查詢相關資料。
+description: this is translated by machine
 ---
 
-# 查詢表單
+# Query Form
 
-## 查詢
+## Query
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+All apis must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method
 {% endhint %}
 
 * Method：POST
-* URL：/rest/flowmanage/api/omdata/list/&lt;api路徑&gt;
-* 輸入參數\(postbody\)：範例格式如下。
+* URL：/rest/flowmanage/api/omdata/list/**&lt;api path&gt;**
+* Input parameters \(postbody\): The example format is as follows.
 
 {% hint style="info" %}
-api路徑請參閱[流程設計](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-can-shu-she-ding)。
+Please refer to the [flow design](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-can-shu-she-ding) for the api path
 {% endhint %}
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "<security>",
 	"omflow_restapi" : 1,
 	"search_conditions" : [],
 	"search_columns" : [],
@@ -32,10 +32,10 @@ api路徑請參閱[流程設計](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-ca
 ```
 
 {% hint style="info" %}
-參數詳細介紹請參閱[**API介紹&gt;我的任務**](wo-de-ren-wu.md#cha-xun)。
+Please refer to [**API&gt;My Mission**](../5/2.md) for details of other parameters
 {% endhint %}
 
-成功時，回傳資料範例如下所示：
+When successful, an example of the returned data is as follows:
 
 ```text
 {
@@ -75,7 +75,7 @@ api路徑請參閱[流程設計](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-ca
 }
 ```
 
-失敗時，回傳資料範例如下：
+When it fails, the example of returned data is as follows:
 
 ```text
 {

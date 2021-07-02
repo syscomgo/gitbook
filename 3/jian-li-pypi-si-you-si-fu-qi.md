@@ -1,157 +1,159 @@
-# 架設pypi私人伺服器
+# Set up pypi private server
 
-OMFlow流程中的程式碼元件可以執行python程式碼，使用者可以在網路、社群尋找好用的範例程式或套件，來架構出屬於自己的流程。此時就會有需要另外安裝python套件的需求產生，接下來會說明如何安裝python套件。
+The code components in the OMFlow process can execute python code. Users can find useful sample programs or packages on the Internet and in the community to construct their own processes. At this time, there will be a need to install the python package separately, and then how to install the python package will be explained.
 
-當伺服器有對外網路時，安裝套件可以直接透過omflow來完成，使用者只需要在流程中python元件的套件頁籤\(詳細可參考[元件介紹](../5/6.md#cheng-shi-ma)\)，填入需要安裝的套件名稱，上架流程時系統會檢查是否已經安裝該套件，若是尚未安裝則會自動幫使用者安裝套件。
+When the server has an external network, the installation of the package can be done directly through omflow. The user only needs to fill in the package name of the package to be installed on the package tab of the python component in the process \(for details, please refer to the component introduction\).
 
-若是伺服器沒有對外網路，此時就需要使用者架設私人伺服器了，下面會說明如何建立pypi私人伺服器。
+The system will check whether the package has been installed, and if it has not been installed, it will automatically install the package for the user. If the server does not have an external network, the user needs to set up a private server at this time. The following will explain how to create a pypi private server.
 
-## 架設私人伺服器
+## Set up a private server
 
-基本需求：python、pip
+Requirement：python、pip
 
-架設私人伺服器最基本就是環境中必須要有安裝python，python如何安裝、設定環境變數等請自行至python官方網站瀏覽，這裡就不多贅述了。
+The most basic of setting up a private server is that python must be installed in the environment. How to install python, set environment variables, etc., please go to the official python website to browse, I won’t go into details here.
 
-#### 步驟一、安裝套件
+#### Step 1、install package
 
-如果私人伺服器的環境有對外網路，打開命令提示字元，鍵入以下指令
+If the private server environment has an external network, open the command prompt and type the following command
 
 ```text
 pip install devpi-server
 pip install devpi-client
 ```
 
-如果沒有對外網路，請在有對外網路的環境中，取得該套件，可以直接google搜尋devpi並下載套件：
+If there is no external network, please obtain the package in an environment with external network. You can directly search for devpi by google and download the package:
 
 {% embed url="https://pypi.org/project/devpi-server/\#files" %}
 
 {% embed url="https://pypi.org/project/devpi-client/\#files" %}
 
 {% hint style="info" %}
-為符合教學情境，請下載.whl的檔案。
+To meet the teaching situation, please download the .whl file.
 {% endhint %}
 
-或是透過python指令下載，指令如下：
+Or download through the python command, the command is as follows:
 
 ```text
-pip download devpi-server -d <下載路徑>
-pip download devpi-client -d <下載路徑>
+pip download devpi-server -d <download path>
+pip download devpi-client -d <download path>
 ```
 
-接著將下載下來的whl檔案移至私人伺服器的環境中，再次打開命令提示字元鍵入下列指令：
+Then move the downloaded whl file to the private server environment, open the command prompt again and type the following command:
 
 ```text
-pip install <devpi-server.whl路徑>
-pip install <devpi-client.whl路徑>
+pip install <devpi-server.whl>
+pip install <devpi-client.whl>
 ```
 
 
 
-#### 步驟二、初始化devpi伺服器
+#### Step 2、initialize devpi server
 
-安裝好devpi套件之後，接著要進行私人伺服器的初始設定，指令如下：
+After the devpi package is installed, the initial settings of the private server must be performed. The command is as follows:
 
 ```text
 devpi-server --serverdir="/devpi" --init
 ```
 
 {% hint style="info" %}
---serverdir後面的路徑，代表伺服器的位置，可以自行調整。
+--serverdir="" the following path represents the location of the server and can be adjusted by yourself.
 {% endhint %}
 
-#### 步驟三、建立root帳號
+#### Step 3、create root
 
-為devpi server建立一個使用者，指令如下：
+To create a user for devpi server, the command is as follows:
 
 ```text
 devpi-server --serverdir="/devpi" --passwd root
 
-#應該會看到請求輸入密碼
+#You should see a password request
 enter password for root:
-#輸入密碼後按下enter，會再次確認密碼。
+#After entering the password, press enter, and the password will be confirmed again.
 repeat password for root:
 ```
 
-#### 步驟四、啟動私人伺服器
+#### Step 4、active pypi server
 
-建立帳號之後，即可啟動伺服器，指令如下：
+After creating an account, you can start the server, the command is as follows:
 
 ```text
 devpi-server --serverdir="/devpi" --restrict-modify=root --port=3141 --host=<IP位置> --start
 ```
 
 {% hint style="info" %}
---port=3141是預設值，可以自行修改。
+--port=3141 is the default value and can be modified by yourself.
 
---host=請填入當前架設環境的ip。
+--host=Please fill in the ip of the current setup environment.
 {% endhint %}
 
 {% hint style="warning" %}
-如果架設私人伺服器的環境有對外網路，完成至此步驟後請跳至第六步驟。
+If the environment where the private server is set up has an external network, please skip to the sixth step after completing this step.
 {% endhint %}
 
-#### 步驟五、設定client
+#### Step 5、client
 
-在沒有對外網路的情況下，使用者只能另外下載套件，最後上傳至私人伺服器作統一管理，此時就需要用到client套件，設定指令如下：
+When there is no external network, the user can only download the package separately, and finally upload it to the private server for unified management. At this time, the client package is needed. The setting command is as follows:
 
 ```text
-#設定client指向的server位置
-devpi use http://<IP位置>:<Port>
+#Set the server location pointed to by the client
+devpi use http://<IP>:<Port>
 ```
 
 {% hint style="info" %}
-ip與port都是步驟四所設定的位置。
+Both ip and port are the positions set in step 4.
 {% endhint %}
 
 ```text
-#登入
-devpi login root --password=<密碼>
+#login
+devpi login root --password=<password>
 
-#在root使用者下建立自己的資料夾
+#Create your own folder under the root user
 devpi index -c local
 ```
 
 {% hint style="info" %}
-local可以自行更換。
+"local" can be changed.
 {% endhint %}
 
 ```text
-#切換至剛才建立的local資料夾
+#Switch to the local folder just created
 devpi use root/local
 
-#上傳已經下載好的套件至pypi私人伺服器
-devpi upload --from-dir <各式自行下載的套件whl檔案路徑>
+#Upload the downloaded package to the pypi private server
+devpi upload --from-dir <whl file path>
 ```
 
-至此，pypi伺服器架設就完成了。
+At this point, the pypi server setup is complete.
 
-#### 步驟六、設定omflow server
+#### Step 6、config omflow server
 
-架設完私人伺服器後，必須要到omflow設定，這樣上架應用時，系統就會根據此設定至pypi server下載安裝套件。
+After setting up the private server, you must go to the omflow setting, so when the application is put on the shelf, the system will download the installation package to the pypi server according to this setting.
 
-登入omflow &gt; 系統設定 &gt; 系統設定
+Log in to omflow&gt; System Settings&gt; System Settings
 
 ![](../.gitbook/assets/pip-server.png)
 
-紅匡位置填入私人伺服器的位置後，儲存即可生效。
+After filling in the location of the private server, the save will take effect.
 
 {% hint style="info" %}
-如果pypi伺服器有對外網路，填入的路徑位置範例：
+If the pypi server has an external network, an example of the path location to fill in:
 
 http://&lt;IP&gt;:3141/root/pypi/+simple/
 {% endhint %}
 
 {% hint style="info" %}
-如果沒有對外網路，填入的路徑位置範例：
+If there is no external network, the example of the path location to fill in:
 
 http://&lt;IP&gt;:3141/root/local/
 {% endhint %}
 
-#### 關閉pypi伺服器
+#### close pypi server
 
-指令如下：
+command：
 
 ```text
 devpi-server --serverdir="/devpi" --restrict-modify=root --port=3141 --host=<IP位置> --stop
 ```
+
+
 
