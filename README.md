@@ -10,7 +10,7 @@ description: this is translated by machine
 
     [OMFLOW Overview](2/1.md) / [OMFLOW Engine](2/2.md) / [Software and Hardware Requirements](2/3.md) / [Patch Record](2/4.md)
 
-### 3、Software installation333
+### 3、Software installation
 
     [Windows](3/1.md) / [Linux](3/2.md) / [Docker](3/3.md) / [Open Source](3/4.md) / [HTTPS](3/5.md)
 
