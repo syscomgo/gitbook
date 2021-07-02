@@ -8,7 +8,7 @@ description: 當版本更新時，為能正確使用新功能，可能需要手�
 
 點擊 **主選單**＞**應用管理**＞**應用設計**，如下圖：
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2827%29%20%282%29.png)
 
 ## STEP2 點擊「下載」
 
@@ -22,13 +22,13 @@ description: 當版本更新時，為能正確使用新功能，可能需要手�
 
 點擊 OMFLOW default APP，對OMFLOW Default APP右側按下「匯入」按鈕。
 
-![](../.gitbook/assets/image%20%2819%29.png)
+![](../.gitbook/assets/image%20%2819%29%20%281%29.png)
 
 ## STEP3 進行上架
 
 勾選想要進行更新的流程，並按下「上架」按鈕，即可進行更新，如下圖：
 
-![](../.gitbook/assets/image%20%2874%29.png)
+![](../.gitbook/assets/image%20%2833%29%20%282%29.png)
 
 ## STEP4 在安裝資料夾下匯入內建流程
 

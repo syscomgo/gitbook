@@ -54,7 +54,7 @@ LOCAL_PROTOCOL = "http"
 
 ### 重啟服務
 
-![](../.gitbook/assets/zhong-qi-fu-wu-%20%281%29.png)
+![](../.gitbook/assets/zhong-qi-fu-wu-%20%281%29%20%281%29.png)
 
 ### 更新collector報到位置
 
