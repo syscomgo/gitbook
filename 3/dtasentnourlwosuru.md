@@ -52,7 +52,7 @@ LOCAL_PROTOCOL = "http"
 
 
 
-![](../.gitbook/assets/zhong-qi-fu-wu-%20%281%29.png)
+![](../.gitbook/assets/zhong-qi-fu-wu-%20%281%29%20%281%29%20%281%29.png)
 
 ### コレクターレポートの位置を更新します
 

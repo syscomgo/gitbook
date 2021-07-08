@@ -4,7 +4,7 @@
 
 ### 二、紹介
 
-   [OMFLOW概要](https://doc.omflow.com.tw/v/japan/2/1) / [OMFLOW エンジン](https://doc.omflow.com.tw/2/2) / [システム要求](https://doc.omflow.com.tw/v/japan/2/3) / [バージョンレコード](https://doc.omflow.com.tw/v/japan/2/4)
+   [OMFLOW概要](https://doc.omflow.com.tw/v/japan/2/1) / [OMFLOW エンジン](2/2.md) / [システム要求](https://doc.omflow.com.tw/v/japan/2/3) / [バージョンレコード](https://doc.omflow.com.tw/v/japan/2/4)
 
 ### 三、インストール
 
