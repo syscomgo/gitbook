@@ -4,21 +4,15 @@
 
 ## 二、介紹
 
-```text
-[OMFLOW概觀](https://doc.omflow.com.tw/2/1) / [OMFLOW流程引擎](https://doc.omflow.com.tw/2/2) / [軟體及硬體需求](https://doc.omflow.com.tw/2/3) / [版本紀錄](https://doc.omflow.com.tw/2/4)
-```
+[OMFLOW概觀](2/1.md) / [OMFLOW流程引擎](2/2.md) / [軟體及硬體需求](2/3.md) / [版本紀錄](2/4.md)
 
 ## 三、軟體安裝
 
-```text
-[安裝在Windows](https://doc.omflow.com.tw/3/1) / [安裝在Linux](https://doc.omflow.com.tw/3/2) / [使用Docker](https://doc.omflow.com.tw/3/3) / [開源版安裝](https://doc.omflow.com.tw/3/4) / [啟用HTTPS](https://doc.omflow.com.tw/3/5)/ [變更資源中心網址](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md) / [建立pypi私有伺服器](3/jian-li-pypi-si-you-si-fu-qi.md)
-```
+[安裝在Windows](3/1.md) / [安裝在Linux](3/2.md) / [使用Docker](3/3.md) / [開源版安裝](3/4.md) / [啟用HTTPS](3/5.md) / [變更資源中心網址](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md) / [建立pypi私有伺服器](3/jian-li-pypi-si-you-si-fu-qi.md)
 
 ## 四、快速上手
 
-```text
-[初始設定](https://doc.omflow.com.tw/4/1) / [人員及組織](https://doc.omflow.com.tw/4/2) / [建立應用、流程](https://doc.omflow.com.tw/4/3)
-```
+[初始設定](4/1.md) / [人員及組織](4/2.md) / [建立應用、流程](4/3.md) / [更新內建流程](4/geng-xin-nei-jian-liu-cheng.md)
 
 ## 五、功能手冊
 
