@@ -20,11 +20,11 @@ All apis must obtain a security code \(security\) before using it, please refer 
 
 ```text
 {
-	"security" : "",
-	"omflow_restapi" : 1,
-	"username" : "",
-	"ad_no" : "",
-	"position" : ""
+    "security" : "",
+    "omflow_restapi" : 1,
+    "username" : "",
+    "ad_no" : "",
+    "position" : ""
 }
 ```
 
@@ -62,10 +62,10 @@ All apis must obtain a security code \(security\) before using it, please refer 
 
 ```text
 {
-	"security" : "",
-	"omflow_restapi" : 1,
-	"org_no" : "",
-	"position" : ""
+    "security" : "",
+    "omflow_restapi" : 1,
+    "org_no" : "",
+    "position" : ""
 }
 ```
 
@@ -118,8 +118,8 @@ All apis must obtain a security code \(security\) before using it, please refer 
 
 ```text
 {
-	"security" : "<security_code>",
-	"omflow_restapi" : 1
+    "security" : "<security_code>",
+    "omflow_restapi" : 1
 }
 ```
 
@@ -142,8 +142,4 @@ API Response example：
     }
 }
 ```
-
-
-
-
 

@@ -14,11 +14,10 @@ All API must obtain a security code \(security\) before using it, please refer t
 
 ```text
 {
-	"security" : "<security_code>",
-	"omflow_restapi" : 1,
-	"org_name" : [],
-	"org_no" : []
-
+    "security" : "<security_code>",
+    "omflow_restapi" : 1,
+    "org_name" : [],
+    "org_no" : []
 ```
 
 * secuity：Required
@@ -47,6 +46,4 @@ API Response example：
     ]
 }
 ```
-
-
 

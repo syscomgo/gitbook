@@ -14,13 +14,13 @@ All apis must obtain a security code \(security\) before using it, please refer 
 
 ```text
 {
-	"security" : "",
-	"omflow_restapi" : 1,
-	"start" : <start time, require>,
-	"end" : <end time, require>,
-	"principal" : "<require, Can fill in user username, nick_name, ad_no>",
-	"substitute" : "<require, Can fill in username, nick_name, ad_no>",
-	"identifier" : "<Used to interface with the leave form of other systems>"
+    "security" : "",
+    "omflow_restapi" : 1,
+    "start" : <start time, require>,
+    "end" : <end time, require>,
+    "principal" : "<require, Can fill in user username, nick_name, ad_no>",
+    "substitute" : "<require, Can fill in username, nick_name, ad_no>",
+    "identifier" : "<Used to interface with the leave form of other systems>"
 }
 ```
 
@@ -44,12 +44,12 @@ List leave records.
 
 ```text
 {
-	"security" : "",
-	"omflow_restapi" : 1,
-	"cancel" : <cancel>, #0 or 1, if not fill in return all
-	"history" : <history>, #0 or 1, if not fill in return all
-	"principal" : "<require, Can fill in user username, nick_name, ad_no>",
-	"substitute" : "<require, Can fill in user username, nick_name, ad_no>"
+    "security" : "",
+    "omflow_restapi" : 1,
+    "cancel" : <cancel>, #0 or 1, if not fill in return all
+    "history" : <history>, #0 or 1, if not fill in return all
+    "principal" : "<require, Can fill in user username, nick_name, ad_no>",
+    "substitute" : "<require, Can fill in user username, nick_name, ad_no>"
 }
 ```
 
@@ -85,11 +85,11 @@ Update leave records.
 
 ```text
 {
-	"security" : "<安全碼>",
-	"omflow_restapi" : 1,
-	"leave_id" : <choose one to fill in with the identifier>,
-	"identifier" : <choose one to fill in with the leave_id>,
-	"substitute" : "<require, Can fill in user username, nick_name, ad_no>"
+    "security" : "<安全碼>",
+    "omflow_restapi" : 1,
+    "leave_id" : <choose one to fill in with the identifier>,
+    "identifier" : <choose one to fill in with the leave_id>,
+    "substitute" : "<require, Can fill in user username, nick_name, ad_no>"
 }
 ```
 
@@ -113,10 +113,10 @@ Cancel leave records.
 
 ```text
 {
-	"security" : "<安全碼>",
-	"omflow_restapi" : 1,
-	"leave_id" : <choose one to fill in with the identifier>,
-	"identifier" : <choose one to fill in with the leave_id>
+    "security" : "<安全碼>",
+    "omflow_restapi" : 1,
+    "leave_id" : <choose one to fill in with the identifier>,
+    "identifier" : <choose one to fill in with the leave_id>
 }
 ```
 
@@ -140,10 +140,10 @@ Delete leave records.
 
 ```text
 {
-	"security" : "<安全碼>",
-	"omflow_restapi" : 1,
-	"leave_id" : <choose one to fill in with the identifier>,
-	"identifier" : <choose one to fill in with the leave_id>
+    "security" : "<安全碼>",
+    "omflow_restapi" : 1,
+    "leave_id" : <choose one to fill in with the identifier>,
+    "identifier" : <choose one to fill in with the leave_id>
 }
 ```
 

@@ -11,7 +11,7 @@ description: >-
 
 Click Main Menu&gt;Application Management&gt;Application Design, as shown in the figure below:
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2827%29%20%284%29%20%282%29.png)
 
 ## STEP2 Click「Download」
 
@@ -21,7 +21,7 @@ Click the blue "Download" button in the upper right corner of the screen, and th
 his function can only be performed when there is a network. If there is no network, you can skip to STEP4.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%2824%29%20%281%29.png)
 
 Click OMFLOW default APP, press the "Import" button on the right side of the OMFLOW Default APP.
 
@@ -31,7 +31,7 @@ Click OMFLOW default APP, press the "Import" button on the right side of the OMF
 
 Check the process that you want to update, and click the "Release" button to update.
 
-![](../.gitbook/assets/image%20%2874%29.png)
+![](../.gitbook/assets/image%20%2833%29%20%282%29%20%282%29.png)
 
 ## STEP4 Import the default app under the installation folder
 

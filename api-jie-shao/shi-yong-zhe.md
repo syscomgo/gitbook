@@ -14,14 +14,14 @@ All API must obtain a security code \(security\) before using it, please refer t
 
 ```text
 {
-	"security" : "<code>",
-	"omflow_restapi" : 1,
-	"search_conditions" : [],
-	"search_columns" : [],
-	"exclude_conditions" : [],
-	"order_column" : [],
-	"limit" : 100,
-	"start" : 0
+    "security" : "<code>",
+    "omflow_restapi" : 1,
+    "search_conditions" : [],
+    "search_columns" : [],
+    "exclude_conditions" : [],
+    "order_column" : [],
+    "limit" : 100,
+    "start" : 0
 }
 ```
 
@@ -122,8 +122,6 @@ API Response:
 }
 ```
 
-
-
 ## Organization Search
 
 Use the **group\_no** to search for users under these organizations.
@@ -138,9 +136,9 @@ All apis must obtain a security code \(security\) before using it, please refer 
 
 ```text
 {
-	"security" : "<code>",
-	"omflow_restapi" : 1,
-	"group_no" : []
+    "security" : "<code>",
+    "omflow_restapi" : 1,
+    "group_no" : []
 }
 ```
 

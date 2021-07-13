@@ -8,7 +8,7 @@ The server will need to change certificates, ports, domains, IPs, etc. due to va
 
 _File path: C:\Program Files\OMFLOW Server\Apache24\conf\httpd.conf_
 
-Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following two settings
+Modify the &lt;IP&gt; and &lt;Port&gt; in the following two settings
 
 ```text
 # Listen: Allows you to bind Apache to specific IP addresses and/or
@@ -32,13 +32,11 @@ Listen <IP>:<Port>
 ServerName <IP>:<Port>
 ```
 
-
-
 ### Modify settings.py
 
 _File path: C:\Program Files\OMFLOW Server\omflow\omflow\settings.py_
 
-Modify **LOCAL**_**\_**_**IP** and **LOCAL\_PORT**
+Modify **LOCAL**_\*\*\_**\_**IP **and** LOCAL\_PORT\*\*
 
 ```text
 #omflow type(server/collector)
@@ -50,11 +48,9 @@ UNIQUE_ID = ""
 LOCAL_PROTOCOL = "http"
 ```
 
-
-
 ### Restart Service
 
-![](../.gitbook/assets/zhong-qi-fu-wu-%20%281%29.png)
+![](../.gitbook/assets/zhong-qi-fu-wu-%20%281%29%20%281%29.png)
 
 ### Update collector register IP
 
@@ -66,8 +62,6 @@ Home &gt; System Setting &gt; System Setting
 
 After the update is completed, all the collectors that have been reported to will modify the reported objects to the new IP.
 
-
-
 ## Linux
 
 ### ubuntu
@@ -76,7 +70,7 @@ After the update is completed, all the collectors that have been reported to wil
 
 _File path:_ /etc/apache2/sites-available/django.conf
 
-Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following two settings
+Modify the &lt;IP&gt; and &lt;Port&gt; in the following two settings
 
 ```text
 <IfModule mod_ssl.c>
@@ -84,14 +78,13 @@ Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following two settings
     DocumentRoot /opt/omflow/server
 
     Alias /static  /opt/omflow/server/staticfiles
-
 ```
 
 ### Modify settings.py
 
 _File path: /opt/omflow/server/omflow/settings.py_
 
-Modify **LOCAL**_**\_**_**IP** and **LOCAL\_PORT**
+Modify **LOCAL**_\*\*\_**\_**IP **and** LOCAL\_PORT\*\*
 
 ```text
 #omflow type(server/collector)
@@ -100,7 +93,6 @@ OMFLOW_TYPE = "server"
 LOCAL_IP = "<IP>"
 LOCAL_PORT = "<Port>"
 LOCAL_PROTOCOL = "http"
-
 ```
 
 ### Restart service
@@ -126,7 +118,7 @@ After the update is completed, all the collectors that have been reported to wil
 
 _File path: /etc/httpd/conf/httpd.conf_
 
-Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following setting.
+Modify the &lt;IP&gt; and &lt;Port&gt; in the following setting.
 
 ```text
 # Change this to Listen on specific IP addresses as shown below to 
@@ -140,7 +132,7 @@ Listen <IP>:<Port>
 
 _File path:_ /etc/httpd/conf.d/django.conf
 
-Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following setting.
+Modify the &lt;IP&gt; and &lt;Port&gt; in the following setting.
 
 ```text
 <IfModule mod_ssl.c>
@@ -148,14 +140,13 @@ Modify the  &lt;IP&gt; and &lt;Port&gt;  in the following setting.
     DocumentRoot /opt/omflow/server
 
     Alias /static  /opt/omflow/server/staticfiles
-
 ```
 
 ### Modify settings.py
 
 _File path: /opt/omflow/server/omflow/settings.py_
 
-Modify **LOCAL**_**\_**_**IP** and **LOCAL\_PORT**
+Modify **LOCAL**_\*\*\_**\_**IP **and** LOCAL\_PORT\*\*
 
 ```text
 #omflow type(server/collector)
@@ -164,7 +155,6 @@ OMFLOW_TYPE = "server"
 LOCAL_IP = "<IP>"
 LOCAL_PORT = "<Port>"
 LOCAL_PROTOCOL = "http"
-
 ```
 
 ### Restart Service

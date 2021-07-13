@@ -55,5 +55,3 @@ In addition to the use of the event API on this website, there are also instruct
 
 ![](../.gitbook/assets/image%20%2849%29.png)
 
-
-

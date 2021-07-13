@@ -68,7 +68,7 @@ The failure to create a data is returned as follows:
 
 ## Query
 
-Select the "Query API" tab. Through this API, you can query the latest id of the data. All the data that have been opened need to obtain the  in order to push the data, and _**the &lt;data\_id&gt;  may be constantly changing or more than one item during the form process**_ , So you need to query first before pushing an data.
+Select the "Query API" tab. Through this API, you can query the latest id of the data. All the data that have been opened need to obtain the in order to push the data, and _**the &lt;data\_id&gt; may be constantly changing or more than one item during the form process**_ , So you need to query first before pushing an data.
 
 ![Bring in the data\_no returned when the data is successfully opened to query the current ID of the data.](../.gitbook/assets/jie-tu-20200722-xia-wu-2.06.41.png)
 
