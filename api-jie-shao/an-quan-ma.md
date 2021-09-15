@@ -4,7 +4,7 @@ description: this is translated by machine
 
 # Security
 
-* Method：POST
+* Method：GET
 * URL：/accounts/api/security/get/
 * Basic Authentication：True
 
