@@ -1,6 +1,6 @@
 # データセンターのURLを変更する
 
-サーバーは、グループの変更、デバイス構造の変更、サーバーの異常など、さまざまな要因により、証明書、ポート、ドメイン、IPなどを交換する必要があります。この記事では、主に何を変更する必要があるかについて説明します。データセンターが正常に動作するため。
+サーバーは、組織の変更、デバイス構造の変更、サーバーの異常など、さまざまな要因により、証明書、ポート、ドメイン、IPなどを交換する必要があります。このドキュメントでは、主に何を変更する必要があるかについて説明します。データセンターが正常に動作できるようにします。
 
 ## Windows
 
@@ -8,7 +8,7 @@
 
 ファイルパス：C:\Program Files\ OMFLOW Server\Apache24\conf\httpd.conf 
 
-以下の2つの設定でとを変更します
+で次の2つの設定を変更します&lt;IP&gt;與&lt;Port&gt;
 
 ```
 # Listen: Allows you to bind Apache to specific IP addresses and/or
@@ -32,11 +32,11 @@ Listen <IP>:<Port>
 ServerName <IP>:<Port>
 ```
 
-### settings.pyを変更します
+### 改訂settings.py
 
 ファイルパス：C:\Program Files\OMFLOW Server\omflow\omflow\settings.py 
 
-LOCAL\_IPとLOCAL\_PORTを変更します
+改訂**LOCAL**_\*\*\_**\_**IP**以及**LOCAL\_PORT\*\*
 
 ```bash
 #omflow type(server/collector)
@@ -48,7 +48,7 @@ UNIQUE_ID = ""
 LOCAL_PROTOCOL = "http"
 ```
 
-### サービスを再開します
+### サービス再開
 
 
 
@@ -122,11 +122,11 @@ systemctl start omflow_server
 
 ### centos
 
-### httpd.confを変更する
+### 改訂httpd.conf
 
 _ファイルパス：/etc/httpd/conf/httpd.conf_
 
-1つの設定を変更します
+次の2つの設定で&lt; IP&gt;と&lt; Port&gt;を変更します。
 
 ```bash
 # Change this to Listen on specific IP addresses as shown below to 
@@ -136,11 +136,11 @@ _ファイルパス：/etc/httpd/conf/httpd.conf_
 Listen <IP>:<Port>
 ```
 
-### django.confを変更する
+### 改訂django.conf
 
 ファイルパス：/etc/httpd/conf.d/django.conf
 
-1つの設定を変更します
+次の2つの設定で&lt; IP&gt;と&lt; Port&gt;を変更します。
 
 ```bash
 <IfModule mod_ssl.c>
@@ -151,11 +151,11 @@ Listen <IP>:<Port>
 
 ```
 
-### settings.pyを変更します
+### 改訂settings.py
 
 ファイルパス：/opt/omflow/server/omflow/settings.py
 
-LOCAL\_IPとLOCAL\_PORTを変更します
+改訂**LOCAL**_\*\*\_**\_**IP**以及**LOCAL\_PORT\*\*
 
 ```bash
 #omflow type(server/collector)
@@ -167,7 +167,7 @@ LOCAL_PROTOCOL = "http"
 
 ```
 
-### サービスを再開します
+### サービス再開
 
 ```bash
 systemctl stop omflow_server

@@ -12,7 +12,7 @@ description: リストされているすべてのカスタムフォームは、�
 
 * Method：POST
 * URL：/rest/flowmanage/api/omdata/list/&lt;api路徑&gt;
-* 輸入參數\(postbody\)：形式の例は次のとおりです。
+* 入力パラメータ\(postbody\)：形式の例は次のとおりです。
 
 {% hint style="info" %}
 API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-doc/v/japan/5/6#xin-jian-bian-ji-liu-cheng-ye-mian-can-shu-she-ding)を参照してください。
@@ -20,7 +20,7 @@ API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-do
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "<セキュリティコード>",
 	"omflow_restapi" : 1,
 	"search_conditions" : [],
 	"search_columns" : [],
@@ -32,7 +32,7 @@ API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-do
 ```
 
 {% hint style="info" %}
-パラメータの詳細については、[APIの紹介 &gt; 私の任務 ](https://app.gitbook.com/@omflow-syscom/s/omflow-doc/v/japan/api-jie-shao/wo-de-ren-wu)を参照してください。
+パラメータの詳細については、[APIの紹介 &gt; 私のタスク ](https://app.gitbook.com/@omflow-syscom/s/omflow-doc/v/japan/api-jie-shao/wo-de-ren-wu)を参照してください。
 {% endhint %}
 
 成功した場合、返されるデータの例は以下のとおりです。
@@ -40,7 +40,7 @@ API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-do
 ```text
 {
     "status": 200,
-    "message": "查詢成功。",
+    "message": "検索に成功。",
     "result": [
         {
             "id": 3,
@@ -48,14 +48,14 @@ API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-do
             "dataid_header": "",
             "data_no": 2,
             "history": true,
-            "status": "新建",
+            "status": "新しい",
             "title": "1",
             "level": "yellow",
             "group": "",
             "closed": false,
             "stop_uuid": "FITEM_15-FITEM_2",
             "stop_chart_type": null,
-            "stop_chart_text": "標準變更分類與狀態",
+            "stop_chart_text": "標準の変更の分類とステータス",
             "running": false,
             "error": false,
             "createtime": "2020-07-15T15:44:06.670",
@@ -70,7 +70,7 @@ API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-do
             "formitm_1": null,
             "formitm_2": null,
             "formitm_3": ""
-        },...<以此類推>
+        },...<等々>
     ]
 }
 ```
@@ -80,7 +80,7 @@ API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-do
 ```text
 {
     "status": 404,
-    "message": "查詢失敗，錯誤訊息如下：<錯誤訊息>",
+    "message": "クエリが失敗しました。エラーメッセージは次のとおりです：<エラーメッセージ>",
     "result": []
 }
 ```

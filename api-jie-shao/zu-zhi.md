@@ -6,43 +6,43 @@
 
 * Method：POST
 * URL：/rest/accounts/api/group/list/
-* 輸入參數\(postbody\)：範例格式如下。
+* 入力パラメータ\(postbody\)：形式の例は次のとおりです。
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+すべてのAPIを使用する前に、セキュリティコード（security ）を取得する必要があります。取得方法については、セキュリティコードの取得を参照してください。
 {% endhint %}
 
 ```text
 {
-	"security" : "<安全碼>",
+	"security" : "<セキュリティコード>",
 	"omflow_restapi" : 1,
 	"org_name" : [],
 	"org_no" : []
 
 ```
 
-* secuity：必填，安全碼。
-* omflow\_restapi：必填，1。
-* org\_no：選填，組織代號，陣列內可放置多個組織代號。\(與組織名稱二擇一\)
-* org\_name：選填，組織名稱，陣列內可放置多個組織代號。\(與組織代號二擇一\)
+* secuity：必須のセキュリティコード。
+* omflow\_restapi：必須，1。
+* org\_no：オプション、組織コード、複数の組織コードを配列に配置できます。 （組織名から1つ選択してください）
+* org\_name：オプション、組織名、複数の組織コードを配列に配置できます。 （組織コードから1つ選択してください）
 
 {% hint style="info" %}
-**如果組織代號與組織名稱都留空時，則回傳全部的組織。**
+**組織コードと組織名の両方を空白のままにすると、すべての組織が返されます。 \*\***
 {% endhint %}
 
-API回傳範例如下：
+APIの戻り例は次のとおりです：
 
 ```text
 {
     "status": 200,
-    "message": "查詢成功。",
+    "message": "クエリは成功しました。",
     "result": [
         {
-            "id": <組織編號>,
-            "group_no": <組織代號>,
-            "display_name": <組織名稱>,
-            "parent_group_id": <父組織編號>,
-            "description": <組織說明>
+            "id": <組織番号>,
+            "group_no": <組織コード>,
+            "display_name": <組織名>,
+            "parent_group_id": <親組織番号>,
+            "description": <組織の説明>
         },...
     ]
 }

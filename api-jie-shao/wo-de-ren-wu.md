@@ -2,16 +2,16 @@
 description: APIを使用してタスクリストをクエリします。
 ---
 
-# 私の任務
+# 私のタスク
 
 ## クエリ
 
 * Method：POST
 * URL：/rest/my-mission/api/my-mission/list/
-* 引数入力\(postbody\)：以下形式の例。
+* 引数inputforce\(postbody\)：次の形式の例
 
 {% hint style="info" %}
-セセキュリティコード（security）を使用する前に、全apiを取得する必要があります。取得方法については、[セキュリティコード](https://doc.omflow.com.tw/v/japan/api-jie-shao/an-quan-ma)の取得を参照してください。
+セキュリティコード（security）を使用する前に、全APIを取得する必要があります。取得方法については、[セキュリティコード](https://doc.omflow.com.tw/v/japan/api-jie-shao/an-quan-ma)の取得を参照してください。
 {% endhint %}
 
 ```text
@@ -29,7 +29,7 @@ description: APIを使用してタスクリストをクエリします。
 
 * secuity：必要，セキュリティコード。
 * omflow\_restapi：必要，1。
-* search\_columns：オプション，照会するフィールドの名前。以下形式の例。
+* search\_columns：SOL、するフィールドの名前の前。次のフォームの例。
 
   ```text
   "search_columns" : ["id", "status", "level"]
@@ -55,7 +55,7 @@ search\_columnsが入力されていない場合、クエリフォームの全�
     {
         "column" : "status",
         "condition" : "in",
-        "value" : ["アサイン", "審查中"]
+        "value" : ["アサイン", "レビュー中"]
     },
     {
         "column" : "id",
@@ -90,7 +90,7 @@ search\_columnsが入力されていない場合、クエリフォームの全�
 
 ## データ返す
 
-成功した場合、以下は返されるデータの例。
+成功した場合、以下は返されるデータの例です。
 
 ```text
 {
