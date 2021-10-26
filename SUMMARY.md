@@ -2,46 +2,46 @@
 
 * [目次](README.md)
 
-## 紹介 <a id="2"></a>
+## 紹介 <a href="2" id="2"></a>
 
 * [OMFLOW概要](2/1.md)
 * [OMFLOW エンジン](2/2.md)
-* [システム要求](2/3.md)
+* [システムリクエスト](2/3.md)
 * [バージョンレコード](2/4.md)
 
-## インストール <a id="3"></a>
+## インストール <a href="3" id="3"></a>
 
 * [Windows](3/1.md)
 * [Linux](3/2.md)
 * [Docker](3/3.md)
 * [オープンソース](3/4.md)
-* [HTTPS啟用](3/5.md)
+* [HTTPSの有効化](3/5.md)
 * [データセンターのURLを変更する](3/dtasentnourlwosuru.md)
 * [pypiプライベートサーバーを設定する](3/pypipuraibtosbwosuru.md)
-* [よくある間違う](3/yokuarui.md)
+* [よくある間違い](3/yokuarui.md)
 
-## クイックスタート\(Quick Start\) <a id="4"></a>
+## クイックスタート(Quick Start) <a href="4" id="4"></a>
 
 * [初期設定](4/1.md)
 * [ユーザーとグループ](4/2.md)
 * [アプリとプロセスの作成](4/3.md)
 * [デフォルトAPPの更新](4/geng-xin-nei-jian-liu-cheng.md)
 
-## 機能説明書 <a id="5"></a>
+## 機能説明書 <a href="5" id="5"></a>
 
 * [ホーム](5/1.md)
-* [私のミッション](5/2.md)
+* [私のタスク](5/2.md)
 * [サービスリクエスト](5/3.md)
 * [サービス管理](5/4.md)
 * [データ収集](5/5.md)
 * [アプリ管理](5/6.md)
-* [Apps](5/7.md)
+* [自訂應用](5/7.md)
 * [ユーザー管理](5/8.md)
 * [システム設定](5/9.md)
 * [内部プロセス](5/10.md)
 * [レポート](5/bao-gao-shu.md)
 
-## API 紹介 <a id="api-jie-shao"></a>
+## API 紹介 <a href="api-jie-shao" id="api-jie-shao"></a>
 
 * [セキュリティコード](api-jie-shao/an-quan-ma.md)
 * [クイック操作](api-jie-shao/kuai-su-kai-chan-tui-chan.md)
@@ -51,5 +51,4 @@
 * [組織図](api-jie-shao/zu-zhi-tu.md)
 * [ユーザー](api-jie-shao/yz.md)
 * [組織](api-jie-shao/zu-zhi.md)
-* [記録を残す](api-jie-shao/wosu.md)
-
+* [休暇記録](api-jie-shao/wosu.md)

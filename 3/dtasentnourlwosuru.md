@@ -1,14 +1,14 @@
 # データセンターのURLを変更する
 
-サーバーは、組織の変更、デバイス構造の変更、サーバーの異常など、さまざまな要因により、証明書、ポート、ドメイン、IPなどを交換する必要があります。このドキュメントでは、主に何を変更する必要があるかについて説明します。データセンターが正常に動作できるようにします。
+サーバーは、組織の変更、デバイス構造の変更、サーバーの異常など、さまざまな要因により、証明書、ポート、ドメイン、IPなどを変更する必要があります。このドキュメントでは、主に何を変更する必要があるかについて説明します。データセンターが正常に動作できるようにします。
 
 ## Windows
 
 ### httpd.confを変更する
 
-ファイルパス：C:\Program Files\ OMFLOW Server\Apache24\conf\httpd.conf 
+ファイルパス：C:\Program Files\ OMFLOW Server\Apache24\conf\httpd.conf&#x20;
 
-で次の2つの設定を変更します&lt;IP&gt;與&lt;Port&gt;
+で次の2つの設定を変更します\<IP>と\<Port>
 
 ```
 # Listen: Allows you to bind Apache to specific IP addresses and/or
@@ -32,11 +32,11 @@ Listen <IP>:<Port>
 ServerName <IP>:<Port>
 ```
 
-### 改訂settings.py
+### settings.pyを変更
 
-ファイルパス：C:\Program Files\OMFLOW Server\omflow\omflow\settings.py 
+ファイルパス：C:\Program Files\OMFLOW Server\omflow\omflow\settings.py&#x20;
 
-改訂**LOCAL**_\*\*\_**\_**IP**以及**LOCAL\_PORT\*\*
+改訂**LOCAL**_\*\*\\_**\_**IP**以及**LOCAL\_PORT\*\*
 
 ```bash
 #omflow type(server/collector)
@@ -52,13 +52,13 @@ LOCAL_PROTOCOL = "http"
 
 
 
-![](../.gitbook/assets/zhong-qi-fu-wu-%20%281%29%20%281%29%20%281%29.png)
+![](<../.gitbook/assets/zhong-qi-fu-wu- (1) (1) (1).png>)
 
-### コレクターレポートの位置を更新します
+### コレクターレポートの位置を更新する
 
-再起動後にOMFLOWにログインします 
+再起動後にOMFLOWにログインします&#x20;
 
-ホーム&gt;システム設定&gt;システム設定
+ホーム>システム設定>システム設定
 
 
 
@@ -72,7 +72,7 @@ LOCAL_PROTOCOL = "http"
 
 ### django.confを変更する
 
-ファイルパス：/etc/apache2/sites-available/django.conf 
+ファイルパス：/etc/apache2/sites-available/django.conf&#x20;
 
 1つの設定を変更します
 
@@ -85,7 +85,7 @@ LOCAL_PROTOCOL = "http"
 
 ```
 
-### settings.pyを変更します
+### settings.pyを変更する
 
 ファイルパス：/opt/omflow/server/omflow/settings.py
 
@@ -101,18 +101,18 @@ LOCAL_PROTOCOL = "http"
 
 ```
 
-### サービスを再開します
+### サービスを再開する
 
 ```bash
 systemctl stop omflow_server
 systemctl start omflow_server
 ```
 
-### コレクターレポートの位置を更新します
+### コレクターレポートの位置を更新する
 
-再起動後にOMFLOWにログインします 
+再起動後にOMFLOWにログインします&#x20;
 
-ホーム&gt;システム設定&gt;システム設定
+ホーム>システム設定>システム設定
 
 
 
@@ -122,11 +122,11 @@ systemctl start omflow_server
 
 ### centos
 
-### 改訂httpd.conf
+### httpd.confを変更する
 
 _ファイルパス：/etc/httpd/conf/httpd.conf_
 
-次の2つの設定で&lt; IP&gt;と&lt; Port&gt;を変更します。
+次の2つの設定で< IP>と< Port>を変更します。
 
 ```bash
 # Change this to Listen on specific IP addresses as shown below to 
@@ -136,11 +136,11 @@ _ファイルパス：/etc/httpd/conf/httpd.conf_
 Listen <IP>:<Port>
 ```
 
-### 改訂django.conf
+### django.confを変更する
 
 ファイルパス：/etc/httpd/conf.d/django.conf
 
-次の2つの設定で&lt; IP&gt;と&lt; Port&gt;を変更します。
+次の2つの設定で< IP>と< Port>を変更します。
 
 ```bash
 <IfModule mod_ssl.c>
@@ -151,11 +151,11 @@ Listen <IP>:<Port>
 
 ```
 
-### 改訂settings.py
+### settings.pyを変更する
 
 ファイルパス：/opt/omflow/server/omflow/settings.py
 
-改訂**LOCAL**_\*\*\_**\_**IP**以及**LOCAL\_PORT\*\*
+LOCAL \*\* \ \_IPおよびLOCAL\_PORT \*\*を変更します。
 
 ```bash
 #omflow type(server/collector)
@@ -167,7 +167,7 @@ LOCAL_PROTOCOL = "http"
 
 ```
 
-### サービス再開
+### サービスを再開する
 
 ```bash
 systemctl stop omflow_server
@@ -178,11 +178,10 @@ systemctl start omflow_server
 
 再起動後にOMFLOWにログインします
 
-ホーム&gt;システム設定&gt;システム設定
+ホーム>システム設定>システム設定
 
 
 
 ![](../.gitbook/assets/tong-bu-collector.png)
 
-更新が完了すると、報告されたすべてのコレクターは、報告されたオブジェクトを新しい場所に変更します。
-
+更新が完了すると、報告されたすべてのコレクターは、報告されたオブジェクトを新しい場所に変更されます。
