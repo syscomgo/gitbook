@@ -18,8 +18,8 @@
 * [HTTPS](3/5.md)
 * [Change data center URL](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md)
 * [Set up pypi private server](3/jian-li-pypi-si-you-si-fu-qi.md)
-* [Common error](3/common-error.md)
 * [Upgrade Apache Server](3/upgrade-apache-server.md)
+* [Common error](3/common-error.md)
 
 ## Quick Start <a href="#4" id="4"></a>
 
