@@ -13,6 +13,7 @@
 
 * [安裝在Windows](3/1.md)
 * [安裝在Linux](3/2.md)
+* [安裝Booster](3/an-zhuang-booster.md)
 * [使用Docker](3/3.md)
 * [開源版安裝](3/4.md)
 * [啟用HTTPS](3/5.md)
