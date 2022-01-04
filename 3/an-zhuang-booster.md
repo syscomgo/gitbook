@@ -2,7 +2,11 @@
 
 ## 功能介紹
 
+### 負載平衡架構
+
 ![](../.gitbook/assets/Booster架構.jpg)
+
+### 負載平衡兼高可用架性構
 
 ![](../.gitbook/assets/BoosterHA架構.jpg)
 
@@ -12,9 +16,9 @@
 
 #### OMFLOW Server
 
-#### OMFLOW Booster Agent
+具備
 
-#### OMFLOW Slave
+#### OMFLOW Booster Agent
 
 ## 安裝
 
@@ -88,17 +92,18 @@ BoosterAgent需與OMFLOWServer安裝在同一台伺服器上。
 
 待以上步驟皆完成後，最後便是依照情境的需求安裝一台以上的OMFLOWSlave。OMFLOWSlave內已包含OMFLOW Server及OMFLOWBooster Agent，安裝過程會需要額外填入以下資訊：
 
-#### 輸入 Booster IP：
+#### 輸入 Booster IP 及 Port：
 
-#### 輸入 Booster Port：
+請輸入視為主Booster的相關資訊。
 
-#### 輸入 HA Booster IP：
+#### 輸入 HA Booster IP 及 Port：
 
-#### 輸入 HA Booster Port：
+請輸入視為副Booster的相關資訊。
 
 ## 啟動順序
 
-1. Booster
-2. Database
-3. Master Booster Agent
-4. Slave Booster Agent
+在啟動順序上，Booster及DB為最高優先順序。其次為負責主要
+
+1. Booster、Database
+2. Master Booster Agent
+3. Slave Booster Agent
