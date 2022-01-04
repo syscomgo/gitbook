@@ -16,7 +16,7 @@
 
 #### OMFLOW Server
 
-具備
+擁有多台進行協同作業
 
 #### OMFLOW Booster Agent
 
@@ -102,8 +102,7 @@ BoosterAgent需與OMFLOWServer安裝在同一台伺服器上。
 
 ## 啟動順序
 
-在啟動順序上，Booster及DB為最高優先順序。其次為負責主要
+在啟動順序上，Booster及DB為最高優先順序。再來啟動
 
 1. Booster、Database
-2. Master Booster Agent
-3. Slave Booster Agent
+2. Booster Agent
