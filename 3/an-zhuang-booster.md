@@ -1,28 +1,32 @@
+---
+description: 支援Python：3.7以上
+---
+
 # 安裝Booster
 
 ## 功能介紹
 
 ### 負載平衡架構
 
+當用戶需要長時間大量開單或是眾多使用者同時上線等極耗效能情境出現，導致單台OMFLOW Server難以負荷時。OMFLOW也提供了負載平衡的機制，可同時建置多台OMFLOW Server分散效能，並由Booster進行協同調配進而提升整體效率，架構圖如下：
+
 ![](../.gitbook/assets/Booster架構.jpg)
 
 ### 負載平衡兼高可用架性構
 
-![](../.gitbook/assets/BoosterHA架構.jpg)
+同時OMFLOW也提供了高可用性的架構，不論是 其中一台Booster或是OMFLOW Server失去聯繫，系統都能正常運作。
 
-支援Python：3.7以上
+![](../.gitbook/assets/BoosterHA架構.jpg)
 
 #### OMFLOW Booster
 
-#### OMFLOW Server
-
-擁有多台進行協同作業
+擔任資料傳遞中心，主要負責協同所有OMFLOW Server共同處理表單流程。平時由主Booster進行作業。當主Booster失去聯繫時，會改由副Booster接替作業，形成高可用性架構。
 
 #### OMFLOW Booster Agent
 
-## 安裝
+使用Booster架構時，Booster Agent需要與OMFLOW Server安裝在同一環境上，其作用為當任一台OMFLOW Server更新Patch時，所有其他的OMFLOW Server也會自動更新。
 
-
+## 安裝步驟
 
 ### 1.  安裝 OMFLOW Booster
 
@@ -102,7 +106,11 @@ BoosterAgent需與OMFLOWServer安裝在同一台伺服器上。
 
 ## 啟動順序
 
-在啟動順序上，Booster及DB為最高優先順序。再來啟動
+在啟動順序上，Booster及DB為最高優先順序，再來啟動所有的Booster Agent。
 
 1. Booster、Database
 2. Booster Agent
+
+{% hint style="info" %}
+Booster Agent 啟動時會自動啟動 OMFLOW Server。
+{% endhint %}
