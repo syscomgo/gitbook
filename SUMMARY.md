@@ -13,6 +13,7 @@
 
 * [Windows](3/1.md)
 * [Linux](3/2.md)
+* [Booster](3/booster.md)
 * [Docker](3/3.md)
 * [Open Source](3/4.md)
 * [HTTPS](3/5.md)
