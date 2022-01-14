@@ -144,3 +144,20 @@ Linux 安裝方式
 {% hint style="info" %}
 Booster Agent 啟動時會自動啟動 OMFLOW Server。
 {% endhint %}
+
+{% hint style="info" %}
+Linux 的服務啟動方式
+
+Booster
+
+```
+/opt/omflow/Booster/omflow_booster_service { start | stop | status }
+```
+
+BoosterAgent
+
+```
+/opt/omflow/BoosterAgent/omflow_booster_agent_service { start | stop | status }
+```
+{% endhint %}
+
