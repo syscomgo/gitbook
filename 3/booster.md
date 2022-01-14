@@ -16,7 +16,7 @@ description: 支援Python：3.7以上
 
 同時OMFLOW也提供了高可用性的架構，將Booster分為「主、副」兩台，所有OMFLOW Server都會依此順序向Booster報到，以確保此架構任一節點失去聯繫時，系統仍能正常運作。
 
-![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-M6SrengyyhO1h0\_BsJ\_-887967055%2Fuploads%2F0Q0pS32qtvMERVEO5lEp%2FBoosterHA%E6%9E%B6%E6%A7%8B.jpg?alt=media\&token=f2c9db39-202e-47c0-86ec-0837fd6fae24)
+![](../.gitbook/assets/HA架構.png)
 
 #### OMFLOW Booster <a href="#omflow-booster" id="omflow-booster"></a>
 
