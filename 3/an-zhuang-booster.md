@@ -85,6 +85,10 @@ Booster架構並不支援Sqlite，需要事先建立好對應的資料庫。OMFL
 
 ### 4. 安裝 OMFLOW Server
 
+{% hint style="warning" %}
+安裝前請先備份資料庫。
+{% endhint %}
+
 當Booster安裝完畢後，接著安裝本架構的**第一台OMFLOW Server**。安裝過程會需要額外填入以下資訊：
 
 #### 輸入DB相關資訊：
@@ -102,10 +106,6 @@ Booster架構並不支援Sqlite，需要事先建立好對應的資料庫。OMFL
 #### 先前已安裝OMFLOW Server：
 
 若在安裝Booster之前已有運行中的OMFLOWServer，可按照以下步驟進行：
-
-{% hint style="warning" %}
-安裝前請先備份資料庫。
-{% endhint %}
 
 1. 確保運行中的OMFLOW Server資料庫並非Sqlite
 2. 將OMFLOW Server更新至最新版本
@@ -133,6 +133,13 @@ cd BoosterAgent_1140
 ```
 
 ### 6. 安裝 OMFLOW Slave
+
+{% hint style="warning" %}
+安裝前請先備份以下：
+
+1. 步驟3的資料庫
+2. 步驟4的OMFLOW Server。
+{% endhint %}
 
 待以上步驟皆完成後，最後便是依照情境的需求安裝一台以上的OMFLOWSlave。OMFLOWSlave內已包含OMFLOW Server及OMFLOWBooster Agent，安裝過程會需要額外填入以下資訊：
 
