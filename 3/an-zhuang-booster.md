@@ -44,6 +44,18 @@ description: 支援Python：3.7.7、3.8
 HA架構下，一台為主Booster，一台為副Booster
 {% endhint %}
 
+{% hint style="info" %}
+Linux 安裝方式
+
+在安裝包擺放的路徑下解壓縮，並且進入執行 install.sh 。
+{% endhint %}
+
+```
+tar xvf Booster_1140.tar.gz
+cd Booster_1140
+./install.sh
+```
+
 ### 2. 建置資料庫
 
 Booster架構並不支援Sqlite，需要事先建立好對應的資料庫。OMFLOW支援的資料庫如下：
@@ -92,6 +104,18 @@ Booster架構並不支援Sqlite，需要事先建立好對應的資料庫。OMFL
 BoosterAgent需與OMFLOWServer安裝在同一台伺服器上。
 {% endhint %}
 
+{% hint style="info" %}
+Linux 安裝方式
+
+在安裝包擺放的路徑下解壓縮，並且進入執行 install.sh 。
+{% endhint %}
+
+```
+tar xvf BoosterAgent_1140.tar.gz
+cd BoosterAgent_1140
+./install.sh
+```
+
 ### 5. 安裝 OMFLOW Slave
 
 待以上步驟皆完成後，最後便是依照情境的需求安裝一台以上的OMFLOWSlave。OMFLOWSlave內已包含OMFLOW Server及OMFLOWBooster Agent，安裝過程會需要額外填入以下資訊：
@@ -103,6 +127,12 @@ BoosterAgent需與OMFLOWServer安裝在同一台伺服器上。
 #### 輸入 HA Booster IP 及 Port：
 
 請輸入視為副Booster的相關資訊。
+
+{% hint style="info" %}
+Linux 安裝方式
+
+同 [Server](2.md#kai-shi-an-zhuang-omflow-server) 的安裝方式，只需將類型輸入 Slave 即可。
+{% endhint %}
 
 ## 啟動順序
 
