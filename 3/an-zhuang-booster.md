@@ -10,13 +10,13 @@ description: 支援Python：3.7.7、3.8
 
 當用戶需要長時間大量開單或是眾多使用者同時上線等極耗效能情境出現，導致單台OMFLOW Server難以負荷時。OMFLOW也提供了負載平衡的機制，可同時建置多台OMFLOW Server分散效能，並由Booster進行協同調配進而提升整體效率，架構圖如下：
 
-![](../.gitbook/assets/OMFLOW架構.png)
+![](<../.gitbook/assets/OMFLOW架構 (2).png>)
 
 ### 負載平衡兼高可用架性構
 
 同時OMFLOW也提供了高可用性的架構，將Booster分為「主、副」兩台，所有OMFLOW Server都會依此順序向Booster報到，以確保此架構任一節點失去聯繫時，系統仍能正常運作。
 
-![](../.gitbook/assets/BoosterHA架構.jpg)
+![](../.gitbook/assets/HA架構.png)
 
 #### OMFLOW Booster
 
