@@ -4,8 +4,6 @@ description: 支援Python：3.7.7、3.8
 
 # Booster
 
-##
-
 ## 功能介紹
 
 ### 負載平衡架構
@@ -194,8 +192,6 @@ BoosterAgent
 {% endhint %}
 
 ## 上傳License
-
-1於「左側主選單 > 系統設定 > 系統設定」Booster
 
 1. 點擊「左側主選單 > 系統設定 > 系統設定」
 2. 於主畫面拖曳至最下方，找到「Booster授權資料」區塊
