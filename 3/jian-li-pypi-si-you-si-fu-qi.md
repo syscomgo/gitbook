@@ -50,7 +50,7 @@ pip install <devpi-client.whl>
 After the devpi package is installed, the initial settings of the server must be performed. The command is as follows:
 
 ```
-devpi-server --serverdir="/devpi" --init
+devpi-init --serverdir="/devpi"
 ```
 
 {% hint style="info" %}
@@ -62,7 +62,7 @@ devpi-server --serverdir="/devpi" --init
 After creating an account, you can start the server, the command is as follows:
 
 ```
-devpi-server --serverdir="/devpi" --restrict-modify=root --port=3141 --host=<IP位置> --start
+devpi-server --serverdir="/devpi" --restrict-modify=root --port=3141 --host=<IP位置>
 ```
 
 {% hint style="info" %}
