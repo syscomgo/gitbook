@@ -87,7 +87,7 @@ devpi use http://<IP位置>:<Port>
 ```
 
 {% hint style="info" %}
-ip與port都是步驟四所設定的位置。
+ip與port都是步驟三所設定的位置。
 {% endhint %}
 
 ```
