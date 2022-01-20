@@ -18,7 +18,7 @@
 * [オープンソース](3/4.md)
 * [HTTPSの有効化](3/5.md)
 * [データセンターのURLを変更する](3/dtasentnourlwosuru.md)
-* [pypiプライベートサーバーを設定する](3/pypipuraibtosbwosuru.md)
+* [PyPIサーバー設定する](3/pypipuraibtosbwosuru.md)
 * [よくある間違い](3/yokuarui.md)
 
 ## クイックスタート(Quick Start) <a href="#4" id="4"></a>
