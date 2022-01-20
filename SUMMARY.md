@@ -18,7 +18,7 @@
 * [開源版安裝](3/4.md)
 * [啟用HTTPS](3/5.md)
 * [變更資料中心網址](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md)
-* [架設pypi私人伺服器](3/jian-li-pypi-si-you-si-fu-qi.md)
+* [架設PyPI伺服器](3/jian-li-pypi-si-you-si-fu-qi.md)
 * [更新Apache Server至2.4.XX](3/geng-xin-apache-server-zhi-2.4.xx.md)
 * [常見錯誤](3/chang-jian-cuo-wu.md)
 
