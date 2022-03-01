@@ -11,33 +11,33 @@ description: リストされているすべてのカスタムフォームは、�
 {% endhint %}
 
 * Method：POST
-* URL：/rest/flowmanage/api/omdata/list/&lt;api路徑&gt;
-* 入力パラメータ\(postbody\)：形式の例は次のとおりです。
+* URL：/rest/flowmanage/api/omdata/list/\<api路徑>
+* 入力パラメータ(postbody)：形式の例は次のとおりです。
 
 {% hint style="info" %}
 API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-doc/v/japan/5/6#xin-jian-bian-ji-liu-cheng-ye-mian-can-shu-she-ding)を参照してください。
 {% endhint %}
 
-```text
+```
 {
 	"security" : "<セキュリティコード>",
 	"omflow_restapi" : 1,
 	"search_conditions" : [],
 	"search_columns" : [],
 	"exclude_conditions" : [],
-	"order_column" : [],
+	"order_columns" : [],
 	"limit" : 100,
 	"start" : 0
 }
 ```
 
 {% hint style="info" %}
-パラメータの詳細については、[APIの紹介 &gt; 私のタスク ](https://app.gitbook.com/@omflow-syscom/s/omflow-doc/v/japan/api-jie-shao/wo-de-ren-wu)を参照してください。
+パラメータの詳細については、[APIの紹介 > 私のタスク ](https://app.gitbook.com/@omflow-syscom/s/omflow-doc/v/japan/api-jie-shao/wo-de-ren-wu)を参照してください。
 {% endhint %}
 
 成功した場合、返されるデータの例は以下のとおりです。
 
-```text
+```
 {
     "status": 200,
     "message": "検索に成功。",
@@ -77,11 +77,10 @@ API Path の[フロー設計](https://app.gitbook.com/@omflow-syscom/s/omflow-do
 
 失敗した場合、返されるデータの例は以下のとおりです。
 
-```text
+```
 {
     "status": 404,
     "message": "クエリが失敗しました。エラーメッセージは次のとおりです：<エラーメッセージ>",
     "result": []
 }
 ```
-
