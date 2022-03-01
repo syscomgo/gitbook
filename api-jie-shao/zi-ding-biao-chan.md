@@ -7,37 +7,37 @@ description: 所有已上架的自訂表單皆可使用此API查詢相關資料�
 ## 查詢
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+所有api使用前須取得安全碼(security)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
 {% endhint %}
 
 * Method：POST
-* URL：/rest/flowmanage/api/omdata/list/&lt;api路徑&gt;
-* 輸入參數\(postbody\)：範例格式如下。
+* URL：/rest/flowmanage/api/omdata/list/\<api路徑>
+* 輸入參數(postbody)：範例格式如下。
 
 {% hint style="info" %}
 api路徑請參閱[流程設計](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-can-shu-she-ding)。
 {% endhint %}
 
-```text
+```
 {
 	"security" : "<安全碼>",
 	"omflow_restapi" : 1,
 	"search_conditions" : [],
 	"search_columns" : [],
 	"exclude_conditions" : [],
-	"order_column" : [],
+	"order_columns" : [],
 	"limit" : 100,
 	"start" : 0
 }
 ```
 
 {% hint style="info" %}
-參數詳細介紹請參閱[**API介紹&gt;我的任務**](wo-de-ren-wu.md#cha-xun)。
+參數詳細介紹請參閱[**API介紹>我的任務**](wo-de-ren-wu.md#cha-xun)。
 {% endhint %}
 
 成功時，回傳資料範例如下所示：
 
-```text
+```
 {
     "status": 200,
     "message": "查詢成功。",
@@ -77,11 +77,10 @@ api路徑請參閱[流程設計](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-ca
 
 失敗時，回傳資料範例如下：
 
-```text
+```
 {
     "status": 404,
     "message": "查詢失敗，錯誤訊息如下：<錯誤訊息>",
     "result": []
 }
 ```
-
