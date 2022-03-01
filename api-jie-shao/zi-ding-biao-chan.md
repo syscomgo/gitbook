@@ -7,37 +7,37 @@ description: this is translated by machine
 ## Query
 
 {% hint style="info" %}
-All apis must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method
+All apis must obtain a security code (security) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method
 {% endhint %}
 
 * Method：POST
-* URL：/rest/flowmanage/api/omdata/list/**&lt;api path&gt;**
-* Input parameters \(postbody\): The example format is as follows.
+* URL：/rest/flowmanage/api/omdata/list/**\<api path>**
+* Input parameters (postbody): The example format is as follows.
 
 {% hint style="info" %}
 Please refer to the [flow design](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-can-shu-she-ding) for the api path
 {% endhint %}
 
-```text
+```
 {
     "security" : "<security>",
     "omflow_restapi" : 1,
     "search_conditions" : [],
     "search_columns" : [],
     "exclude_conditions" : [],
-    "order_column" : [],
+    "order_columns" : [],
     "limit" : 100,
     "start" : 0
 }
 ```
 
 {% hint style="info" %}
-Please refer to [**API&gt;My Mission**](../5/2.md) for details of other parameters
+Please refer to [**API>My Mission**](../5/2.md) for details of other parameters
 {% endhint %}
 
 When successful, an example of the returned data is as follows:
 
-```text
+```
 {
     "status": 200,
     "message": "查詢成功。",
@@ -77,11 +77,10 @@ When successful, an example of the returned data is as follows:
 
 When it fails, the example of returned data is as follows:
 
-```text
+```
 {
     "status": 404,
     "message": "查詢失敗，錯誤訊息如下：<錯誤訊息>",
     "result": []
 }
 ```
-
