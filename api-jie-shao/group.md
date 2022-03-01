@@ -9,21 +9,22 @@ Query organization information that meets specific conditions
 * postbody：
 
 {% hint style="info" %}
-All API must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
+All API must obtain a security code (security) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
 {% endhint %}
 
-```text
+```
 {
     "security" : "<security_code>",
     "omflow_restapi" : 1,
     "org_name" : [],
     "org_no" : []
+}
 ```
 
 * secuity：Required
 * omflow\_restapi：Required, Fill in 1
-* org\_no：Fill in Organization No \(Just choose one between org\_no, org\_name\)
-* org\_name：Fill in Organization Name \(Just choose one between org\_no, org\_name\)
+* org\_no：Fill in Organization No (Just choose one between org\_no, org\_name)
+* org\_name：Fill in Organization Name (Just choose one between org\_no, org\_name)
 
 {% hint style="info" %}
 If both the Organization No and Organization Name are left blank, all organizations will be returned.
@@ -31,7 +32,7 @@ If both the Organization No and Organization Name are left blank, all organizati
 
 API Response example：
 
-```text
+```
 {
     "status": 200,
     "message": "查詢成功。",
@@ -46,4 +47,3 @@ API Response example：
     ]
 }
 ```
-
