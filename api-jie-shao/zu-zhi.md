@@ -6,19 +6,19 @@
 
 * Method：POST
 * URL：/rest/accounts/api/group/list/
-* 入力パラメータ\(postbody\)：形式の例は次のとおりです。
+* 入力パラメータ(postbody)：形式の例は次のとおりです。
 
 {% hint style="info" %}
 すべてのAPIを使用する前に、セキュリティコード（security ）を取得する必要があります。取得方法については、セキュリティコードの取得を参照してください。
 {% endhint %}
 
-```text
+```
 {
 	"security" : "<セキュリティコード>",
 	"omflow_restapi" : 1,
 	"org_name" : [],
 	"org_no" : []
-
+}
 ```
 
 * secuity：必須のセキュリティコード。
@@ -32,7 +32,7 @@
 
 APIの戻り例は次のとおりです：
 
-```text
+```
 {
     "status": 200,
     "message": "クエリは成功しました。",
@@ -47,4 +47,3 @@ APIの戻り例は次のとおりです：
     ]
 }
 ```
-
