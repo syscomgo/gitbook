@@ -9,27 +9,27 @@ Query user data that meets specific conditions
 * postbody:
 
 {% hint style="info" %}
-All API must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
+All API must obtain a security code (security) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
 {% endhint %}
 
-```text
+```
 {
     "security" : "<code>",
     "omflow_restapi" : 1,
     "search_conditions" : [],
     "search_columns" : [],
     "exclude_conditions" : [],
-    "order_column" : [],
+    "order_columns" : [],
     "limit" : 100,
     "start" : 0
 }
 ```
 
-* search\_columns：Optional, the name of the field to be queried. The format example is as follows.
+*   search\_columns：Optional, the name of the field to be queried. The format example is as follows.
 
-  ```text
-  "search_columns" : ["id", "username", "nick_name"]
-  ```
+    ```
+    "search_columns" : ["id", "username", "nick_name"]
+    ```
 
 {% hint style="info" %}
 If search\_columns is not filled, all field names and field values of the query form will be returned.
@@ -38,14 +38,14 @@ If search\_columns is not filled, all field names and field values of the query 
 * search\_conditions：Optional, filter out the data that meet the conditions. Each condition in the array is a JSON object structure, and each condition is an AND relationship. The default is to query all data.
   * column：For the field name, please refer to the example of [returned data.](shi-yong-zhe.md#general-search-return-format)
   * condition：Condition characters are divided into the following five types.
-    * =：Filter out the data exactly the same as value.
-    * &gt;：Filter out data greater than value.
-    * &lt;：Filter out data less than value.
+    * \=：Filter out the data exactly the same as value.
+    * \>：Filter out data greater than value.
+    * <：Filter out data less than value.
     * in：Filter out the same data as in the value array.
     * contains：Filter out data that contains value.
   * value：For the field value, fill in the corresponding value in accordance with [User Data](../5/8.md#user-management).
 
-```text
+```
 "search_conditions" :
 [
     {
@@ -63,16 +63,15 @@ If search\_columns is not filled, all field names and field values of the query 
 ```
 
 * exclude\_conditions：Optional. Exclude data that meets the conditions. The format is the same as search\_conditions. The default is not to exclude any conditions.
-* order\_columns：Optional, sort according to the specified field. If you need to sort in reverse, please add a "-" sign in front of the field name. The default is to sort by \["id"\]. The example format is as follows.
+*   order\_columns：Optional, sort according to the specified field. If you need to sort in reverse, please add a "-" sign in front of the field name. The default is to sort by \["id"]. The example format is as follows.
 
-  ```text
-  #asc
-  "order_columns" : ["id"]
+    ```
+    #asc
+    "order_columns" : ["id"]
 
-  #desc
-  "order_columns" : ["-id"]
-  ```
-
+    #desc
+    "order_columns" : ["-id"]
+    ```
 * limit：Optional, fill in the number to get to the number of data, the default is 100.
 * start：Optional, fill in the number from the number of data to obtain, the default is the 0th.
 
@@ -88,7 +87,7 @@ example 3: start=100, limit=100, return 0 rows
 
 API Response:
 
-```text
+```
 {
     "status": 200,
     "message": "success",
@@ -131,10 +130,10 @@ Use the **group\_no** to search for users under these organizations.
 * postbody:
 
 {% hint style="info" %}
-All apis must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
+All apis must obtain a security code (security) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
 {% endhint %}
 
-```text
+```
 {
     "security" : "<code>",
     "omflow_restapi" : 1,
@@ -148,7 +147,7 @@ All apis must obtain a security code \(security\) before using it, please refer 
 
 API Response:
 
-```text
+```
 {
     "status": 200,
     "message": "success",
@@ -172,4 +171,3 @@ API Response:
     }
 }
 ```
-
