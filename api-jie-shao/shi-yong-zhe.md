@@ -19,7 +19,7 @@
 	"search_conditions" : [],
 	"search_columns" : [],
 	"exclude_conditions" : [],
-	"order_column" : [],
+	"order_columns" : [],
 	"limit" : 100,
 	"start" : 0
 }
