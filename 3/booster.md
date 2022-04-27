@@ -1,7 +1,3 @@
----
-description: 支援Python：3.7.7、3.8
----
-
 # Booster
 
 ## 功能介紹
