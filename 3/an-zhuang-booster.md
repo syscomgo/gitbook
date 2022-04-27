@@ -1,7 +1,3 @@
----
-description: 支援Python：3.7.7、3.8
----
-
 # 安裝Booster
 
 ## 功能介紹
