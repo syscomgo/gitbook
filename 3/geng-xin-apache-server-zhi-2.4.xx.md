@@ -28,4 +28,21 @@ Windows版本的安裝檔已內建Apache Server，以下為對照表。使用者
 
 ## **Linux**
 
-****
+1.  透過下方指令關閉 OMFLOW Server 服務。&#x20;
+
+    ```
+    /opt/omflow/server/omflow_server stop
+    ```
+2.  透過下方指令安裝新版本Apache。
+
+    ```
+    apt install -y software-properties-common
+    add-apt-repository ppa:ondrej/apache2
+    apt install -y apache2
+    ```
+3.  透過下方指令開啟 OMFLOW Server 服務。
+
+    ```
+    /opt/omflow/server/omflow_server start
+    ```
+
