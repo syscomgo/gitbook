@@ -174,4 +174,54 @@ description: 使用API查詢我的任務清單。
 
 ### 回傳資料
 
-成功時回傳
+成功時，回傳資料範例如下：
+
+```
+{
+  "status": "200",
+  "message": "推單成功",
+  "result": ""
+}
+```
+
+
+
+## 快速操作
+
+* Method：POST
+* URL：/rest/flowmanage/api/omdata/edit
+* 輸入參數(postbody)：範例格式如下。
+
+{% hint style="info" %}
+所有api使用前須取得安全碼(security)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+{% endhint %}
+
+```
+{
+  "security": "<security>",
+  "omflow_restapi": 1,
+  "action": "update",
+  "flow_uuid": "<flow_uuid>",
+  "data_id": "<data_id>",
+  "quick_action": "<action1/action2>"
+}
+```
+
+* secuity：必填，安全碼。
+* omflow\_restapi：必填，1。
+* action：必填，填入"update"即可。
+* flow\_uuid：必填，填入查詢API所查詢到的flow\_uuid。
+* data\_id：必填，填入查詢API所查詢到的data\_id。
+* quick\_action：必填，填入 action1 或是 action2。
+
+### 回傳資料
+
+成功時，回傳資料範例如下：
+
+```
+{
+  "status": "200",
+  "message": "推單成功",
+  "result": ""
+}
+```
