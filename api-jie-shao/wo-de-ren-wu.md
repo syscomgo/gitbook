@@ -8,13 +8,13 @@ description: 使用API查詢我的任務清單。
 
 * Method：POST
 * URL：/rest/my-mission/api/my-mission/list/
-* 輸入參數\(postbody\)：範例格式如下。
+* 輸入參數(postbody)：範例格式如下。
 
 {% hint style="info" %}
-所有api使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+所有api使用前須取得安全碼(security)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
 {% endhint %}
 
-```text
+```
 {
 	"security" : "<安全碼>",
 	"omflow_restapi" : 1,
@@ -29,11 +29,11 @@ description: 使用API查詢我的任務清單。
 
 * secuity：必填，安全碼。
 * omflow\_restapi：必填，1。
-* search\_columns：選填，要查詢的**欄位名稱**。格式範例如下。
+*   search\_columns：選填，要查詢的**欄位名稱**。格式範例如下。
 
-  ```text
-  "search_columns" : ["id", "status", "level"]
-  ```
+    ```
+    "search_columns" : ["id", "status", "level"]
+    ```
 
 {% hint style="info" %}
 若未填 search\_columns ，會回傳查詢表單所有**欄位名稱、欄位值**。
@@ -42,14 +42,14 @@ description: 使用API查詢我的任務清單。
 * search\_conditions：選填，篩選出符合條件的資料。陣列中每個條件為JSON物件結構，每個條件之間為AND關係，預設為查詢所有資料。
   * column：欄位名稱，可參考[_**回傳資料範例**_](wo-de-ren-wu.md#hui-chuan-zi-liao)，若為**自訂表單**可參考[_開單API_](kuai-su-kai-chan-tui-chan.md#kai-chan)中的id值。
   * condition：條件字元，分為下列五種。
-    * =：篩選出與value完全相同的資料。
-    * &gt;：篩選出大於value的資料。
-    * &lt;：篩選出小於value的資料。
+    * \=：篩選出與value完全相同的資料。
+    * \>：篩選出大於value的資料。
+    * <：篩選出小於value的資料。
     * in：篩選出與value陣列中相同的資料。
     * contains：篩選出包含value的資料。
-  * value：欄位值，依照 [_**應用管理 &gt; 應用設計 &gt; 表單設計**_](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-biao-chan-she-ji) 而填入對應值。
+  * value：欄位值，依照 [_**應用管理 > 應用設計 > 表單設計**_](../5/6.md#xin-jian-bian-ji-liu-cheng-ye-mian-biao-chan-she-ji) 而填入對應值。
 
-```text
+```
 "search_conditions" :
 [
     {
@@ -67,16 +67,15 @@ description: 使用API查詢我的任務清單。
 ```
 
 * exclude\_conditions：選填，排除掉符合條件的資料，格式與search\_conditions相同，預設為不排除任何條件。
-* order\_columns：選填，依照指定欄位進行排序。需要逆向排序請在欄位名稱前方加上"-"號，預設為以 \["id"\] 進行排序。範例格式如下。
+*   order\_columns：選填，依照指定欄位進行排序。需要逆向排序請在欄位名稱前方加上"-"號，預設為以 \["id"] 進行排序。範例格式如下。
 
-  ```text
-  #正排序
-  "order_columns" : ["id"]
+    ```
+    #正排序
+    "order_columns" : ["id"]
 
-  #逆排序
-  "order_columns" : ["-id"]
-  ```
-
+    #逆排序
+    "order_columns" : ["-id"]
+    ```
 * limit：選填，填入數字取得至第幾筆資料，預設為100筆。
 * start：選填，填入數字從第幾筆資料開始取得，預設為第 0 筆。
 
@@ -88,11 +87,11 @@ description: 使用API查詢我的任務清單。
 例3：start=100，limit=100，回傳0筆資料。
 {% endhint %}
 
-## 回傳資料
+### 回傳資料
 
 成功時，回傳資料範例如下所示：
 
-```text
+```
 {
     "status": 200,
     "message": "查詢成功。",
@@ -126,7 +125,7 @@ description: 使用API查詢我的任務清單。
 
 失敗時，回傳資料範例如下：
 
-```text
+```
 {
     "status": 404,
     "message": "查詢失敗，錯誤訊息如下：<錯誤訊息>",
@@ -134,3 +133,45 @@ description: 使用API查詢我的任務清單。
 
 ```
 
+
+
+## 推單
+
+* Method：POST
+* URL：/rest/flowmanage/api/omdata/edit
+* 輸入參數(postbody)：範例格式如下。
+
+{% hint style="info" %}
+所有api使用前須取得安全碼(security)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+{% endhint %}
+
+```
+{
+  "security": "<security>",
+  "omflow_restapi": 1,
+  "action": "update",
+  "flow_uuid": "<flow_uuid>",
+  "data_id": "<data_id>",
+  "formdata": [
+    {
+      "id": "<FORMITM_X>",
+      "value": "<欄位值>"
+    },
+    {
+      "id": "FORMITM_X",
+      "value": "<欄位值>"
+    },......
+  ]
+}
+```
+
+* secuity：必填，安全碼。
+* omflow\_restapi：必填，1。
+* action：必填，填入"update"即可。
+* flow\_uuid：必填，填入查詢API所查詢到的flow\_uuid。
+* data\_id：必填，填入查詢API所查詢到的data\_id。
+* formdata：選填，填入要修改的欄位及欄位內容。
+
+### 回傳資料
+
+成功時回傳
