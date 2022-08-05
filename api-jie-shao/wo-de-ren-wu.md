@@ -237,3 +237,169 @@ description: 使用API查詢我的任務清單。
   "result": ""
 }
 ```
+
+
+
+## 範例程式碼
+
+### Python
+
+查詢我的任務列表，並針對指定的表單流程進行推單動作
+
+```
+#====================================
+# OMFLOW 我的任務範例
+# 請參考 https://doc.omflow.com.tw/api-jie-shao/wo-de-ren-wu
+#====================================
+import sys,requests,json
+
+url = 'https://1.2.3.4' # OMFLOW 伺服器的位址
+url_login = '/accounts/api/security/get/'
+url_my_mission = '/rest/my-mission/api/my-mission/list/'
+url_action = '/rest/flowmanage/api/omdata/edit/'
+
+api_path = 'some-api-path-syscom' #指定要處理的任務的 API Path(應用管理,已上架應用中可看到)
+api_id = '38ea93dc82za39as0a38ei1'  #指定要處理任務的 uuid (點開該表單，網址列可看到)
+
+
+data_security = '' #存放登入成功的安全碼
+
+#====================================
+# 登入OMFLOW
+# 全域變數: data_security , url , url_login
+# 輸入 : user=帳號 , pwd=密碼
+# 回傳 : 200 = 成功
+#====================================
+def login(user,pwd):
+    global data_security
+    response = requests.get( url + url_login, auth=( user, pwd ))
+    data = response.json()
+    data_code_int = data['status']
+    data_security = data['result']['security']
+    return data_code_int
+#====================================
+# 取得我的任務清單
+# 全域變數: data_security , url , url_my_mission
+# 輸入 : 無
+# 回傳 : 我的任務列表(JSON格式)
+#====================================
+def myMissonList():
+    values={
+        "security" : data_security,
+        "omflow_restapi" : 1,
+        "search_columns" : [],
+        "search_conditions" : [],
+        "exclude_conditions" : [],
+        "order_columns" : [],
+        "limit" : 100,
+        "start" : 0
+    }
+    response = requests.post( url + url_my_mission, data=values )
+    data = response.json()
+    data_list = data['result']
+    return data_list
+
+#====================================
+# 針對指定的流程進行核准
+# 全域變數: data_security , url , url_action , api_path , api_id
+# 輸入 : 我的任務列表(JSON格式)
+# 回傳 : 無
+#====================================
+def approve(data_list):
+    #列印 data_list 可取得所有資料
+    for item in data_list:
+        data_flow_uuid = item['flow_uuid']
+        data_data_id = item['data_id']
+        if data_flow_uuid.replace('-','') == api_id:
+            #組織送單內容，可在應用管理,已上架應用中可範例
+            values = {
+                    "security": data_security,
+                    "omflow_restapi": 1,
+                    "action": "update",
+                    "data_id": data_data_id,
+                    "formdata": [
+                        {
+                            "id": "FORMITM_5",
+                            "value": "審核通過"
+                        }
+                    ]
+                }
+            response = requests.post(  url + url_action + api_path, data= json.dumps(values))
+            print('flow:' + data_flow_uuid + ',data:' + str(data_data_id) + ',approved.')
+
+#MAIN
+if len(sys.argv) != 3:
+    print('error')
+else:
+    if login(sys.argv[1] , sys.argv[2]) == 200:
+        approve(myMissonList())
+
+```
+
+### PowerShell
+
+查詢我的任務列表
+
+```
+#====================================
+# OMFLOW my mission example
+# refrence https://doc.omflow.com.tw/api-jie-shao/wo-de-ren-wu
+#====================================
+
+#url = OMFLOW Server URL
+#token = user password
+#user = user name
+
+$url = 'https://1.2.3.4' 
+$token='password' 
+$user ='user'
+$api_path = 'some-api-path-syscom' 
+$api_id = '1ko2kme1o9a120a03a0dfs' 
+
+$url_login = '/accounts/api/security/get/'
+$url_my_mission = '/rest/my-mission/api/my-mission/list/'
+$url_action = '/rest/flowmanage/api/omdata/edit/'
+
+
+
+
+$security = ''
+
+
+$auth = $user + ':' + $token
+$encoded = [System.Text.Encoding]::UTF8.GetBytes($auth)
+$authorizationInfo = [System.Convert]::ToBase64String($encoded)
+$headers = @{"Authorization"="Basic $($authorizationInfo)"}
+
+$result = Invoke-WebRequest -Uri "$url$url_login" -Method GET -Headers $headers
+if ($result.StatusCode -eq 200)
+{
+    $result_json = $result.Content | ConvertFrom-Json
+	#echo $result_json.status
+	#echo $result_json.message
+	$security = $result_json.result.security
+}
+else
+{
+    echo "login fail."
+}
+
+if ($security -ne "")
+{
+    $postParams = @{
+        "security"=$security;
+        "omflow_restapi"=1;
+        "search_columns"="";
+        "search_conditions"="";
+        "exclude_conditions"="";
+        "order_columns"="";
+        "limit"=100;
+        "start"=0
+		}
+	$result = Invoke-WebRequest -Uri "$url$url_my_mission" -Method POST -Body $postParams
+	$result_json = $result.Content | ConvertFrom-Json
+	$count = $result_json.result.length
+	echo "total $count mission"
+}
+
+```
