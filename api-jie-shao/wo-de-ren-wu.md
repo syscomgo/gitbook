@@ -389,10 +389,10 @@ if ($security -ne "")
     $postParams = @{
         "security"=$security;
         "omflow_restapi"=1;
-        "search_columns"="";
-        "search_conditions"="";
-        "exclude_conditions"="";
-        "order_columns"="";
+        "search_columns"=@();
+        "search_conditions"=@();
+        "exclude_conditions"=@();
+        "order_columns"=@();
         "limit"=100;
         "start"=0
 		}
