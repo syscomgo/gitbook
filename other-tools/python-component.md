@@ -1,0 +1,178 @@
+# 程式碼元件
+
+## 流程
+
+查詢符合特定條件的使用者資料
+
+* Method：POST
+* URL：/rest/accounts/api/user/list/
+* 輸入參數(postbody)：範例格式如下。
+
+{% hint style="info" %}
+所有api使用前須取得安全碼(security)，取得方式請參閱[取得安全碼](../api-jie-shao/an-quan-ma.md)。
+{% endhint %}
+
+```
+{
+	"security" : "<安全碼>",
+	"omflow_restapi" : 1,
+	"search_conditions" : [],
+	"search_columns" : [],
+	"exclude_conditions" : [],
+	"order_columns" : [],
+	"limit" : 100,
+	"start" : 0
+}
+```
+
+*   search\_columns：選填，要查詢的**欄位名稱**。格式範例如下。
+
+    ```
+    "search_columns" : ["id", "username", "nick_name"]
+    ```
+
+{% hint style="info" %}
+若未填 search\_columns ，會回傳查詢表單所有**欄位名稱、欄位值**。
+{% endhint %}
+
+* search\_conditions：選填，篩選出符合條件的資料。陣列中每個條件為JSON物件結構，每個條件之間為AND關係，預設為查詢所有資料。
+  * column：欄位名稱，可參考[_**回傳資料範例**_](../api-jie-shao/shi-yong-zhe.md#yi-ban-sou-xun-hui-chuan-ge-shi)。
+  * condition：條件字元，分為下列五種。
+    * \=：篩選出與value完全相同的資料。
+    * \>：篩選出大於value的資料。
+    * <：篩選出小於value的資料。
+    * in：篩選出與value陣列中相同的資料。
+    * contains：篩選出包含value的資料。
+  * value：欄位值，依照 _****_ [_**人員管理>使用者管理>使用者資料**_](../5/8.md#shi-yong-zhe-guan-li) _****_ 而填入對應值。
+
+```
+"search_conditions" :
+[
+    {
+        "column" : "username",
+        "condition" : "in",
+        "value" : ["admin", "user001"]
+    },
+    {
+        "column" : "id",
+        "condition" : ">",
+        "value" : 3
+    },
+    <其他條件>,...
+]
+```
+
+* exclude\_conditions：選填，排除掉符合條件的資料，格式與search\_conditions相同，預設為不排除任何條件。
+*   order\_columns：選填，依照指定欄位進行排序。需要逆向排序請在欄位名稱前方加上"-"號，預設為以 \["id"] 進行排序。範例格式如下。
+
+    ```
+    #正排序
+    "order_columns" : ["id"]
+
+    #逆排序
+    "order_columns" : ["-id"]
+    ```
+* limit：選填，填入數字取得至第幾筆資料，預設為100筆。
+* start：選填，填入數字從第幾筆資料開始取得，預設為第 0 筆。
+
+{% hint style="info" %}
+例1：start=0，limit=100，回傳100筆資料。
+
+例2：start=1，limit=100，回傳99筆資料。
+
+例3：start=100，limit=100，回傳0筆資料。
+{% endhint %}
+
+## 使用者
+
+API回傳範例如下：
+
+```
+{
+    "status": 200,
+    "message": "查詢成功。",
+    "result": [
+        {
+            "id": <使用者編號>,
+            "password": <加密過後的密碼>,
+            "last_login": <上次登入時間>,
+            "is_superuser": <是否為管理者>,
+            "username": <帳號>,
+            "first_name": <名字>,
+            "last_name": <姓氏>,
+            "is_active": <是否啟用>,
+            "email": <電子郵件>,
+            "nick_name": <顯示名稱>,
+            "birthday": <生日>,
+            "gender": <性別>,
+            "phone1": <電話>,
+            "phone2": <手機>,
+            "extension_no": <分機>,
+            "company": <公司名稱>,
+            "ad_flag": <是否整合ad>,
+            "ad_sid": <ad編號>,
+            "frequency": <前端刷新頻率>,
+            "updatetime": <更新時間>,
+            "delete": <是否刪除>,
+            "default_group": <預設組織>,
+            "ad_no": <員工編號>
+        },...
+    ]
+}
+```
+
+
+
+## 部門/角色
+
+使用「**組織代號**」來搜尋這些組織底下有哪些使用者。
+
+* Method：POST
+* URL：/rest/accounts/api/user/list-by-group/
+* 輸入參數(postbody)：範例格式如下。
+
+{% hint style="info" %}
+所有api使用前須取得安全碼(security)，取得方式請參閱[取得安全碼](../api-jie-shao/an-quan-ma.md)。
+{% endhint %}
+
+```
+{
+	"security" : "<安全碼>",
+	"omflow_restapi" : 1,
+	"org_no" : [],
+	"org_name" : []
+}
+```
+
+* secuity：必填，安全碼。
+* omflow\_restapi：必填，1。
+* org\_no：選填，組織代號，陣列內可放置多個組織代號。(與組織名稱二擇一)
+* org\_name：選填，組織名稱，陣列內可放置多個組織代號。(與組織代號二擇一)
+
+API回傳範例如下：
+
+```
+{
+    "status": 200,
+    "message": "讀取成功。",
+    "result": {
+        "<組織代號>": [
+            {
+                "user": <使用者編號>, #此為omflow資料庫使用之編號
+                "user__nick_name": <使用者顯示名稱>,
+                "user__username": <使用者帳號>,
+                "user__ad_no": <使用者員工編號>
+            },...
+        ],
+        "<組織代號>": [
+            {
+                "user": <使用者編號>, #此為omflow資料庫使用之編號
+                "user__nick_name": <使用者顯示名稱>,
+                "user__username": <使用者帳號>,
+                "user__ad_no": <使用者員工編號>
+            },...
+        ],
+    }
+}
+```
+

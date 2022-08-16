@@ -44,7 +44,7 @@
 * [內建流程](5/10.md)
 * [報表](5/bao-biao.md)
 
-## API介紹
+## REST API介紹 <a href="#api-jie-shao" id="api-jie-shao"></a>
 
 * [安全碼](api-jie-shao/an-quan-ma.md)
 * [快速開單、推單](api-jie-shao/kuai-su-kai-chan-tui-chan.md)
@@ -55,3 +55,8 @@
 * [使用者](api-jie-shao/shi-yong-zhe.md)
 * [組織](api-jie-shao/zu-zhi.md)
 * [請假紀錄](api-jie-shao/qing-jia-ji-lu.md)
+
+## 其他工具 <a href="#other-tools" id="other-tools"></a>
+
+* [程式碼元件](other-tools/python-component.md)
+* [獨立執行](other-tools/independent.md)
