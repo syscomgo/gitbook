@@ -91,7 +91,7 @@ description: 使用API查詢我的任務清單。
 
 成功時，回傳資料範例如下所示：
 
-```
+```python
 {
     "status": 200,
     "message": "查詢成功。",
@@ -103,11 +103,11 @@ description: 使用API查詢我的任務清單。
             "status": "指派",
             "level": "",
             "title": "123",
-            "data_no": 1,
-            "data_id": 4,
+            "data_no": 1,                    #單號
+            "data_id": 4,                    #資料編號，推單時必要參數
             "history": false,
-            "stop_uuid": "FITEM_7",
-            "stop_chart_text": "指派人工",
+            "stop_uuid": "FITEM_7",          #表單當前關卡
+            "stop_chart_text": "指派人工",    #關卡名稱
             "create_user_id": "system",
             "update_user_id": null,
             "ticket_createtime": "2020-07-07T13:50:21.494",
@@ -116,8 +116,8 @@ description: 使用API查詢我的任務清單。
             "assignee_id": null,
             "assign_group_id": 1,
             "action": ",",
-            "attachment": false,
-            "closed": false
+            "attachment": false,            #是否有附加檔案
+            "closed": false,
         },.....
     ]
 }
@@ -246,7 +246,7 @@ description: 使用API查詢我的任務清單。
 
 查詢我的任務列表，並針對指定的表單流程進行推單動作
 
-```
+```python
 #====================================
 # OMFLOW 我的任務範例
 # 請參考 https://doc.omflow.com.tw/api-jie-shao/wo-de-ren-wu
@@ -340,7 +340,7 @@ else:
 
 查詢我的任務列表
 
-```
+```powershell
 #====================================
 # OMFLOW my mission example
 # refrence https://doc.omflow.com.tw/api-jie-shao/wo-de-ren-wu
