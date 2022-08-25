@@ -8,7 +8,7 @@
 
 ![](<../.gitbook/assets/OMFLOW架構 (1).png>)
 
-### 負載平衡兼高可用架性構
+### 負載平衡兼高可用性架構
 
 同時OMFLOW也提供了高可用性的架構，將Booster分為「主、副」兩台，所有OMFLOW Server都會依此順序向Booster報到，以確保此架構任一節點失去聯繫時，系統仍能正常運作。
 
