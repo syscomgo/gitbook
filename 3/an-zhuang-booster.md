@@ -26,11 +26,11 @@
 
 ### 1. 環境需求
 
-Booster伺服器：建議至少 4 core 8 GB，用於安裝OMFLOWBooster
+Booster伺服器：建議至少 4 core 8 GB，用於安裝OMFLOW Booster
 
-Python：確保Booster與OMFLOWServer的Python版本為3.7.7或3.8以上
+Python：確保Booster與OMFLOW Server的Python版本為3.7.7或3.8以上
 
-Port：確保Booster與OMFLOWServer之間的5169埠號相互開通
+Port：確保Booster與OMFLOW Server之間的5169埠號相互開通
 
 ### 2. 安裝 OMFLOW Booster
 

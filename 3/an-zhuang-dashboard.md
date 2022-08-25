@@ -42,7 +42,7 @@ OMFLOW Dashboard產品為OMFLOW的擴充套件，此產品為一套儀錶板設�
 
 * Java：須確保安裝環境已有Java8以上版本，並設有相關Path路徑。
 * Tomcat：需自行架設網頁伺服器
-* OMFLOW資訊：請至專案資料夾下修改dashboard.conf檔案，將已安裝的OMFLOW相關網址資訊填入對應參數，並確保本產品環境能連通此網址。
+* OMFLOW資訊：本產品需搭配OMFLOW產品，請至已安裝的OMFLOW Dashboard資料夾下修改dashboard.conf檔案，將已安裝的OMFLOW相關網址資訊填入對應參數，並確保本產品環境能連通此網址。
 
 ## 上傳 License
 
