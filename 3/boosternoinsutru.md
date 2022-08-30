@@ -1,0 +1,199 @@
+# Boosterのインストール
+
+## 機能紹介
+
+### ロードバランス構成
+
+ユーザが大量の起票を長時間にわたって行う、もしくは多くのユーザが同時に利用する必要がある場合、著しくシステム資源を消費し単体のOMFLOW Serverでは負荷を処理するのが困難になる場合があります。OMFLOWでは同時に多数のOMFLOW Serverに分散して処理するロードバランス構成も提供しており、Boosterを通じて処理を分散し、全体の処理性能を向上させます。構成図は下記の通りです。：
+
+![](<../.gitbook/assets/OMFLOW架構 (1).png>)
+
+### ロードバランスおよび高可用性構成
+
+同時に、OMFLOWは高可用性構成も提供しています。Boosterを「Active、Standby」の2台とし、すべてのOMFLOW Serverはこの順序でBoosterに通知することにより、この構成のいずれかのノードの応答が無くなった場合でも、システムを正常に運用できるようにします。
+
+![](<../.gitbook/assets/HA架構 (1).png>)
+
+#### OMFLOW Booster
+
+データ転送センタとして、主にOMFLOW Serverと連携してフォームプロセスを処理します。通常はActive Boosterが処理を行い、Active Boosterの応答が無くなった場合は、Standby Boosterが作業を引き継ぎ、高可用性構成を形成します。
+
+#### OMFLOW Booster Agent
+
+Booster構成を使用する場合、Booster AgentとOMFLOW Serverを同一環境上にインストールする必要があります。これにより、1台のOMFLOW ServerにPatchが適用された場合、その他の全てのOMFLOW Serverも自動的に更新されます。
+
+## インストール手順
+
+### 1. 環境要件
+
+Boosterサーバ：OMFLOW Boosterのインストールには、4core CPU、8GBメモリ以上を推奨。
+
+Python：BoosterとOMFLOW ServerのPythonのバージョンは3.7.7または3.8以上が必要。
+
+Port：BoosterとOMFLOW Server間は5169番Portでの相互の接続を許可しておくことが必要。
+
+### 2. OMFLOW Boosterのインストール
+
+最初に、構成要件に従い1台または2台のBoosterをインストールします。2台の場合の順序指定はありません。インストール時に以下の情報を入力してください。
+
+#### サーバのIP/DomainおよびPort番号を入力：
+
+このBoosterのIP/DomainおよびPort番号を入力し、ここに対して全てのOMFLOW Serverから接続できるようにします。
+
+{% hint style="info" %}
+Booster以外に、OMFLOW Serverでも5169番ポートを開いておく必要があります。
+{% endhint %}
+
+#### HA BoosterのIP/DomainおよびPort番号を入力(任意)：
+
+HA構成適用時、もう1台のBoosterのIP/DomainおよびPort番号を入力し、Booster同士が相互に接続できるようにします。
+
+{% hint style="info" %}
+HA構成では、1台はActive Booster、もう1台はStandby Boosterとなります。
+{% endhint %}
+
+{% hint style="info" %}
+Linuxインストール方式
+
+インストールパッケージを置いているパスで解凍し、そこでinstall.shを実行します。
+{% endhint %}
+
+```
+tar xvf Booster_1140.tar.gz
+cd Booster_1140
+./install.sh
+```
+
+### 3. データベースの構築
+
+Booster構成はSqliteをサポートしないため、サポートしているデータベースを事前に構築しておく必要があります。OMFLOWがサポートしているデータベースは下記の通りです。
+
+* PostgreSQL
+* MySQL
+* SQL Server
+* Oracle
+
+{% hint style="info" %}
+データベースとテーブルを作成し、読み取りと書き込み権限を有するアカウントを準備します。
+{% endhint %}
+
+
+
+### 4. OMFLOW Serverのインストール
+
+Boosterのインストール完了後、引き続き本構成の**1台目のOMFLOW Server**のインストールを行います。インストール中に下記の情報を入力してください。
+
+#### DB関連情報の入力：
+
+手順3.で準備したデータベース関連情報を入力してください。
+
+#### Booster IPおよびPort番号を入力：
+
+Active Boosterに関する情報を入力してください。
+
+#### HA Booster IPおよびPort番号を入力：
+
+Standby Boosterに関する情報を入力してください。
+
+#### 先にOMFLOW Serverをインストールした場合：
+
+Boosterのインストール前に既に利用中のOMFLOW Serverがある場合、下記の手順に従って対応してください。
+
+{% hint style="warning" %}
+インストール前にデータベースをバックアップしてください。
+{% endhint %}
+
+確保運行中的OMFLOW Server資料庫並非Sqlite
+
+1. OMFLOW Serverを最新版に更新します。
+2. setting.pyファイルを修正し、BOOSTER\_IP、BOOSTER\_PORT、SECOND\_BOOSTER\_IP、SECOND\_BOOSTER\_PORTの4つのBooster関連パラメータを入力してます。
+3. OMFLOW Serverを再起動します。
+
+### 5. OMFLOW Booster Agentのインストール
+
+1台目のOMFLOW Serverのインストール完了後、同一環境上にOMFLOW Booster Agentをインストールします。
+
+{% hint style="info" %}
+BoosterAgentはOMFLOW Serverと同一サーバ上にインストールする必要があります。
+{% endhint %}
+
+{% hint style="info" %}
+Linux インストール方式
+
+インストールパッケージを置いているパスで解凍し、そこでinstall.shを実行します。
+{% endhint %}
+
+```
+tar xvf BoosterAgent_1140.tar.gz
+cd BoosterAgent_1140
+./install.sh
+```
+
+### 6. OMFLOW Slaveのインストール
+
+{% hint style="warning" %}
+インストール前に以下のバックアップを実施：
+
+1. 手順3のデータベース
+2. 手順4のOMFLOW Server。
+{% endhint %}
+
+以上の手順が全て完了した後、環境要件に従い1台以上のOMFLOW Slaveをインストールします。OMFLOW SlaveにはOMFLOW ServerおよびOMFLOW Booster Agentが含めれています。インストール中に下記の情報を入力してください。
+
+#### BoosterのIPおよびPort番号を入力：
+
+Active Boosterに関する情報を入力してください。
+
+#### HA BoosterのIPおよびPort番号を入力：
+
+Standby Boosterに関する情報を入力してください。
+
+{% hint style="info" %}
+Windowsインストール方式
+
+専用インストーラomflow\_slave\_1\_1\_4\_0.exeを実行してください。
+{% endhint %}
+
+{% hint style="info" %}
+Linux インストール方式
+
+Server のインストール手順に従い、タイプでSlaveと入力してください。
+{% endhint %}
+
+## 起動順序
+
+起動順序は、BoosterおよびDBを最優先で起動し、その後全てのBooster Agentを起動するようにしてください。
+
+1. Booster、Database
+2. Booster Agent
+
+{% hint style="info" %}
+Booster Agentの起動時には、OMFLOW Serverが自動的に起動されます。
+{% endhint %}
+
+{% hint style="info" %}
+Linuxでのサービス起動方式
+
+Booster
+
+```
+/opt/omflow/Booster/omflow_booster_service { start | stop | status }
+```
+
+BoosterAgent
+
+```
+/opt/omflow/BoosterAgent/omflow_booster_agent_service { start | stop | status }
+```
+{% endhint %}
+
+## ライセンスのアップロード
+
+1. 「左側メインメニュー > システム設定 > システム設定」をクリックしてください。
+2. メイン画面を下方にスクロールし、「Boosterライセンスデータ」ブロックに移動してください。
+3. 「アップロード」ボタンをクリックし、ライセンスファイルをアップロードしてください。
+
+{% hint style="info" %}
+Boosterはライセンスのアップロードをしていない場合、7日間のみ試用できます。
+{% endhint %}
+
