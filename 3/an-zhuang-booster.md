@@ -85,7 +85,7 @@ Booster架構並不支援Sqlite，需要事先建立好對應的資料庫。OMFL
 
 #### 輸入DB相關資訊：
 
-請輸入[步驟2](an-zhuang-booster.md#2.-jian-zhi-zi-liao-ku)所準備的資料庫相關資訊。
+請輸入[步驟3](an-zhuang-booster.md#3.-jian-zhi-zi-liao-ku)所準備的資料庫相關資訊。
 
 #### 輸入 Booster IP 及 Port：
 
@@ -114,7 +114,7 @@ Booster架構並不支援Sqlite，需要事先建立好對應的資料庫。OMFL
 待第一台OMFLOW Server安裝完畢後，在同一環境上繼續安裝OMFLOW Booster Agent。
 
 {% hint style="info" %}
-BoosterAgent需與OMFLOWServer安裝在同一台伺服器上。
+BoosterAgent需與OMFLOW Server安裝在同一台伺服器上。
 {% endhint %}
 
 {% hint style="info" %}
