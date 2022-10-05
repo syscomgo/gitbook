@@ -1,15 +1,19 @@
+---
+description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大同小異，但不同環境間彼此不可互換。
+---
+
 # 備份與還原
 
 ## Windows
 
-#### 備份
+#### 備份步驟
 
 1. 備份資料夾 C:\Program Files\OMFLOW Server
 2. 將資料庫 OMFLOW 專用 DB 進行 dump
 
-#### 異地還原步驟
+#### 還原步驟
 
-1. 將dump的DB重新進行restore
+1. 首先將dump的DB重新進行restore
 2. 安裝 OMFLOW Server，參考[安裝在Windows](1.md)
    * 安裝時，選擇「不使用資料庫」選項
    * 更新至與備份之相同版本
@@ -45,14 +49,18 @@
 
 ## Linux
 
-#### 備份
+#### 備份步驟
 
 1. 備份資料夾 /opt/omflow
 2. 將資料庫 OMFLOW 專用 DB 進行 dump
 
-#### 異地還原步驟
+#### 還原步驟
 
-1. 將dump的DB重新進行restore
+
+
+
+
+1. 首先將dump的DB重新進行restore
 2. 安裝 OMFLOW Server，參考[安裝在Linux](2.md)
    * 安裝時，選擇「SQLite」選項
    * 更新至與備份之相同版本
