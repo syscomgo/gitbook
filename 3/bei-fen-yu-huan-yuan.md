@@ -4,7 +4,9 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 
 # 備份與還原
 
-## Windows
+## Windows&#x20;
+
+### OMFLOW Server
 
 #### 備份步驟
 
@@ -39,7 +41,7 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
    * ...\OMFLOW Server\omflow\omservice\migrations
    * ...\OMFLOW Server\omflow\omuser\migrations
 5. 覆蓋備份的所有檔案
-6. 根據新環境修改setting.py
+6. 根據新環境修改...\OMFLOW Server\omflow\omflow\setting.py
    * DATABASES：確保新DB的IP、Port等相關參數無誤
    * LOCAL\_IP：OMFLOW的連入IP，0.0.0.0為任意IP
    * LOCAL\_PORT：OMFLOW的連入Port
@@ -47,7 +49,49 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 7. 重新啟動服務
    * OMFLOW Server
 
+
+
+### OMFLOW Collector
+
+#### 備份步驟
+
+1. 備份資料夾 C:\Program Files\OMFLOW Collector
+
+#### 還原步驟
+
+1. 安裝 OMFLOW Collector，參考[安裝在Windows](1.md)
+   * 更新至與備份之相同版本
+2. 關閉以下服務
+   * OMFLOW Collector
+   * OMFLOW Collector Web
+3. 刪除以下資料夾
+   * ...\OMFLOW Collector\omflow\omcustom\migrations
+   * ...\OMFLOW Collector\omflow\omdashboard\migrations
+   * ...\OMFLOW Collector\omflow\omflow\migrations
+   * ...\OMFLOW Collector\omflow\omformflow\production
+   * ...\OMFLOW Collector\omflow\omformflow\migrations
+   * ...\OMFLOW Collector\omflow\omformmodel\migrations
+   * ...\OMFLOW Collector\omflow\omldap\migrations
+   * ...\OMFLOW Collector\omflow\ommessage\migrations
+   * ...\OMFLOW Collector\omflow\ommission\migrations
+   * ...\OMFLOW Collector\omflow\ommobile\migrations
+   * ...\OMFLOW Collector\omflow\ommonitor\migrations
+   * ...\OMFLOW Collector\omflow\omorganization\migrations
+   * ...\OMFLOW Collector\omflow\omformflow\migrations
+   * ...\OMFLOW Collector\omflow\ompolicymodel\migrations
+   * ...\OMFLOW Collector\omflow\omreport\migrations
+   * ...\OMFLOW Collector\omflow\omservice\migrations
+   * ...\OMFLOW Collector\omflow\omuser\migrations
+4. 覆蓋備份的所有檔案
+5. 根據新環境修改...\OMFLOW Collector\omflow\omflow\setting.py
+   * LOCAL\_IP：OMFLOW Collector的連入IP，0.0.0.0為任意IP
+   * LOCAL\_PORT：OMFLOW Collector的連入Port
+6. 重新啟動服務
+   * OMFLOW Server
+
 ## Linux
+
+### OMFLOW Server
 
 #### 備份步驟
 
@@ -55,10 +99,6 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 2. 將資料庫 OMFLOW 專用 DB 進行 dump
 
 #### 還原步驟
-
-
-
-
 
 1. 首先將dump的DB重新進行restore
 2. 安裝 OMFLOW Server，參考[安裝在Linux](2.md)
@@ -88,7 +128,7 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
    * /opt/omflow/server/omservice/migrations
    * /opt/omflow/server/omuser/migrations
 5. 覆蓋備份的所有檔案
-6. 根據新環境修改setting.py
+6. 根據新環境修改 /opt/omflow/server/omflow/setting.py
    * DATABASES：確保新DB的IP、Port等相關參數無誤
    * LOCAL\_IP：OMFLOW的連入IP，0.0.0.0為任意IP
    * LOCAL\_PORT：OMFLOW的連入Port
@@ -97,4 +137,47 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 
     ```
     /opt/omflow/server/omflow_server start
+    ```
+
+### OMFLOW Collector
+
+#### 備份步驟
+
+1. 備份資料夾 /opt/omflow
+
+#### 還原步驟
+
+1. 安裝 OMFLOW Collector，參考[安裝在Linux](2.md)
+   * 更新至與備份之相同版本
+2.  關閉以下服務
+
+    ```
+    /opt/omflow/server/omflow_collector stop
+    ```
+3. 刪除以下資料夾
+   * /opt/omflow/collector/omcustom/migrations
+   * /opt/omflow/collector/omdashboard/migrations
+   * /opt/omflow/collector/omflow/migrations
+   * /opt/omflow/collector/omformflow/productions
+   * /opt/omflow/collector/omformflow/migrations
+   * /opt/omflow/collector/omformmodel/migrations
+   * /opt/omflow/collector/omldap/migrations
+   * /opt/omflow/collector/ommessage/migrations
+   * /opt/omflow/collector/ommission/migrations
+   * /opt/omflow/collector/ommobile/migrations
+   * /opt/omflow/collector/ommonitor/migrations
+   * /opt/omflow/collector/omorganization/migrations
+   * /opt/omflow/collector/omformflow/migrations
+   * /opt/omflow/collector/ompolicymodel/migrations
+   * /opt/omflow/collector/omreport/migrations
+   * /opt/omflow/collector/omservice/migrations
+   * /opt/omflow/collector/omuser/migrations
+4. 覆蓋備份的所有檔案
+5. 根據新環境修改 /opt/omflow/collector/omflow/setting.py
+   * LOCAL\_IP：OMFLOW Collector的連入IP，0.0.0.0為任意IP
+   * LOCAL\_PORT：OMFLOW Collector的連入Port
+6.  重新啟動服務
+
+    ```
+    /opt/omflow/server/omflow_collector start
     ```
