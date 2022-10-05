@@ -21,6 +21,7 @@
 * [變更資料中心網址](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md)
 * [架設PyPI伺服器](3/jian-li-pypi-si-you-si-fu-qi.md)
 * [更新Apache Server至2.4.XX](3/geng-xin-apache-server-zhi-2.4.xx.md)
+* [備份與還原](3/bei-fen-yu-huan-yuan.md)
 * [常見錯誤](3/chang-jian-cuo-wu.md)
 
 ## 快速上手(Quick Start) <a href="#4" id="4"></a>
