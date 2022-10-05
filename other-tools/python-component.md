@@ -10,7 +10,7 @@ description: 在程式碼元件中可使用的物件與方法範例，範例中�
 
 ```python
 #匯入
-form omflow.syscom.tools import OmData
+from omflow.syscom.tools import OmData
 
 #宣告一個事故流程的物件
 api_path = 'incident-managment'
@@ -39,7 +39,7 @@ message = result['message']    #錯誤訊息，開單成功則為空字串
 ### 2. 推單
 
 <pre class="language-python"><code class="lang-python">#匯入
-form omflow.syscom.tools import OmData
+from omflow.syscom.tools import OmData
 
 #宣告一個事故流程的物件
 api_path = 'incident-managment'
@@ -65,7 +65,7 @@ message = result['message']    #錯誤訊息，推單成功則為空字串</code
 
 ```python
 #匯入
-form omflow.syscom.tools import OmData
+from omflow.syscom.tools import OmData
 
 #宣告一個事故流程的物件
 api_path = 'incident-managment'
@@ -84,7 +84,7 @@ message = result['message']    #錯誤訊息，推單成功則為空字串
 
 ```python
 #匯入
-form omflow.syscom.tools import OmData
+from omflow.syscom.tools import OmData
 
 #宣告一個事故流程的物件
 api_path = 'incident-managment'
