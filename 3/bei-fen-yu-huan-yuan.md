@@ -22,7 +22,7 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 3. 關閉以下服務
    * OMFLOW Server
    * OMFLOW Server Web
-4. 刪除以下資料夾
+4. 刪除安裝後的以下資料夾
    * ...\OMFLOW Server\omflow\omcustom\migrations
    * ...\OMFLOW Server\omflow\omdashboard\migrations
    * ...\OMFLOW Server\omflow\omflow\migrations
@@ -64,7 +64,7 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 2. 關閉以下服務
    * OMFLOW Collector
    * OMFLOW Collector Web
-3. 刪除以下資料夾
+3. 刪除安裝後的以下資料夾
    * ...\OMFLOW Collector\omflow\omcustom\migrations
    * ...\OMFLOW Collector\omflow\omdashboard\migrations
    * ...\OMFLOW Collector\omflow\omflow\migrations
@@ -109,7 +109,7 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
     ```
     /opt/omflow/server/omflow_server stop
     ```
-4. 刪除以下資料夾
+4. 刪除安裝後的以下資料夾
    * /opt/omflow/server/omcustom/migrations
    * /opt/omflow/server/omdashboard/migrations
    * /opt/omflow/server/omflow/migrations
@@ -154,7 +154,7 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
     ```
     /opt/omflow/server/omflow_collector stop
     ```
-3. 刪除以下資料夾
+3. 刪除安裝後的以下資料夾
    * /opt/omflow/collector/omcustom/migrations
    * /opt/omflow/collector/omdashboard/migrations
    * /opt/omflow/collector/omflow/migrations
