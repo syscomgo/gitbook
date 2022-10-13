@@ -107,7 +107,7 @@ search_columns = [
 ]                                #取得欄位，取得單號以及欄位1
 exclude_conditions = [
     {
-        'column':'close',
+        'column':'closed',
         'condition':'=',
         'value':True
     }
@@ -190,9 +190,10 @@ condition = {'data_no__gt':5}
 情境三、查詢 單號大於5且某個輸入欄位的值等於test 的單並推進
 list寫法：
 condition = []
-con = {'column':'data_no','condition':'>','value':5}
-con = {'column':'formitm_1','condition':'=','value':'test'}
-condition.append(con)
+con1 = {'column':'data_no','condition':'>','value':5}
+condition.append(con1)
+con2 = {'column':'formitm_1','condition':'=','value':'test'}
+condition.append(con2)
 dict寫法：
 condition = {'data_no__gt':5, 'formitm_1':'test'}
 '''
