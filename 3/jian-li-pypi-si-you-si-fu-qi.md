@@ -120,7 +120,7 @@ devpi upload --from-dir <各式自行下載的套件whl檔案路徑>
 
 ![](../.gitbook/assets/pip-server.png)
 
-紅匡位置填入伺服器的位置後，儲存即可生效。
+找到「PIPServer位置」欄位並填入伺服器的位置後，儲存即可生效。
 
 {% hint style="info" %}
 如果pypi伺服器有對外網路，填入的路徑位置範例：
