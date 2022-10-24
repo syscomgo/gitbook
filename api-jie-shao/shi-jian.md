@@ -14,7 +14,7 @@ description: >-
 * URL：/rest/monitor/api/event/create/
 * Post body：如下
 
-```text
+```
 {
   "security": "<安全碼>",
   "title": "<事件標題>",
@@ -25,10 +25,10 @@ description: >-
 }
 ```
 
-上述 Post body 為轉換成事件的內容依據，其中嚴重等級分為五等級，分別為 1 \(Info\)、 2 \(Normal\)、 3 \(Warning\)、 4 \(Major\)、 5 \(Critical\)，舉例來說，若嚴重等級為 Warning 則 severity 參數填入3。另外source2為串聯同樣設備同樣事件的索引字串，在下個章節上會進一步說明。
+上述 Post body 為轉換成事件的內容依據，其中嚴重等級分為五等級，分別為 1 (Info)、 2 (Normal)、 3 (Warning)、 4 (Major)、 5 (Critical)，舉例來說，若嚴重等級為 Warning 則 severity 參數填入3。另外source2為串聯同樣設備同樣事件的索引字串，在下個章節上會進一步說明。
 
 {% hint style="info" %}
-所有 API 使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+所有 API 使用前須取得安全碼(security)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
 {% endhint %}
 
 ## 關閉事件
@@ -39,7 +39,7 @@ description: >-
 * URL：/rest/monitor/api/event/close/
 * Post body：如下
 
-```text
+```
 {
   "security": "<安全碼>",
   "omflow_restapi": 1,
@@ -48,12 +48,9 @@ description: >-
 ```
 
 {% hint style="info" %}
-所有 API 使用前須取得安全碼\(security\)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
+所有 API 使用前須取得安全碼(security)，取得方式請參閱[取得安全碼](an-quan-ma.md)。
 {% endhint %}
 
 ## 系統說明
 
-除了本網站說明事件API的使用方式外，在系統上也有說明。可前往主選單&gt;資料收集&gt;事件管理的「事件API」頁籤上檢視，如下圖：
-
-![](../.gitbook/assets/image%20%2849%29.png)
-
+除了本網站說明事件API的使用方式外，在系統上也有說明。可前往主選單>資料收集>事件管理的「事件API」頁籤上檢視。
