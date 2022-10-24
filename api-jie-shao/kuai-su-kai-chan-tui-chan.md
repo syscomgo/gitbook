@@ -10,15 +10,9 @@ description: 作成したフォームをリリース後、APIで直接起票し�
 
 **メインメニュー>アプリケーション管理>リリース済みアプリケーション**にて、調べたいアプリケーションのプロセス一覧を表示します。
 
-![](../.gitbook/assets/pic028.jpg)
-
 調べたいプロセスの右側の設定ボタンをクリックします。
 
-![](../.gitbook/assets/pic029.jpg)
-
-クリックすると次の画面が表示されます。以下にタブの説明を1つずつ記載します。
-
-![](<../.gitbook/assets/pic032 (1).jpg>)
+以下にタブの説明を1つずつ記載します。
 
 * カラム設定：プロセスのフォームリストの表示列をカスタマイズします。
 * 起票API：起票時に使用するAPI形式。
@@ -28,8 +22,6 @@ description: 作成したフォームをリリース後、APIで直接起票し�
 ### 起票
 
 クリックした後、\[起票API]タブを選択すると、次の図に示すように、該当APIの例が表示されます。
-
-![](../.gitbook/assets/jie-tu-20200817-shang-wu-9.56.27.png)
 
 {% hint style="info" %}
 **セキュリティコードを\<security>に設定する必要があり、formdataの"<>"内容を変更する必要があります。**
@@ -70,9 +62,7 @@ formdataは少なくとも必須入力欄の内容を設定する必要があり
 
 ### ファイル添付
 
-フォームのファイル添付機能が有効になっている場合は、起票時に下図のように同時にファイルをアップロードすることもできます。：
-
-<figure><img src="https://3346898383-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-M6SrengyyhO1h0_BsJ_%2F-MUptA-ihW68AxzlLLQ4%2F-MUq2eJqXIOtSxKMUGbb%2Fimage.png?alt=media&#x26;token=451b4efe-23aa-44fd-9fef-5ad3c434b7e3" alt=""><figcaption></figcaption></figure>
+フォームのファイル添付機能が有効になっている場合は、起票時に下のように同時にファイルをアップロードすることもできます。：
 
 Pythonでの例は以下の通り：
 
@@ -94,8 +84,6 @@ requests.post( url, data=values, files=files )
 ## クエリ
 
 「クエリAPI」タブを選択します。このAPIを使用して、フォームデータの最新のIDを検索できます。全ての起票済みのフォームデータは\<data\_id>を取得しないと処理できず、かつ\_**フォームデータの\<data\_id>は、処理プロセスにおいて絶えず変更されていたり、1データに留まらない可能性があります**\_。そのため、処理前にクエリを実行する必要があります。
-
-![起票成功時に戻されるdata\_noを用いて、現在の最新のidを調べることができます。](../.gitbook/assets/jie-tu-20200817-shang-wu-9.56.47.png)
 
 クエリが成功すると、次のようなデータが戻されます。
 
@@ -128,8 +116,6 @@ requests.post( url, data=values, files=files )
 ### 処理
 
 「処理API」タブを選択すると、フォーム処理の例が表示されます。
-
-![data\_idはクエリAPIで取得します。](../.gitbook/assets/jie-tu-20200817-shang-wu-9.57.01.png)
 
 処理に成功すると、次のような応答を返します。
 
