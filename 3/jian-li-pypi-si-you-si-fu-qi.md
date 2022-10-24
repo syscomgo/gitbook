@@ -116,11 +116,7 @@ devpi upload --from-dir <各式自行下載的套件whl檔案路徑>
 
 架設完伺服器後，必須要到omflow設定，這樣上架應用時，系統就會根據此設定至pypi server下載安裝套件。
 
-登入omflow > 系統設定 > 系統設定
-
-![](../.gitbook/assets/pip-server.png)
-
-找到「PIPServer位置」欄位並填入伺服器的位置後，儲存即可生效。
+登入omflow > 系統設定 > 系統設定，找到「PIPServer位置」欄位並填入伺服器的位置後，儲存即可生效。
 
 {% hint style="info" %}
 如果pypi伺服器有對外網路，填入的路徑位置範例：
