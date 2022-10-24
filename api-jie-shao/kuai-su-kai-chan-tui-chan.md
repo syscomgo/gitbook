@@ -8,15 +8,9 @@ description: 當自訂表單上架後，可使用API直接進行開單，也可�
 
 進入 _**主選單>應用管理>已上架應用**_ ，選擇欲查詢的應用並進入到流程列表。
 
-![](../.gitbook/assets/pic028.jpg)
-
 找到欲查詢的流程，點選最右方的設定。
 
-![](../.gitbook/assets/pic029.jpg)
-
-點擊後會出現介面如下，以下將一一介紹頁籤：
-
-![](<../.gitbook/assets/pic032 (1).jpg>)
+點擊後會出現介面如下：
 
 * 欄位設定：自訂該流程的表單列表顯示欄位。
 * [開單API](kuai-su-kai-chan-tui-chan.md#kai-chan)：開單時所使用的API格式。
@@ -25,9 +19,7 @@ description: 當自訂表單上架後，可使用API直接進行開單，也可�
 
 ## 開單
 
-點開後，選擇「開單API」頁籤，即可看到該流程API範例，如下圖。
-
-![](../.gitbook/assets/jie-tu-20200817-shang-wu-9.56.27.png)
+點開後，選擇「開單API」頁籤，即可看到該流程API範例。
 
 {% hint style="info" %}
 **安全碼需帶入\<security>，並修改formdata中包含"<>"的內容。**
@@ -68,9 +60,7 @@ description: 當自訂表單上架後，可使用API直接進行開單，也可�
 
 ## 附加檔案
 
-開單時，若表單已開啟附加檔案功能，也可同時上傳檔案，如下圖：
-
-![](<../.gitbook/assets/image (10).png>)
+開單時，若表單已開啟附加檔案功能，也可同時上傳檔案。
 
 Python範例如下：
 
@@ -92,8 +82,6 @@ requests.post( url, data=values, files=files )
 ## 查詢
 
 選擇「查詢API」頁籤，透過這支API可以查詢資料最新的id，所有開過的單皆需要取得\<data\_id>才能進行推單，且_**\<data\_id>在表單過程中可能不斷變換或是不只一筆**_，因此在推單先都需要先進行查詢。
-
-![將開單成功時所回傳的data\_no帶入，即可查詢該單目前最新的id。](../.gitbook/assets/jie-tu-20200817-shang-wu-9.56.47.png)
 
 查詢成功時回傳如下：
 
@@ -128,8 +116,6 @@ requests.post( url, data=values, files=files )
 ## 推單
 
 選擇「推單API」頁籤，可以看到推單的範例。
-
-![data\_id須透過查詢API取得。](../.gitbook/assets/jie-tu-20200817-shang-wu-9.57.01.png)
 
 推單成功時回傳如下：
 
