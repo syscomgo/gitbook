@@ -50,17 +50,36 @@ LOCAL_PROTOCOL = "http"
 
 ### Restart Service
 
-![](<../.gitbook/assets/zhong-qi-fu-wu- (1) (1).png>)
+```
+net stop OMFLOWServer
+net start OMFLOWServer
+```
 
 ### Update collector register IP
 
-restart and login OMFLOW
+_檔案路徑：C:\Program Files\OMFLOW Collector\omflow\omflow\settings.py_
 
-Home > System Setting > System Setting
+修改 **SERVER\_IP** 以及 **SERVER\_PORT**&#x20;
 
-![](../.gitbook/assets/tong-bu-collector.png)
+```
+#server info
+SERVER_IP = "<IP>"
+SERVER_PORT = "<Port>"
+SERVER_PROTOCOL = "http"
+SECOND_SERVER_IP = ""
+SECOND_SERVER_PORT = ""
+SECOND_SERVER_PROTOCOL = "http"
 
-After the update is completed, all the collectors that have been reported to will modify the reported objects to the new IP.
+```
+
+### Restart Service
+
+```
+net stop OMFLOWCollector
+net start OMFLOWCollector
+```
+
+
 
 ## Linux
 
@@ -104,13 +123,27 @@ systemctl start omflow_server
 
 ### Update collector register IP
 
-Restart and login OMFLOW
+_檔案路徑：/opt/omflow/collector/omflow/settings.py_
 
-Home > System Setting > System Setting
+修改 **SERVER\_IP** 以及 **SERVER\_PORT**&#x20;
 
-![](../.gitbook/assets/tong-bu-collector.png)
+```
+#server info
+SERVER_IP = "<IP>"
+SERVER_PORT = "<Port>"
+SERVER_PROTOCOL = "http"
+SECOND_SERVER_IP = ""
+SECOND_SERVER_PORT = ""
+SECOND_SERVER_PROTOCOL = "http"
 
-After the update is completed, all the collectors that have been reported to will modify the reported objects to the new IP.
+```
+
+### Restart Service
+
+```
+systemctl stop omflow_collector
+systemctl start omflow_collector
+```
 
 ### centos
 
@@ -166,10 +199,24 @@ systemctl start omflow_server
 
 ### Update collector register IP
 
-Restart and login OMFLOW
+_檔案路徑：/opt/omflow/collector/omflow/settings.py_
 
-Home > System Setting > System Setting
+修改 **SERVER\_IP** 以及 **SERVER\_PORT**&#x20;
 
-![](../.gitbook/assets/tong-bu-collector.png)
+```
+#server info
+SERVER_IP = "<IP>"
+SERVER_PORT = "<Port>"
+SERVER_PROTOCOL = "http"
+SECOND_SERVER_IP = ""
+SECOND_SERVER_PORT = ""
+SECOND_SERVER_PROTOCOL = "http"
 
-After the update is completed, all the collectors that have been reported to will modify the reported objects to the new IP.
+```
+
+### Restart Service
+
+```
+systemctl stop omflow_collector
+systemctl start omflow_collector
+```
