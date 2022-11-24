@@ -9,8 +9,10 @@ description: OMFLOW 的運行需搭配 Apache Server，當後者因漏洞修復�
 1. 關閉 OMFLOW Server 服務。&#x20;
 2. 備份 C:\Program Files\OMFLOW Server\Apache24\conf\httpd.conf。
 3. 備份 C:\Program Files\OMFLOW Server\Apache24\conf\extra\httpd-ssl.conf (OMFLOW啟用SSL憑證時必要)。 &#x20;
-4. 備份相關certificate檔案(若OMFLOW的SSL憑證存放於Apache24資料夾時必要)。&#x20;
-5. 備份各專案因特殊需求而自行加入之檔案。&#x20;
+4. 備份相關certificate及檔案(若OMFLOW的SSL憑證存放於Apache24資料夾時必要)。&#x20;
+   * /bin/OMFLOWServer.exe
+   * /bin/OMFLOWCollector.exe
+5. 備份各專案因特殊需求而自行加入之檔案。
 6. 刪除 C:\Program Files\OMFLOW Server\Apache24 資料夾。
 7. 下載 Apache 的最新版本並解壓縮至 C:\Program Files\OMFLOW Server\。
 8. 修改解壓縮後的資料夾名稱為 Apache24 。
@@ -19,10 +21,7 @@ description: OMFLOW 的運行需搭配 Apache Server，當後者因漏洞修復�
 
 Windows版本的安裝檔已內建Apache Server，以下為對照表。使用者可自行參考是否須更新Apache Server。
 
-| OMFLOW installer 版本 | 內建 Apache Server 版本 |   |
-| ------------------- | ------------------- | - |
-| 1.1.0.0             | 2.4.43              |   |
-| 1.1.4.0             | 2.4.51              |   |
+<table><thead><tr><th>OMFLOW installer 版本</th><th>內建 Apache Server 版本</th><th data-hidden></th></tr></thead><tbody><tr><td>1.1.0.0</td><td>2.4.43</td><td></td></tr><tr><td>1.1.4.0</td><td>2.4.51</td><td></td></tr></tbody></table>
 
 ****
 
