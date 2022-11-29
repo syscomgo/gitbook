@@ -201,7 +201,7 @@ condition = {'data_no__gt':5, 'formitm_1':'test'}
 user_id = '1'                  #使用者編號
 files = None                   #檔案
 update_duplicate = False       #當條件查詢回來的資料為複數筆時，是否將其全部推進。若否，則全部不推進並回傳失敗訊息。
-update_duplicate_interval = 0  #當條件查詢回來的資料為複數筆時
+update_duplicate_interval = 0  #當推進的資料為複數筆時，每一筆推進的間隔時間(秒)
 wait_time_max = 0              #當查詢回來的資料筆數為0時，要進行n次重新查詢，n次查詢都為0後回傳錯誤訊息。
 wait_time_seconds = 0          #每次重新查詢的間隔時間(秒)
 result = inc_flow_obj.advanced_update(condition, user_id, files, update_duplicate, update_duplicate_interval, wait_time_seconds, wait_time_max)
@@ -480,15 +480,36 @@ OMFLOW版本 **1.1.6.0** 後可用
 
 ### 1. 建立部門
 
-```
-//some code
+```python
+#匯入
+from omflow.syscom.tools import Group
+
+#宣告一個部門(角色)的物件
+group_obj = Group()
+
+#填入資料(必填)
+group_name = 'test'          #部門名稱
+is_role = False                #填入True為角色，False為部門
+
+#填入資料(選填)
+parent_group_id = None         #父部門id，角色不可填
+description = ''               #說明欄位
+group_no = ''                  #部門代號
+
+#建立使用者
+result = group_obj.create(parent_group_id, group_name, description, group_no, is_role)
+
+#取得回傳
+group_id = result['group_id']  #部門/角色id
+status = result['status']      #狀態True/False
+message = result['message']    #錯誤訊息，開單成功則為空字串
 ```
 
 
 
 ### 2. 取得部門資訊
 
-```
+```python
 //some code
 ```
 
