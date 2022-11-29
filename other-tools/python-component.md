@@ -496,7 +496,7 @@ parent_group_id = None         #父部門id，角色不可填
 description = ''               #說明欄位
 group_no = ''                  #部門代號
 
-#建立使用者
+#建立部門
 result = group_obj.create(parent_group_id, group_name, description, group_no, is_role)
 
 #取得回傳
@@ -510,7 +510,27 @@ message = result['message']    #錯誤訊息，開單成功則為空字串
 ### 2. 取得部門資訊
 
 ```python
-//some code
+#匯入
+from omflow.syscom.tools import Group
+
+#宣告一個部門(角色)的物件
+group_id = ''
+group_no = ''
+group_name = ''
+#部門id/部門代號/部門名稱請三選一填入值
+group_obj = Group(group_id, group_no, group_name)
+
+#讀取部門資訊
+result = group_obj.load()
+
+#取得回傳
+group_id = result.get('id','')                       #部門id
+display_name = result.get('display_name','')         #部門名稱
+parent_group_id = result.get('parent_group_id','')   #父部門id
+description = result.get('description','')           #說明
+group_no = result.get('group_no','')                 #部門代號
+group_user_list = result.get('group_user_list','')   #該部門底下有的使用者id
+permissions = result.get('permissions','')           #該角色有的權限，查詢部門時回傳為空陣列
 ```
 
 
