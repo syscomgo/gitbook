@@ -333,26 +333,30 @@ from omflow.syscom.tools import User
 #宣告一個流程的物件
 user_obj = User()
 
-#填入使用者資料(必填)
-username = 'a12345'
-token = 'aA!123456'
-nick_name ='王小明'
-email = 'a12345@gmail.com'
+#查詢條件(必填，下列三選一填入)
+user_id = None
+username = None
+nick_name = None
 
-#填入使用者資料(選填)
+#填入要查詢的使用者欄位
 #有下列欄位可填
-#birthday, gender, phone1, phone2, company, default_group, ad_no, extension_no
-other_param_dict = {}
-other_param_dict['ad_no'] = '001234'
-other_param_dict['phone1'] = '0911111111'
+#id, username, nick_name, email, birthday, gender, phone1, phone2, company, default_group, ad_no, extension_no
+#若留空代表查詢全部欄位
+user_attr = []
 
-#建立使用者
-result = user_obj.create(username, token, nick_name, email, other_param_dict)
+#查詢使用者
+result = user_obj.load(user_id, username, nick_name, user_attr)
 
-#取得回傳
-user_id = result['user_id']    #使用者id
-status = result['status']      #狀態True/False
-message = result['message']    #錯誤訊息，開單成功則為空字串
+#取得回傳(請依照查詢的欄位取得資料)
+#result資料結構如下
+{
+    'id':123,
+    'username':'12312',
+    'nick_name':'王小明',
+    'email':'123@gamil.com',    #上述欄位會依照user_attr變數不同而有所不同
+    'groups':[],                #groups與roles則是固定提供之回傳，與user_attr填入與否無關
+    'roles':[],                 #groups回傳使用者所在部門的部門id陣列, roles回傳使用者所在角色的角色id陣列
+}
 ```
 
 
@@ -366,26 +370,13 @@ from omflow.syscom.tools import User
 #宣告一個流程的物件
 user_obj = User()
 
-#填入使用者資料(必填)
-username = 'a12345'
-token = 'aA!123456'
-nick_name ='王小明'
-email = 'a12345@gmail.com'
-
-#填入使用者資料(選填)
-#有下列欄位可填
-#birthday, gender, phone1, phone2, company, default_group, ad_no, extension_no
-other_param_dict = {}
-other_param_dict['ad_no'] = '001234'
-other_param_dict['phone1'] = '0911111111'
+#填入要查詢的使用者id(陣列)
+user_id_list = []
 
 #建立使用者
-result = user_obj.create(username, token, nick_name, email, other_param_dict)
-
-#取得回傳
-user_id = result['user_id']    #使用者id
-status = result['status']      #狀態True/False
-message = result['message']    #錯誤訊息，開單成功則為空字串
+result = user_obj.listEmail(user_id_list)
+#result資料格式如下
+['aaa@gmail.com','bbb@gmail.com','ccc@gmail.com','ddd@gmail.com']
 ```
 
 
@@ -399,26 +390,12 @@ from omflow.syscom.tools import User
 #宣告一個流程的物件
 user_obj = User()
 
-#填入使用者資料(必填)
-username = 'a12345'
-token = 'aA!123456'
-nick_name ='王小明'
-email = 'a12345@gmail.com'
-
-#填入使用者資料(選填)
-#有下列欄位可填
-#birthday, gender, phone1, phone2, company, default_group, ad_no, extension_no
-other_param_dict = {}
-other_param_dict['ad_no'] = '001234'
-other_param_dict['phone1'] = '0911111111'
+#填入要查詢的使用者帳號(陣列)
+username_list = []
 
 #建立使用者
-result = user_obj.create(username, token, nick_name, email, other_param_dict)
-
-#取得回傳
-user_id = result['user_id']    #使用者id
-status = result['status']      #狀態True/False
-message = result['message']    #錯誤訊息，開單成功則為空字串
+result = user_obj.delete(username_list)
+#result若等於空字串代表刪除成功，回傳任何文字訊息代表是錯誤訊息
 ```
 
 
