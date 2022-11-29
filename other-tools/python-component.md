@@ -537,23 +537,51 @@ permissions = result.get('permissions','')           #該角色有的權限，�
 
 ### 3. 加入使用者
 
-```
-//some code
+```python
+#匯入
+from omflow.syscom.tools import Group
+
+#宣告一個部門(角色)的物件
+group_id = ''
+group_no = ''
+group_name = ''
+#部門id/部門代號/部門名稱請三選一填入值
+group_obj = Group(group_id, group_no, group_name)
+
+#填入使用者id列表
+user_id_list = []
+
+#部門加入使用者，result為boolean，True代表成功，False代表失敗
+result = group_obj.addUsers(user_id_list)
 ```
 
 
 
 ### 4. 移出使用者
 
-```
-//some code
+```python
+#匯入
+from omflow.syscom.tools import Group
+
+#宣告一個部門(角色)的物件
+group_id = ''
+group_no = ''
+group_name = ''
+#部門id/部門代號/部門名稱請三選一填入值
+group_obj = Group(group_id, group_no, group_name)
+
+#填入使用者id列表
+user_id_list = []
+
+#部門移出使用者，result為boolean，True代表成功，False代表失敗
+result = group_obj.removeUsers(user_id_list)
 ```
 
 
 
 ### 5. 透過組織圖尋找人員
 
-```
+```python
 //some code
 ```
 
