@@ -431,26 +431,15 @@ from omflow.syscom.tools import User
 #宣告一個流程的物件
 user_obj = User()
 
-#填入使用者資料(必填)
-username = 'a12345'
-token = 'aA!123456'
-nick_name ='王小明'
-email = 'a12345@gmail.com'
+#選擇使用者(必填)
+user_id = None
 
-#填入使用者資料(選填)
-#有下列欄位可填
-#birthday, gender, phone1, phone2, company, default_group, ad_no, extension_no
-other_param_dict = {}
-other_param_dict['ad_no'] = '001234'
-other_param_dict['phone1'] = '0911111111'
+#填入要移出的部門id陣列(必填)
+group_id_list = []
 
-#建立使用者
-result = user_obj.create(username, token, nick_name, email, other_param_dict)
-
-#取得回傳
-user_id = result['user_id']    #使用者id
-status = result['status']      #狀態True/False
-message = result['message']    #錯誤訊息，開單成功則為空字串
+#使用者移出部門
+result = user_obj.removefromGroup(user_id, group_id_list)
+#result為boolean，True代表成功，False代表失敗
 ```
 
 
