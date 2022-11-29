@@ -289,26 +289,37 @@ from omflow.syscom.tools import User
 #宣告一個流程的物件
 user_obj = User()
 
-#填入使用者資料(必填)
-username = 'a12345'
-token = 'aA!123456'
-nick_name ='王小明'
-email = 'a12345@gmail.com'
+#查詢條件(下為範例，請依照實際需求修改)
+search_conditions = [
+    {
+        'column':'gender',
+        'condition':'=',
+        'value':'female'
+    },                           #查詢條件，查詢女性使用者
+]
 
-#填入使用者資料(選填)
-#有下列欄位可填
-#birthday, gender, phone1, phone2, company, default_group, ad_no, extension_no
-other_param_dict = {}
-other_param_dict['ad_no'] = '001234'
-other_param_dict['phone1'] = '0911111111'
+search_columns = [
+    'username',
+    'email'
+]                                #取得欄位，取得帳號以及信箱
 
-#建立使用者
-result = user_obj.create(username, token, nick_name, email, other_param_dict)
+exclude_conditions = [
+    {
+        'column':'is_active',
+        'condition':'=',
+        'value':False
+    }
+]                                #排除條件，排除停用的使用者
+
+order_columns = ['-username']    #使用帳號逆排序
+limit = 0                        #取得所有資料(若值給100代表取得前100筆資料)
+start = 0                        #從第1筆資料開始
+
+#查詢使用者
+result = user_obj.list(search_conditions, search_columns, exclude_conditions, order_columns, limit, start)
 
 #取得回傳
-user_id = result['user_id']    #使用者id
-status = result['status']      #狀態True/False
-message = result['message']    #錯誤訊息，開單成功則為空字串
+#回傳詳細範例請參閱 REST API介紹>使用者
 ```
 
 
