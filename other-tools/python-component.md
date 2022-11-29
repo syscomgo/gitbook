@@ -198,12 +198,13 @@ dict寫法：
 condition = {'data_no__gt':5, 'formitm_1':'test'}
 '''
 
-user_id = '1'               #使用者編號
-files = None                #檔案
-update_duplicate = False    #當條件查詢回來的資料為複數筆時，是否將其全部推進。若否，則全部不推進並回傳失敗訊息。
-wait_time_max = 0           #當查詢回來的資料筆數為0時，要進行n次重新查詢，n次查詢都為0後回傳錯誤訊息。
-wait_time_seconds = 0       #每次重新查詢的間隔時間(秒)
-result = inc_flow_obj.advanced_update(condition, user_id, files, update_duplicate, wait_time_seconds, wait_time_max)
+user_id = '1'                  #使用者編號
+files = None                   #檔案
+update_duplicate = False       #當條件查詢回來的資料為複數筆時，是否將其全部推進。若否，則全部不推進並回傳失敗訊息。
+update_duplicate_interval = 0  #當條件查詢回來的資料為複數筆時
+wait_time_max = 0              #當查詢回來的資料筆數為0時，要進行n次重新查詢，n次查詢都為0後回傳錯誤訊息。
+wait_time_seconds = 0          #每次重新查詢的間隔時間(秒)
+result = inc_flow_obj.advanced_update(condition, user_id, files, update_duplicate, update_duplicate_interval, wait_time_seconds, wait_time_max)
 
 #取得回傳
 status = result['status']      #狀態True/False
