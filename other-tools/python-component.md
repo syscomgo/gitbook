@@ -462,7 +462,7 @@ position_name = None
 position_no = None
 responsibilitie_name = None
 
-#查詢組織塗
+#查詢組織圖
 result = user_obj.getPosition(user_id, position_name, position_no, responsibilitie_name)
 
 #取得回傳
@@ -582,7 +582,27 @@ result = group_obj.removeUsers(user_id_list)
 ### 5. 透過組織圖尋找人員
 
 ```python
-//some code
+#匯入
+from omflow.syscom.tools import Group
+
+#宣告一個部門(角色)的物件
+group_id = ''
+group_no = ''
+group_name = ''
+#部門id/部門代號/部門名稱請三選一填入值
+group_obj = Group(group_id, group_no, group_name)
+
+#填入要查詢對象的職務名稱或職務代號或權責名稱(必填，下列三選一填入)
+position_name = None
+position_no = None
+responsibilitie_name = None
+
+#查詢組織圖
+result = group_obj.getPosition(position_name, position_no, responsibilitie_name)
+
+#取得回傳
+manager_user_id = result.get('user_id','')
+manager_group_id = result.get('group_id','')
 ```
 
 
