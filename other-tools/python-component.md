@@ -453,35 +453,69 @@ from omflow.syscom.tools import User
 #宣告一個流程的物件
 user_obj = User()
 
-#填入使用者資料(必填)
-username = 'a12345'
-token = 'aA!123456'
-nick_name ='王小明'
-email = 'a12345@gmail.com'
+#選擇使用者(必填)
+user_id = None
 
-#填入使用者資料(選填)
-#有下列欄位可填
-#birthday, gender, phone1, phone2, company, default_group, ad_no, extension_no
-other_param_dict = {}
-other_param_dict['ad_no'] = '001234'
-other_param_dict['phone1'] = '0911111111'
+#填入要查詢對象的職務名稱或職務代號或權責名稱(必填，下列三選一填入)
+position_name = None
+position_no = None
+responsibilitie_name = None
 
-#建立使用者
-result = user_obj.create(username, token, nick_name, email, other_param_dict)
+#查詢組織塗
+result = user_obj.getPosition(user_id, position_name, position_no, responsibilitie_name)
 
 #取得回傳
-user_id = result['user_id']    #使用者id
-status = result['status']      #狀態True/False
-message = result['message']    #錯誤訊息，開單成功則為空字串
+manager_user_id = result.get('user_id','')
+manager_group_id = result.get('group_id','')
 ```
 
 
 
 ## 部門/角色
 
+{% hint style="info" %}
+OMFLOW版本 **1.1.6.0** 後可用
+{% endhint %}
 
+### 1. 建立部門
 
 ```
 //some code
 ```
+
+
+
+### 2. 取得部門資訊
+
+```
+//some code
+```
+
+
+
+### 3. 加入使用者
+
+```
+//some code
+```
+
+
+
+### 4. 移出使用者
+
+```
+//some code
+```
+
+
+
+### 5. 透過組織圖尋找人員
+
+```
+//some code
+```
+
+
+
+
 
