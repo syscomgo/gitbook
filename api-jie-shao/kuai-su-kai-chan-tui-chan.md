@@ -54,7 +54,7 @@ The failure to create a data is returned as follows:
 ```
 {
   "status": "404",
-  "message": "Failed to create data: "
+  "message": "Failed to create data: <error message>"
 }
 ```
 
@@ -88,7 +88,7 @@ When the query fails, the response is as follows:
 ```
 {
   "status": "404",
-  "message": "Query failed: "
+  "message": "Query failed: <error message>"
 }
 ```
 
