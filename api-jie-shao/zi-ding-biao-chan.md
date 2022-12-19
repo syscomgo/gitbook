@@ -40,7 +40,7 @@ When successful, an example of the returned data is as follows:
 ```
 {
     "status": 200,
-    "message": "查詢成功。",
+    "message": "Query successful",
     "result": [
         {
             "id": 3,
@@ -48,14 +48,14 @@ When successful, an example of the returned data is as follows:
             "dataid_header": "",
             "data_no": 2,
             "history": true,
-            "status": "新建",
+            "status": "Create",
             "title": "1",
             "level": "yellow",
             "group": "",
             "closed": false,
             "stop_uuid": "FITEM_15-FITEM_2",
             "stop_chart_type": null,
-            "stop_chart_text": "標準變更分類與狀態",
+            "stop_chart_text": "Standard Change Classification and Status",
             "running": false,
             "error": false,
             "createtime": "2020-07-15T15:44:06.670",
@@ -70,7 +70,7 @@ When successful, an example of the returned data is as follows:
             "formitm_1": null,
             "formitm_2": null,
             "formitm_3": ""
-        },...<以此類推>
+        },...<and so on>
     ]
 }
 ```
@@ -80,7 +80,7 @@ When it fails, the example of returned data is as follows:
 ```
 {
     "status": 404,
-    "message": "查詢失敗，錯誤訊息如下：<錯誤訊息>",
+    "message": "Query failed: <error message>",
     "result": []
 }
 ```
