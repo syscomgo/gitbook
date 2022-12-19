@@ -39,7 +39,7 @@ Response Example:
 ```
 {
     "status": 200,
-    "message": "查詢成功。",
+    "message": "Query successful",
     "result": {
         "user_ad_no": "",
         "username": "",
@@ -81,7 +81,7 @@ API Response example：
 ```
 {
     "status": 200,
-    "message": "查詢成功。",
+    "message": "Query successful",
     "result": {
         "user_ad_no": "",
         "username": "",
@@ -119,7 +119,7 @@ API Response example：
 ```
 {
     "status": 200,
-    "message": "讀取成功。",
+    "message": "Read successful",
     "result": {
         "value": [<org_obj>,<org_obj>,...],
         "status": False,
