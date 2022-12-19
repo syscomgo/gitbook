@@ -35,7 +35,7 @@ When the abnormal situation is eliminated, you can call this API to close the ev
 
 * Method：POST
 * URL：/rest/monitor/api/event/close/
-* Post body：如下
+* Post body：
 
 ```
 {
