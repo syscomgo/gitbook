@@ -1,61 +1,61 @@
 # Booster
 
-## 功能介紹
+## Features
 
-### 負載平衡架構
+### Load balancing architecture
 
-當用戶需要長時間大量開單或是眾多使用者同時上線等極耗效能情境出現，導致單台OMFLOW Server難以負荷時。OMFLOW也提供了負載平衡的機制，可同時建置多台OMFLOW Server分散效能，並由Booster進行協同調配進而提升整體效率，架構圖如下：
+When the user needs to bill a large number of bills for a long time or many users go online at the same time and other extremely performance-consuming situations occur, which makes it difficult for a single OMFLOW Server to load. OMFLOW also provides a load balancing mechanism. Multiple OMFLOW Servers can be built at the same time to distribute performance, and Booster can coordinate deployment to improve overall efficiency. The architecture diagram is as follows:
 
 ![](<../.gitbook/assets/OMFLOW架構 (2).png>)
 
-### 負載平衡兼高可用架性構
+### Load balancing and high availability architecture
 
-同時OMFLOW也提供了高可用性的架構，將Booster分為「主、副」兩台，所有OMFLOW Server都會依此順序向Booster報到，以確保此架構任一節點失去聯繫時，系統仍能正常運作。
+At the same time, OMFLOW also provides a high-availability architecture. The Booster is divided into two "master and slave". All OMFLOW Servers will report to the Booster in this order to ensure that the system can still operate normally when any node of this architecture loses contact.
 
 ![](../.gitbook/assets/HA架構.png)
 
 #### OMFLOW Booster
 
-擔任資料傳遞中心，主要負責協同所有OMFLOW Server共同處理表單流程。平時由主Booster進行作業。當主Booster失去聯繫時，會改由副Booster接替作業，形成高可用性架構。
+Acting as the data transfer center, it is mainly responsible for cooperating with all OMFLOW Servers to jointly process the form process. Normally, the main Booster will do the work. When the primary Booster loses contact, the secondary Booster will take over to form a high-availability architecture.
 
 #### OMFLOW Booster Agent
 
-使用Booster架構時，Booster Agent需要與OMFLOW Server安裝在同一環境上，其作用為當任一台OMFLOW Server更新Patch時，所有其他的OMFLOW Server也會自動更新。
+When using the Booster architecture, the Booster Agent needs to be installed on the same environment as the OMFLOW Server. Its function is that when any OMFLOW Server updates the Patch, all other OMFLOW Servers will also be automatically updated.
 
-## 安裝步驟
+## Installation Steps
 
-### 1. 環境需求
+### 1. Environmental requirements
 
-Booster伺服器：建議至少 4 core 8 GB，用於安裝OMFLOWBooster
+**Booster server**: recommended at least 4 core 8 GB for installing OMFLOWBooster&#x20;
 
-Python：確保Booster與OMFLOWServer的Python版本為3.7.7或3.8以上
+**Python**: Make sure that the Python version of Booster and OMFLOWServer is 3.7.7 or above&#x20;
 
-Port：確保Booster與OMFLOWServer之間的5169埠號相互開通
+**Port**: Make sure that the port 5169 between Booster and OMFLOWServer is open to each other
 
-### 2. 安裝 OMFLOW Booster
+### 2. Install OMFLOW Booster
 
-最優先安裝，並依照情境安裝一台或兩台Booster。兩者無順序要求，安裝時需填入以下資訊：
+Install the most priority, and install one or two Boosters according to the situation. There is no sequence requirement for the two, and the following information needs to be filled in during installation:
 
-#### 輸入本機IP/Domain 及 Port：
+#### Enter the local IP/Domain and Port:
 
-填寫此Booster所代表的IP/Domain及Port，並確保所有OMFLOW Server與此連通。
+Fill in the IP/Domain and Port represented by this Booster, and ensure that all OMFLOW Servers are connected to this.
 
 {% hint style="info" %}
-除Booster以外，OMFLOW Server也需要開通5169埠號。
+In addition to Booster, OMFLOW Server also needs to open port 5169.
 {% endhint %}
 
-#### 輸入 HA Booster IP/Domain 及 Port(非必填)：
+#### Enter HA Booster IP/Domain and Port (optional):
 
-當情境為HA架構時，填寫另一台Booster所代表的IP/Domain及Port，並確保兩台Booster彼此能互相連通。
+When the scenario is an HA architecture, fill in the IP/Domain and Port represented by another Booster, and ensure that the two Boosters can communicate with each other.
 
 {% hint style="info" %}
-HA架構下，一台為主Booster，一台為副Booster
+Under the HA architecture, one is the primary Booster and the other is the secondary Booster
 {% endhint %}
 
 {% hint style="info" %}
-Linux 安裝方式
+How to install Linux&#x20;
 
-在安裝包擺放的路徑下解壓縮，並且進入執行 install.sh 。
+Unzip it under the path where the installation package is placed, and enter and execute **install.sh**.
 {% endhint %}
 
 ```
@@ -64,63 +64,66 @@ cd Booster_1140
 ./install.sh
 ```
 
-### 3. 建置資料庫
+### 3. Build Database
 
-Booster架構並不支援Sqlite，需要事先建立好對應的資料庫。OMFLOW支援的資料庫如下：
+The Booster architecture does not support Sqlite, and the corresponding database needs to be established in advance. The databases supported by OMFLOW are as follows:
 
 * PostgreSQL
 * MySQL
 * SQL Server
 * Oracle
+* DBMaker
 
 {% hint style="info" %}
-準備好資料庫以及具備建立資料表和讀寫該資料庫權限的帳號
+Prepare the database and an account with permissions to create tables and read and write the database
 {% endhint %}
 
 
 
-### 4. 安裝 OMFLOW Server
+### 4. Install OMFLOW Server
 
-當Booster安裝完畢後，接著安裝本架構的**第一台OMFLOW Server**。安裝過程會需要額外填入以下資訊：
+After the Booster is installed, install the first OMFLOW Server of this architecture. The installation process will require the following additional information:
 
-#### 輸入DB相關資訊：
+#### Enter DB related information:
 
-請輸入[步驟2](booster.md#2.-jian-zhi-zi-liao-ku)所準備的資料庫相關資訊。
+Please enter the information about the database prepared in [step 2](booster.md#2.-jian-zhi-zi-liao-ku).
 
-#### 輸入 Booster IP 及 Port：
+#### Enter Booster IP and Port:
 
-請輸入視為主Booster的相關資訊。
+Please enter the relevant information to be considered as the main Booster.
 
-#### 輸入 HA Booster IP 及 Port：
+#### Enter HA Booster IP and Port:
 
-請輸入視為副Booster的相關資訊。
+Please enter the relevant information to be regarded as a secondary Booster.
 
-#### 先前已安裝OMFLOW Server：
+#### If OMFLOW Server was previously installed:
 
-若在安裝Booster之前已有運行中的OMFLOWServer，可按照以下步驟進行：
+If there is already a running OMFLOWServer before installing Booster, follow the steps below:
 
 {% hint style="warning" %}
-安裝前請先備份資料庫。
+Please back up your database before installation.
 {% endhint %}
 
-確保運行中的OMFLOW Server資料庫並非Sqlite
+{% hint style="warning" %}
+Make sure the running OMFLOW Server database is not Sqlite
+{% endhint %}
 
-1. 將OMFLOW Server更新至最新版本
-2. 修改setting.py文件，將Booster相關資訊填入BOOSTER\_IP、BOOSTER\_PORT、SECOND\_BOOSTER\_IP、SECOND\_BOOSTER\_PORT四個參數
-3. 重啟OMFLOW Server
+1. Update OMFLOW Server to the latest version
+2. Modify the setting.py file and fill in the Booster related information into the four parameters BOOSTER\_IP, BOOSTER\_PORT, SECOND\_BOOSTER\_IP, SECOND\_BOOSTER\_PORT
+3. Restart OMFLOW Server
 
-### 5. 安裝 OMFLOW Booster Agent
+### 5. Install OMFLOW Booster Agent
 
-待第一台OMFLOW Server安裝完畢後，在同一環境上繼續安裝OMFLOW Booster Agent。
+After the first OMFLOW Server is installed, continue to install OMFLOW Booster Agent on the same environment.
 
 {% hint style="info" %}
-BoosterAgent需與OMFLOWServer安裝在同一台伺服器上。
+BoosterAgent needs to be installed on the same server as OMFLOWServer.
 {% endhint %}
 
 {% hint style="info" %}
-Linux 安裝方式
+How to install Linux&#x20;
 
-在安裝包擺放的路徑下解壓縮，並且進入執行 install.sh 。
+Unzip it under the path where the installation package is placed, and enter and execute **install.sh**.
 {% endhint %}
 
 ```
@@ -129,50 +132,50 @@ cd BoosterAgent_1140
 ./install.sh
 ```
 
-### 6. 安裝 OMFLOW Slave
+### 6. Install OMFLOW Slave
 
 {% hint style="warning" %}
-安裝前請先備份以下：
+lease backup the following before installation:
 
-1. 步驟3的資料庫
-2. 步驟4的OMFLOW Server。
+1. Database for step 3
+2. OMFLOW Server of step 4
 {% endhint %}
 
-待以上步驟皆完成後，最後便是依照情境的需求安裝一台以上的OMFLOWSlave。OMFLOWSlave內已包含OMFLOW Server及OMFLOWBooster Agent，安裝過程會需要額外填入以下資訊：
+After the above steps are completed, the last step is to install more than one OMFLOWSlave according to the needs of the situation. OMFLOWSlave already contains OMFLOW Server and OMFLOWBooster Agent, the installation process will need to fill in the following additional information:
 
-#### 輸入 Booster IP 及 Port：
+#### Enter Booster IP and Port:
 
-請輸入視為主Booster的相關資訊。
+Please enter the relevant information to be considered as the main Booster.
 
-#### 輸入 HA Booster IP 及 Port：
+#### Enter HA Booster IP and Port (optional):
 
-請輸入視為副Booster的相關資訊。
+Please enter the relevant information to be regarded as a secondary Booster.
 
 {% hint style="info" %}
-Windows安裝方式
+Windows installation
 
-有獨立的安裝檔 omflow\_slave\_1\_1\_4\_0.exe提供執行。
+There is an independent installation file **omflow\_slave\_1\_1\_X\_X.exe** to provide execution.
 {% endhint %}
 
 {% hint style="info" %}
-Linux 安裝方式
+Linux installation
 
-同 [Server](2.md#kai-shi-an-zhuang-omflow-server) 的安裝方式，只需將類型輸入 Slave 即可。
+The installation method is the same as [Server](2.md#kai-shi-an-zhuang-omflow-server), only need to input the type into "**Slave**".
 {% endhint %}
 
-## 啟動順序
+## Boot Sequence
 
-在啟動順序上，Booster及DB為最高優先順序，再來啟動所有的Booster Agent。
+In the startup sequence, Booster and DB are the highest priority, and then start all Booster Agents.
 
 1. Booster、Database
 2. Booster Agent
 
 {% hint style="info" %}
-Booster Agent 啟動時會自動啟動 OMFLOW Server。
+OMFLOW Server is automatically started when the Booster Agent starts.
 {% endhint %}
 
 {% hint style="info" %}
-Linux 的服務啟動方式
+How to start a service in Linux
 
 Booster
 
@@ -187,13 +190,13 @@ BoosterAgent
 ```
 {% endhint %}
 
-## 上傳License
+## Upload License
 
-1. 點擊「左側主選單 > 系統設定 > 系統設定」
-2. 於主畫面拖曳至最下方，找到「Booster授權資料」區塊
-3. 點擊上傳「上傳」按鈕，將license檔案
+1. Click "Left Main Menu > System Settings > System Settings"
+2. Drag to the bottom of the main screen to find the "Booster Authorization Information" block.
+3. Click the "Upload" button to upload the license file
 
 {% hint style="info" %}
-Booster在未上傳license情況下仍有7天試用期。
+Booster still has a trial period of 7 days without uploading the license.
 {% endhint %}
 
