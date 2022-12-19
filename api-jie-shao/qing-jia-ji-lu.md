@@ -9,10 +9,10 @@ Add leave records.
 * postbody:
 
 {% hint style="info" %}
-All apis must obtain a security code \(security\) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
+All apis must obtain a security code (security) before using it, please refer to [Security](an-quan-ma.md) for the obtaining method.
 {% endhint %}
 
-```text
+```
 {
     "security" : "",
     "omflow_restapi" : 1,
@@ -26,10 +26,10 @@ All apis must obtain a security code \(security\) before using it, please refer 
 
 API Response:
 
-```text
+```
 {
     "status": 200,
-    "message": "新增成功。",
+    "message": "Added successful",
     "result": <leave id>
 }
 ```
@@ -42,7 +42,7 @@ List leave records.
 * URL：/rest/api/leave-records/list/
 * postbody:
 
-```text
+```
 {
     "security" : "",
     "omflow_restapi" : 1,
@@ -55,10 +55,10 @@ List leave records.
 
 API Response:
 
-```text
+```
 {
     "status": 200,
-    "message": "查詢成功。",
+    "message": "Query successful",
     "result": {
         "now_time" : <system now time>
         "leave_list" : [{
@@ -83,9 +83,9 @@ Update leave records.
 * URL：/rest/api/leave-records/update/
 * postbody:
 
-```text
+```
 {
-    "security" : "<安全碼>",
+    "security" : "<security>",
     "omflow_restapi" : 1,
     "leave_id" : <choose one to fill in with the identifier>,
     "identifier" : <choose one to fill in with the leave_id>,
@@ -95,10 +95,10 @@ Update leave records.
 
 API Response:
 
-```text
+```
 {
     "status": 200,
-    "message": "更新成功。",
+    "message": "Update successful",
     "result": None
 }
 ```
@@ -111,9 +111,9 @@ Cancel leave records.
 * URL：/rest/api/leave-records/cancel/
 * postbody:
 
-```text
+```
 {
-    "security" : "<安全碼>",
+    "security" : "<security>",
     "omflow_restapi" : 1,
     "leave_id" : <choose one to fill in with the identifier>,
     "identifier" : <choose one to fill in with the leave_id>
@@ -122,10 +122,10 @@ Cancel leave records.
 
 API Response:
 
-```text
+```
 {
     "status": 200,
-    "message": "註銷成功。",
+    "message": "Logout successful",
     "result": None
 }
 ```
@@ -138,9 +138,9 @@ Delete leave records.
 * URL：/rest/api/leave-records/delete/
 * postbody:
 
-```text
+```
 {
-    "security" : "<安全碼>",
+    "security" : "<security>",
     "omflow_restapi" : 1,
     "leave_id" : <choose one to fill in with the identifier>,
     "identifier" : <choose one to fill in with the leave_id>
@@ -149,11 +149,10 @@ Delete leave records.
 
 API Response:
 
-```text
+```
 {
     "status": 200,
-    "message": "刪除成功。",
+    "message": "Delete successful",
     "result": None
 }
 ```
-
