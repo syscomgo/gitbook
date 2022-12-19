@@ -34,7 +34,7 @@ When the data is successfully created, there will be two types of return.
 ```
 {
   "status": "200",
-  "message": "開單成功",
+  "message": "Create data successful",
   "result": "<data_no>"
 }
 ```
@@ -44,7 +44,7 @@ When the data is successfully created, there will be two types of return.
 ```
 {
   "status": "200",
-  "message": "開單成功",
+  "message": "Create data successful",
   "result": ""
 }
 ```
@@ -54,7 +54,7 @@ The failure to create a data is returned as follows:
 ```
 {
   "status": "404",
-  "message": "開單失敗"
+  "message": "Failed to create data: "
 }
 ```
 
@@ -67,11 +67,11 @@ When the query is successful, the return is as follows:
 ```
 {
   "status": "200",
-  "message": "查詢成功",
+  "message": "Query successful",
   "result": [
     {
-      "data_id": "<資料的唯一編號，推單時使用>",
-      "stop_chart_text": "<停留的關卡名稱(人工處理點名稱)>"
+      "data_id": "<number, use for pushing data>",
+      "stop_chart_text": "<the element name where proccess staying>"
     },...
   ]
 }
@@ -88,7 +88,7 @@ When the query fails, the response is as follows:
 ```
 {
   "status": "404",
-  "message": "查詢失敗"
+  "message": "Query failed: "
 }
 ```
 
@@ -101,7 +101,7 @@ When the data is pushed successfully, the return is as follows:
 ```
 {
   "status": "200",
-  "message": "推單成功",
+  "message": "Push data successful",
   "result": ""
 }
 ```
@@ -111,6 +111,6 @@ When the push data fails, the return is as follows:
 ```
 {
   "status": "404",
-  "message": "推單失敗"
+  "message": "Failed to push data"
 }
 ```
