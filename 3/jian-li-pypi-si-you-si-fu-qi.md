@@ -114,9 +114,7 @@ At this point, the pypi server setup is complete.
 
 After setting up the server, you must go to the omflow setting, so when the application is put on the shelf, the system will download the installation package to the pypi server according to this setting.
 
-Log in to omflow> System Settings> System Settings
-
-![](../.gitbook/assets/pip-server.png)
+Click **Main Menu**> **System Settings**> **System Settings** and fill the **PIP Server Path** column.
 
 After filling in the location of the server, the save will take effect.
 
