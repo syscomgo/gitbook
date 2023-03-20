@@ -67,7 +67,8 @@ files = None    #檔案
 </strong>#取得回傳
 data_no = result['data_no']    #單號
 status = result['status']      #狀態True/False
-message = result['message']    #錯誤訊息，推單成功則為空字串</code></pre>
+message = result['message']    #錯誤訊息，推單成功則為空字串
+</code></pre>
 
 ### 3. 列表
 
@@ -603,6 +604,45 @@ result = group_obj.getPosition(position_name, position_no, responsibilitie_name)
 #取得回傳
 manager_user_id = result.get('user_id','')
 manager_group_id = result.get('group_id','')
+```
+
+
+
+## 組織圖相關
+
+### 1. 更新組織圖內使用者名稱
+
+```python
+from omorganization.models import Organization
+from omuser.models import OmUser
+import json
+
+
+def upodate_user_nick_name_for_org():
+    userNicknameJson = get_user_nick_name_dict()
+    org_list = Organization.objects.filter()
+    for org in org_list:
+        orgobject = json.loads(org.value)
+        
+        for org_item in orgobject['items']:
+            if org_item['type'] == 'people' and org_item['config']['noid'] in userNicknameJson:
+                org_item['text'] = userNicknameJson[org_item['config']['noid']]
+            elif org_item['type'] == 'dept' and org_item['config']['host']:
+                for sub_item in org_item['config']['sub_item']['items']:
+                    if sub_item['type'] == 'people' and sub_item['config']['noid'] in userNicknameJson:
+                        sub_item['text'] = userNicknameJson[sub_item['config']['noid']]
+        org.value = json.dumps(orgobject)
+        org.save()
+
+def get_user_nick_name_dict():
+    user_dict = {}
+    user_list = OmUser.objects.all().values('id','nick_name')
+    for u in user_list:
+        user_dict[str(u['id'])] = u['nick_name']
+    return user_dict
+
+
+result = upodate_user_nick_name_for_org()
 ```
 
 
