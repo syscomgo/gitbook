@@ -221,5 +221,48 @@ except Exception as e:
 
 ```
 
+### 找出組織圖上特定職務/權責的使用者
+
+將組織圖上特定的職務/權責使用者整理出csv檔案
+
+從系統中匯出組織圖的檔案，以及從報表匯出的使用者的資料，合併整理出使用者的權責/職務
+
+```python
+import json
+
+f = open("mainOrg.omf", "r", encoding='UTF-8')
+orgobject = f.read()
+orgobject = json.loads(orgobject)
 
 
+#找出職務元件上指定名稱的權責底下連接的元件
+sirList = []
+for org_item in orgobject['items']:
+    if org_item['type'] == 'role' and '主管' in org_item['config']['responsibility']:
+        for line_item in orgobject['items']:
+            if line_item['type'] == 'line' and line_item['config']['source_item'] == org_item['id']:
+                sirList.append(line_item['config']['target_item'])
+#找出前面元件的使用者id
+peopleList = []
+for org_item in orgobject['items']:
+    if org_item['type'] == 'people' and org_item['id'] in sirList:
+        if not org_item['config']['noid'] in peopleList:
+            peopleList.append(org_item['config']['noid'])
+import csv
+
+#開啟報表產出的使用者csv，比對使用者id生成新的csv
+readyList = []
+with open('syscomUser.csv', newline='', encoding='UTF-8') as syscomUserfile:
+    spamreader = csv.reader(syscomUserfile, delimiter=',', quotechar='|')
+  
+    for row in spamreader:
+        if row[0] in peopleList:
+            readyList.append(row[1:])
+                
+                
+with open('syscomUserWithSir.csv', 'w', newline='', encoding='UTF-8') as syscomUserWithSirfile:
+    spamwriter = csv.writer(syscomUserWithSirfile, delimiter=',',
+                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    for row in readyList:
+        spamwriter.writerow(row)
+```
