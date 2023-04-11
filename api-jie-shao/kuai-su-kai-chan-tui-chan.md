@@ -64,7 +64,7 @@ description: 當自訂表單上架後，可使用API直接進行開單，也可�
 
 Python範例如下：
 
-```
+```python
 import requests,json
 
 url = '<開單API網址>'
@@ -73,10 +73,29 @@ values={
   "security": "<sevurity>",
   "omflow_restapi": 1,
   "action": "create",
-  "formdata": json.dumps(inputjson)
+  "formdata": json.dumps(formdata)
 }
 files={'files': open('<檔案路徑>','rb')}
 requests.post( url, data=values, files=files )
+```
+
+如果有檔案欄位需要上傳檔案的話，範例如下：(假設檔案欄位為FORMITM\_3)
+
+```python
+import requests,json
+
+url = '<開單API網址>'
+formdata = [{"id": "FORMITM_1","value": "<輸入>"}]
+files_item = ['FORMITM_3'] #須增加此參數
+values={
+  "security": '<security>',
+  "omflow_restapi": 1,
+  "action": "create",
+  "formdata": json.dumps(formdata),
+  "files_item": json.dumps(files_item) #須增加此參數
+}
+files={'files': open('<檔案路徑>','rb'), 'FORMITM_3':open('<檔案路徑>','rb')}
+response = requests.post( url, data=values, files=files )
 ```
 
 ## 查詢
