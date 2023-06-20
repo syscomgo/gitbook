@@ -10,8 +10,9 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 
 #### 備份步驟
 
-1. 備份資料夾 C:\Program Files\OMFLOW Server
-2. 將資料庫 OMFLOW 專用 DB 進行 dump
+1. 停止服務 OMFLOW Server 以及 OMFLOW Server Web
+2. 備份資料夾 C:\Program Files\OMFLOW Server
+3. 將資料庫 OMFLOW 專用 DB 進行 dump
 
 #### 還原步驟
 
@@ -55,7 +56,8 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 
 #### 備份步驟
 
-1. 備份資料夾 C:\Program Files\OMFLOW Collector
+1. 停止服務 OMFLOW Collector 以及 OMFLOW Collector Web
+2. 備份資料夾 C:\Program Files\OMFLOW Collector
 
 #### 還原步驟
 
@@ -95,8 +97,9 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 
 #### 備份步驟
 
-1. 備份資料夾 /opt/omflow
-2. 將資料庫 OMFLOW 專用 DB 進行 dump
+1. 停止服務 /opt/omflow/server/omflow\_server stop
+2. 備份資料夾 /opt/omflow
+3. 將資料庫 OMFLOW 專用 DB 進行 dump
 
 #### 還原步驟
 
@@ -143,7 +146,8 @@ description: OMFLOW的備份還原分為Windows及Linux兩種，步驟基本大�
 
 #### 備份步驟
 
-1. 備份資料夾 /opt/omflow
+1. 停止服務 /opt/omflow/collector/omflow\_collector stop
+2. 備份資料夾 /opt/omflow
 
 #### 還原步驟
 
