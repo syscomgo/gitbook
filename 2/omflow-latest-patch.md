@@ -1,6 +1,6 @@
-# 產品下載
+# OMFLOW latest patch
 
-OMFLOW requires an authorization code for registration on the product support website, [https://support.syscom.com.tw/](https://support.syscom.com.tw/). After completing the registration, you can proceed to download the software with the following steps:
+OMFLOW latest patch requires an authorization code for registration on the product support website, [https://support.syscom.com.tw/](https://support.syscom.com.tw/). After completing the registration, you can proceed to download the software with the following steps:
 
 1. Registration: Register using your company email address (syscom.com.tw).
 2. License Registration:&#x20;
