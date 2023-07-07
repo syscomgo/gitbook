@@ -8,6 +8,7 @@
 * [OMFLOW Engine](2/2.md)
 * [Software and Hardware Requirements](2/3.md)
 * [OMFLOW Patch Record](2/4.md)
+* [Download](2/download.md)
 
 ## Software Installation <a href="#3" id="3"></a>
 
