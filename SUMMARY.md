@@ -8,6 +8,7 @@
 * [OMFLOW 流程引擎](2/2.md)
 * [軟體及硬體需求](2/3.md)
 * [OMFLOW 版本紀錄](2/4.md)
+* [OMFLOW最新Patch](2/omflow-zui-xin-patch.md)
 
 ## 軟體安裝 <a href="#3" id="3"></a>
 
