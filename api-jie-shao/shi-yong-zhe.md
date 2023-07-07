@@ -43,7 +43,7 @@
     * <：篩選出小於value的資料。
     * in：篩選出與value陣列中相同的資料。
     * contains：篩選出包含value的資料。
-  * value：欄位值，依照 _****_ [_**人員管理>使用者管理>使用者資料**_](../5/8.md#shi-yong-zhe-guan-li) _****_ 而填入對應值。
+  * value：欄位值，依照 [_**人員管理>使用者管理>使用者資料**_](../5/8.md#shi-yong-zhe-guan-li) 而填入對應值。
 
 ```
 "search_conditions" :

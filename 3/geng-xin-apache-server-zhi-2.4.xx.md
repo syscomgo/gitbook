@@ -23,7 +23,7 @@ Windows版本的安裝檔已內建Apache Server，以下為對照表。使用者
 
 <table><thead><tr><th>OMFLOW installer 版本</th><th>內建 Apache Server 版本</th><th data-hidden></th></tr></thead><tbody><tr><td>1.1.0.0</td><td>2.4.43</td><td></td></tr><tr><td>1.1.4.0</td><td>2.4.51</td><td></td></tr></tbody></table>
 
-****
+
 
 ## **Linux**
 
