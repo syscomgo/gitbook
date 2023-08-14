@@ -23,6 +23,8 @@
 * [PyPIサーバー設定する](3/pypipuraibtosbwosuru.md)
 * [Apache Serverの2.4.XXへの更新](3/apache-serverno24xxheno.md)
 * [よくある間違い](3/yokuarui.md)
+* [バックアップと復元](3/bakkuapputo.md)
+* [バージョンアップ](3/bjonappu.md)
 
 ## クイックスタート(Quick Start) <a href="#4" id="4"></a>
 
