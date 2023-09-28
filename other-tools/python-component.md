@@ -601,9 +601,8 @@ OMFLOW版本 **1.1.6.3** 更動
 區分為從組織圖查詢或從部門架構查詢
 {% endhint %}
 
-```python
-#匯入
-from omflow.syscom.tools import Group
+<pre class="language-python"><code class="lang-python"><strong>#匯入
+</strong>from omflow.syscom.tools import Group
 
 #宣告一個部門(角色)的物件
 group_id = ''
@@ -627,11 +626,73 @@ result = group_obj.getPosition(org_name='', position_name=None, position_no=None
 #取得回傳
 manager_user_id = result.get('user_id','')
 manager_group_id = result.get('group_id','')
+</code></pre>
+
+
+
+### 6. 查詢部門職務權責
+
+```
+#匯入
+from omflow.syscom.tools import Group
+
+#宣告一個部門的物件
+group_id = ''
+group_no = ''
+group_name = ''
+#部門id/部門代號/部門名稱請三選一填入值
+group_obj = Group(group_id, group_no, group_name)
+
+#取得回傳
+result = group_obj.loadGroupJobRole()
+```
+
+回傳資料範例如下所示：
+
+```
+[
+  {
+    'job_role_id': <資料編號>, 
+    'position_id': <職務編號>,
+    'position_no': <職務代號>,
+    'position_name': <職務名稱>,
+    'user_id': <使用者編號>,                             
+    'nick_name': <使用者顯示名稱>,
+    'is_active': <使用者是否啟用>, 
+    'responsibility': <權責>, 
+    'data_index': <排序>
+  },........
+]
 ```
 
 
 
+### 7. 更新部門職務權責
 
+<pre><code>#匯入
+from omflow.syscom.tools import Group
 
+#宣告一個部門的物件
+group_id = ''
+group_no = ''
+group_name = ''
+#部門id/部門代號/部門名稱請三選一填入值
+group_obj = Group(group_id, group_no, group_name)
 
+job_role_list = [
+  {
+    'job_role_id': &#x3C;資料編號>,   #修改舊資料時填寫
+    'position_no': &#x3C;職務代號>,
+    'user_id': &#x3C;使用者編號>,
+    'responsibility': &#x3C;權責>, 
+    'data_index': &#x3C;排序>
+  },........
+]
+
+<strong>result = group_obj.updateGroupJobRole(job_role_list)
+</strong><strong>
+</strong>#取得回傳
+status = result['status']      #狀態success/update error
+message = result['message']    #錯誤訊息，推單成功則為空字串
+</code></pre>
 
