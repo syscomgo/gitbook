@@ -448,6 +448,12 @@ result = user_obj.removefromGroup(user_id, group_id_list)
 
 ### 9. 透過組織圖尋找人員
 
+{% hint style="warning" %}
+OMFLOW版本 **1.1.6.3** 更動
+
+區分為從組織圖查詢或從部門架構查詢
+{% endhint %}
+
 ```python
 #匯入
 from omflow.syscom.tools import User
@@ -457,14 +463,20 @@ user_obj = User()
 
 #選擇使用者(必填)
 user_id = None
+#部門代號(選填)，指定要從哪個部門開始查詢，未填寫則從使用者的預設部門開始查詢
+group_no=None
 
 #填入要查詢對象的職務名稱或職務代號或權責名稱(必填，下列三選一填入)
 position_name = None
 position_no = None
 responsibilitie_name = None
 
+#選擇要從組織圖或部門架構查詢，如果dept_search是False，請填寫組織圖名稱
+dept_search=False
+org_name=''
+
 #查詢組織圖
-result = user_obj.getPosition(user_id, position_name, position_no, responsibilitie_name)
+result = user_obj.getPosition(user_id, group_no, org_name, position_name, position_no, responsibilitie_name, dept_search)
 
 #取得回傳
 manager_user_id = result.get('user_id','')
@@ -496,9 +508,10 @@ is_role = False                #填入True為角色，False為部門
 parent_group_id = None         #父部門id，角色不可填
 description = ''               #說明欄位
 group_no = ''                  #部門代號
+order = 0                      #部門排序，數字越小排序越靠前，請填入整數(可以為負)
 
 #建立部門
-result = group_obj.create(parent_group_id, group_name, description, group_no, is_role)
+result = group_obj.create(parent_group_id, group_name, description, group_no, is_role, order)
 
 #取得回傳
 group_id = result['group_id']  #部門/角色id
@@ -582,6 +595,12 @@ result = group_obj.removeUsers(user_id_list)
 
 ### 5. 透過組織圖尋找人員
 
+{% hint style="warning" %}
+OMFLOW版本 **1.1.6.3** 更動
+
+區分為從組織圖查詢或從部門架構查詢
+{% endhint %}
+
 ```python
 #匯入
 from omflow.syscom.tools import Group
@@ -598,8 +617,12 @@ position_name = None
 position_no = None
 responsibilitie_name = None
 
+#選擇要從組織圖或部門架構查詢，如果dept_search是False，請填寫組織圖名稱
+org_name=''
+dept_search=False
+
 #查詢組織圖
-result = group_obj.getPosition(position_name, position_no, responsibilitie_name)
+result = group_obj.getPosition(org_name='', position_name=None, position_no=None, responsibilitie_name=None, dept_search=False)
 
 #取得回傳
 manager_user_id = result.get('user_id','')
@@ -607,43 +630,6 @@ manager_group_id = result.get('group_id','')
 ```
 
 
-
-## 組織圖相關
-
-### 1. 更新組織圖內使用者名稱
-
-```python
-from omorganization.models import Organization
-from omuser.models import OmUser
-import json
-
-
-def upodate_user_nick_name_for_org():
-    userNicknameJson = get_user_nick_name_dict()
-    org_list = Organization.objects.filter()
-    for org in org_list:
-        orgobject = json.loads(org.value)
-        
-        for org_item in orgobject['items']:
-            if org_item['type'] == 'people' and org_item['config']['noid'] in userNicknameJson:
-                org_item['text'] = userNicknameJson[org_item['config']['noid']]
-            elif org_item['type'] == 'dept' and org_item['config']['host']:
-                for sub_item in org_item['config']['sub_item']['items']:
-                    if sub_item['type'] == 'people' and sub_item['config']['noid'] in userNicknameJson:
-                        sub_item['text'] = userNicknameJson[sub_item['config']['noid']]
-        org.value = json.dumps(orgobject)
-        org.save()
-
-def get_user_nick_name_dict():
-    user_dict = {}
-    user_list = OmUser.objects.all().values('id','nick_name')
-    for u in user_list:
-        user_dict[str(u['id'])] = u['nick_name']
-    return user_dict
-
-
-result = upodate_user_nick_name_for_org()
-```
 
 
 
