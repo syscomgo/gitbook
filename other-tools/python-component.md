@@ -669,7 +669,8 @@ result = group_obj.loadGroupJobRole()
 
 ### 7. 更新部門職務權責
 
-<pre><code>#匯入
+```
+#匯入
 from omflow.syscom.tools import Group
 
 #宣告一個部門的物件
@@ -681,18 +682,18 @@ group_obj = Group(group_id, group_no, group_name)
 
 job_role_list = [
   {
-    'job_role_id': &#x3C;資料編號>,   #修改舊資料時填寫
-    'position_no': &#x3C;職務代號>,
-    'user_id': &#x3C;使用者編號>,
-    'responsibility': &#x3C;權責>, 
-    'data_index': &#x3C;排序>
+    'job_role_id': <資料編號>,   #修改舊資料時填寫
+    'position_no': <職務代號>,
+    'user_id': <使用者編號>,
+    'responsibility': <權責>, 
+    'data_index': <排序>
   },........
 ]
 
-<strong>result = group_obj.updateGroupJobRole(job_role_list)
-</strong><strong>
-</strong>#取得回傳
+result = group_obj.updateGroupJobRole(job_role_list)
+
+#取得回傳
 status = result['status']      #狀態success/update error
 message = result['message']    #錯誤訊息，推單成功則為空字串
-</code></pre>
+```
 
