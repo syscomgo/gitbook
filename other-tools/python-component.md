@@ -545,6 +545,7 @@ description = result.get('description','')           #說明
 group_no = result.get('group_no','')                 #部門代號
 group_user_list = result.get('group_user_list','')   #該部門底下有的使用者id
 permissions = result.get('permissions','')           #該角色有的權限，查詢部門時回傳為空陣列
+order = result.get('order ','')                      #部門排序
 ```
 
 
@@ -649,14 +650,14 @@ result = group_obj.loadGroupJobRole()
 
 回傳資料範例如下所示：
 
-```
+```python
 [
   {
     "job_role_id": <資料編號>, 
     "position_id": <職務編號>,
     "position_no": <職務代號>,
     "position_name": <職務名稱>,
-    "user_id": <使用者編號>,                             
+    "user_id": <使用者編號>,
     "nick_name": <使用者顯示名稱>,
     "is_active": <使用者是否啟用>, 
     "responsibility": <權責>, 
@@ -669,7 +670,7 @@ result = group_obj.loadGroupJobRole()
 
 ### 7. 更新部門職務權責
 
-```
+```python
 #匯入
 from omflow.syscom.tools import Group
 
@@ -707,7 +708,7 @@ OMFLOW版本 **1.1.6.3** 後可用
 
 ### 1. 取得組織圖資訊
 
-```
+```python
 #匯入
 from omflow.syscom.tools import OrgChart
 
@@ -723,7 +724,7 @@ result = org_obj.load()
 
 回傳資料範例如下所示：
 
-```
+```python
 {
     "org_name": <組織圖名稱>,
     "value": [{
@@ -767,9 +768,9 @@ result = org_obj.load()
 
 
 
-### 2.更新/新增組織圖
+### 2. 更新/新增組織圖
 
-```
+```python
 #匯入
 from omflow.syscom.tools import OrgChart
 
@@ -777,34 +778,34 @@ from omflow.syscom.tools import OrgChart
 org_obj = OrgChart()
 
 org_chart_dict = {
-    "org_name": <組織圖名稱>,
-    "value": [{
-            "org_id": <組織元件編號>, #修改舊資料時填寫
-            "group_no": <組織元件代號>,
-            "group_name": <組織元件名稱>,
-            "parent_group_no": <父組織元件代號>,
-            "order": <組織元件排序>,
-            "host_user": <託管人>, #使用者編號
-            "host": <是否被託管>, #True/False
-            "is_host": <是否屬於託管組織>, #True/False
-            "job_role": [{
-                    "job_role_id": <資料編號>, #修改舊資料時填寫
-                    "position_no": <職務代號>,
-                    "user_id": <使用者編號>,       
-                    "responsibility": <權責>, 
-                    "data_index": <排序>
+    'org_name': <組織圖名稱>,
+    'value': [{
+            'org_id': <組織元件編號>, #修改舊資料時填寫
+            'group_no': <組織元件代號>,
+            'group_name': <組織元件名稱>,
+            'parent_group_no': <父組織元件代號>,
+            'order': <組織元件排序>,
+            'host_user': <託管人>, #使用者編號
+            'host': <是否被託管>, #True/False
+            'is_host': <是否屬於託管組織>, #True/False
+            'job_role': [{
+                    'job_role_id': <資料編號>, #修改舊資料時填寫
+                    'position_no': <職務代號>,
+                    'user_id': <使用者編號>,       
+                    'responsibility': <權責>, 
+                    'data_index': <排序>
                   }
             ]
         },........
     ],
-    "org_approver": {
-        "group": <審核人部門編號>,
-        "user": <審核人使用者編號>
+    'org_approver': {
+        'group': <審核人部門編號>,
+        'user': <審核人使用者編號>
     },
-    "is_search_dept": <組織圖查詢不到時，查詢部門架構>, #True/False
-    "is_sub": <是否為託管的組織圖>, #True/False
-    "uid": <uid>,
-    "org_config_id": <組織圖編號> #修改舊資料時填寫
+    'is_search_dept': <組織圖查詢不到時，查詢部門架構>, #True/False
+    'is_sub': <是否為託管的組織圖>, #True/False
+    'uid': <uid>,
+    'org_config_id': <組織圖編號> #修改舊資料時填寫
 }
 
 #更新/新增組織圖資訊
@@ -820,7 +821,7 @@ op_result = result['result']   #執行結果，執行成功則為空字串
 
 ### 3. 刪除組織圖
 
-```
+```python
 #匯入
 from omflow.syscom.tools import OrgChart
 
