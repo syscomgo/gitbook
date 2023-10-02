@@ -827,7 +827,7 @@ from omflow.syscom.tools import OrgChart
 #宣告一個組織圖的物件
 org_obj = OrgChart()
 
-org_config_id_list = [1,2,3] 
+org_config_id_list = [<組織圖編號>,........] 
 
 #刪除組織圖
 result = org_obj.delete(org_config_id_list )
