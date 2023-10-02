@@ -697,6 +697,8 @@ status = result['status']      #狀態success/update error
 message = result['message']    #錯誤訊息，執行成功則為空字串
 ```
 
+##
+
 ## 組織圖
 
 {% hint style="info" %}
