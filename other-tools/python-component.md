@@ -8,9 +8,13 @@ description: 在程式碼元件中可使用的物件與方法範例，範例中�
 
 ### 1. 開單
 
+_<mark style="color:red;">OMFLOW版本</mark> <mark style="color:red;"></mark><mark style="color:red;">**1.1.5.2**</mark> <mark style="color:red;"></mark><mark style="color:red;">後可用</mark>_
+
 {% hint style="info" %}
 OMFLOW版本 **1.1.5.2** 後可用
 {% endhint %}
+
+***
 
 ```python
 #匯入
@@ -39,6 +43,8 @@ data_no = result['data_no']    #單號
 status = result['status']      #狀態True/False
 message = result['message']    #錯誤訊息，開單成功則為空字串
 ```
+
+***
 
 ### 2. 推單
 
