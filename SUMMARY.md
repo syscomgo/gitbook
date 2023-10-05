@@ -32,6 +32,7 @@
 * [人員及組織](4/2.md)
 * [建立應用、流程](4/3.md)
 * [更新內建流程](4/geng-xin-nei-jian-liu-cheng.md)
+* [簽核機制](4/qian-he-ji-zhi.md)
 
 ## 功能介紹 <a href="#5" id="5"></a>
 
