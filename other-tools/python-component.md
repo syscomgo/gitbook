@@ -8,10 +8,8 @@ description: 在程式碼元件中可使用的物件與方法範例，範例中�
 
 ### 1. 開單
 
-_<mark style="color:red;">OMFLOW版本</mark> <mark style="color:red;"></mark><mark style="color:red;">**1.1.5.2**</mark> <mark style="color:red;"></mark><mark style="color:red;">後可用</mark>_
-
 {% hint style="info" %}
-OMFLOW版本 **1.1.5.2** 後可用
+※※※ OMFLOW版本 **1.1.5.2** 後可用 ※※※
 {% endhint %}
 
 ***
