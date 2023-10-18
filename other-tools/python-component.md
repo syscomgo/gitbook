@@ -484,7 +484,7 @@ result = user_obj.getPosition(user_id, group_no, org_name, position_name, positi
 
 #取得回傳
 manager_user_id = result.get('user_id','')
-manager_group_id = result.get('group_id','')
+manager_group_no = result.get('group_no','')
 ```
 
 
@@ -630,7 +630,7 @@ result = group_obj.getPosition(org_name='', position_name=None, position_no=None
 
 #取得回傳
 manager_user_id = result.get('user_id','')
-manager_group_id = result.get('group_id','')
+manager_group_no = result.get('group_no','')
 </code></pre>
 
 
