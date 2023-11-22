@@ -64,3 +64,4 @@
 
 * [程式碼元件](other-tools/python-component.md)
 * [獨立執行](other-tools/independent.md)
+* [Java工具](other-tools/3.md)
