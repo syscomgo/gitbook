@@ -2,7 +2,7 @@
 
 * [目錄](README.md)
 
-## 介紹 <a href="#2" id="2"></a>
+## 介紹 <a href="#id-2" id="id-2"></a>
 
 * [OMFLOW概觀](2/1.md)
 * [OMFLOW 流程引擎](2/2.md)
@@ -10,7 +10,7 @@
 * [OMFLOW 版本紀錄](2/4.md)
 * [OMFLOW最新Patch](2/omflow-zui-xin-patch.md)
 
-## 軟體安裝 <a href="#3" id="3"></a>
+## 軟體安裝 <a href="#id-3" id="id-3"></a>
 
 * [安裝在Windows](3/1.md)
 * [安裝在Linux](3/2.md)
@@ -25,8 +25,9 @@
 * [備份與還原](3/bei-fen-yu-huan-yuan.md)
 * [版本更新](3/ban-ben-geng-xin.md)
 * [常見錯誤](3/chang-jian-cuo-wu.md)
+* [技術支援](id-3/14.md)
 
-## 快速上手(Quick Start) <a href="#4" id="4"></a>
+## 快速上手(Quick Start) <a href="#id-4" id="id-4"></a>
 
 * [初始設定](4/1.md)
 * [人員及組織](4/2.md)
@@ -34,7 +35,7 @@
 * [更新內建流程](4/geng-xin-nei-jian-liu-cheng.md)
 * [簽核機制](4/qian-he-ji-zhi.md)
 
-## 功能介紹 <a href="#5" id="5"></a>
+## 功能介紹 <a href="#id-5" id="id-5"></a>
 
 * [首頁](5/1.md)
 * [我的任務](5/2.md)
