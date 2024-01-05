@@ -10,6 +10,8 @@
 * [OMFLOW 版本紀錄](2/4.md)
 * [OMFLOW最新Patch](2/omflow-zui-xin-patch.md)
 
+## 軟體安裝 <a href="#3" id="3"></a>
+
 ## 軟體安裝 <a href="#id-3" id="id-3"></a>
 
 * [安裝在Windows](3/1.md)
@@ -25,7 +27,6 @@
 * [備份與還原](3/bei-fen-yu-huan-yuan.md)
 * [版本更新](3/ban-ben-geng-xin.md)
 * [常見錯誤](3/chang-jian-cuo-wu.md)
-* [技術支援](id-3/14.md)
 
 ## 快速上手(Quick Start) <a href="#id-4" id="id-4"></a>
 
