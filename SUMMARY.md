@@ -22,6 +22,8 @@
 * [Set up PyPI server](3/jian-li-pypi-si-you-si-fu-qi.md)
 * [Upgrade Apache Server](3/upgrade-apache-server.md)
 * [Common error](3/common-error.md)
+* [Technical Support](3/14.md)
+* [Technical Support](3/technical-support.md)
 
 ## Quick Start <a href="#4" id="4"></a>
 
