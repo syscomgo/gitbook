@@ -46,6 +46,20 @@ OMFLOW 在 1.1.4.0之後的版本，可以直接使用最新的更新檔升級�
 
 現在你可以繼續使用OMFLOW了！
 
+## 版本 1.2.0.0 更新 Python
+
+OMFLOW在1.2.0.0版本後將Python版本升級至3.11，若用戶在過去版本額外安裝python套件，更新過程會要求用戶手動安裝Python，以下為相關步驟：
+
+1. 下載 Python3.11 ( 32 Bit ) Windows Installer 並執行
+2. 選擇 Customize installation 自定義安裝路徑
+3. 安裝路徑選擇 C:\PROGRA\~1\OMFLOW Server\Python311
+4. 安裝完畢後，可在更新視窗點擊「下一步」進行檢查
+5. 此時更新視窗會檢查比對原Python及Python311套件清單是否相符，並列出缺失套件。
+6. 若有缺失套件，以**管理者權限**開啟CMD視窗，並進入Python311資料夾下
+7. 以 python.exe -m pip install 指令進行安裝
+8. 安裝後點擊下一步進行檢查，以此循環直到無缺失套件
+9. 關閉所有原Python及Python311相關CMD視窗
+
 ## Linux
 
 ### 第一步驟，備份OMFLOW
