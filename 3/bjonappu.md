@@ -44,6 +44,20 @@ OMFLOWのWindows更新ファイルは直接実行することができます。�
 
 これで引き続きOMFLOWをご利用いただけます！
 
+#### 1.2.0.0注意事項
+
+OMFLOW在1.2.0.0版本後將Python版本升級至3.11，若用戶在過去版本額外安裝python套件，更新過程會要求用戶手動安裝Python，以下為相關步驟：
+
+1. 下載 Python3.11 ( 32 Bit ) Windows Installer 並執行
+2. 選擇 Customize installation 自定義安裝路徑
+3. 安裝路徑選擇 `C:\PROGRA\~1\OMFLOW Server\Python311`
+4. 安裝完畢後，可在更新視窗點擊「下一步」進行檢查
+5. 此時更新視窗會檢查比對原Python及Python311套件清單是否相符，並列出缺失套件。
+6. 若有缺失套件，以**管理者權限**開啟CMD視窗，並進入Python311資料夾下
+7. 以 `python.exe -m pip install` 指令進行安裝
+8. 安裝後點擊下一步進行檢查，以此循環直到無缺失套件
+9. 關閉所有原Python及Python311相關CMD視窗
+
 ## Linux
 
 ### STEP1 OMFLOWのバックアップ
@@ -104,3 +118,266 @@ OMFLOWのバージョンが1.1.4.0以降の場合は、最新の更新ファイ�
 {% endhint %}
 
 これで引き続きOMFLOWをご利用いただけます！
+
+#### Linux 更新 1.2.0.0 版本步驟
+
+OMFLOW在1.2.0.0版本對環境需求進一步提升，使用Linux環境之用戶需手動更新，以下為相關步驟：
+
+> python version: 3.8 → 3.11\
+> django version: 2.2 → 4.2
+
+1. **停止OMFLOW**
+
+```bash
+        omflow_server stop
+```
+
+2. **刪除/opt/omflow資料夾底下的python資料夾**
+
+```bash
+        rm -rf /opt/omflow/python/
+```
+
+3. **安裝ubuntu套件**
+
+> 套件清單
+>
+> * python 3.11
+> * python3.11-dev
+> * python3.11-venv
+> * python3-pip
+
+安裝方式一：線上安裝版(需連線網際網路)
+
+```bash
+        # 更新套件庫
+        apt-get update -y
+        # 增加套件庫
+        add-apt-repository ppa:deadsnakes/ppa -y
+        # 更新套件庫
+        apt-get update -y
+
+        # 安裝python3.11及相關套件
+        apt-get install -y python3.11 python3.11-dev python3.11-venv python3-pip
+```
+
+安裝方式二：無網路環境、離線安裝方式請見補充
+
+> 下載Ubuntu套件離線安裝包\
+> 離線安裝Ubuntu套件
+
+4. **設定python 3.11為環境變數(使得python3.11可用指令python3呼叫)**
+
+```bash
+        update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
+```
+
+5. **建立python 3.11的虛擬環境在/opt/omflow資料夾底下**
+
+```bash
+        python3 -m venv /opt/omflow/python
+```
+
+6. **進入虛擬環境並安裝python套件**
+
+> python套件清單
+>
+> * wheel
+> * django==4.2
+> * ldap3
+> * mod\_wsgi
+> * openpyxl
+> * DB會用到的python套件
+> * 其他會用到的套件…
+> * 線上安裝版(需連線網際網路)
+
+```bash
+        # 進入虛擬環境
+        source /opt/omflow/python/bin/activate
+
+        # 安裝 wheel
+        pip install wheel
+
+        # 非必要可略
+        python /usr/lib/python3.11/test/libregrtest/setup.py bdist_wheel
+
+        # 安裝必要套件，其他套件請自行評估安裝
+        pip install django==4.2 ldap3 mod_wsgi openpyxl
+```
+
+無網路環境、離線安裝方式請見補充
+
+> 下載python套件離線安裝包(.whl)\
+> 離線安裝python套件
+
+7. **修改apache http.conf裡的wsgi\_module路徑改成新的路徑**
+
+```bash
+        # 修改django.conf
+        vim /etc/apache2/sites-enabled/django.conf
+
+        # 修改wsgi_module的路徑
+```
+
+8. **更新並啟動OMFLOW 1.2.0.0**
+
+```bash
+        # 進入tmp
+        cd /tmp/
+
+        # 解壓縮patch檔
+        tar zxvf /tmp/omflow_patch_1_1_6_4_upgrade3.tar.gz
+
+        # 進入patch資料夾
+        cd omflow_patch_1_1_6_4_upgrade4/
+
+        # 執行patch
+        ./patch.sh
+```
+
+#### 補充:
+
+**下載Ubuntu套件離線安裝包**
+
+找一台環境與OMFLOW server相同的Ubuntu，需有網際網路連線。
+
+> 需要套件:
+>
+> * python3.11
+> * python3.11-dev
+> * python3.11-venv
+> * python3-pip
+
+下載指令:
+
+```bash
+        # 切換root身分
+        sudo su
+        
+        # 新增套件庫**deadsnakes** PPA
+        add-apt-repository ppa:deadsnakes/ppa
+        
+        # 更新套件列表: 
+        apt-get update
+        
+        # (如果需要的話)清理預設的下載資料夾
+        apt-get clean
+        
+        # 下載但不安裝套件
+        apt-get install --download-only python3.11 python3.11-dev python3.11-venv python3-pip
+```
+
+下載的安裝包將被保存在 **`/var/cache/apt/archives/`** 目錄下，自行使用FTP軟體取出並放至OMFLOW server環境。
+
+**離線安裝Ubuntu套件**
+
+> 需要套件:
+>
+> * python3.11
+> * python3.11-dev
+> * python3.11-venv
+> * python3-pip
+
+將 **`.deb`** 文件複製到Ubuntu的某個目錄，此用 \*\*`/tmp/Downloads`\*\*舉例
+
+Ubuntu指令:
+
+```bash
+        # 切換root身分
+        sudo su
+        
+        # 移動到安裝包所在的路徑底下
+        cd /tmp/Downloads
+        
+        # 使用 dpkg 安裝下載的套件包
+        dpkg -i *.deb
+```
+
+**從現有環境匯出已安裝的python套件清單**
+
+如果您已經有原OMFLOW使用的套件清單可略過本步驟。
+
+參考資料: [https://pip.pypa.io/en/stable/cli/pip\_freeze/](https://pip.pypa.io/en/stable/cli/pip\_freeze/)
+
+匯出指令:
+
+```bash
+        # 切換到OMFLOW的虛擬環境
+        source /opt/omflow/python/bin/activate
+        
+        # 匯出python套件清單至/tmp底下
+        pip freeze > /tmp/requirements.txt
+        
+        # 將django的版本改為4.2以上版本
+        vim /tmp/requirements.txt
+```
+
+自行使用FTP軟體取出並放至有網路的Ubuntu環境，作為後續下載套件的參考。
+
+**下載python套件離線安裝包(.whl)**
+
+請準備一台已經安裝好python3.11的環境，方便下載python3.11適用的套件版本，此環境必須能連到網路。
+
+下載指令:
+
+```bash
+        # 新增一個存放離線安裝包的資料夾
+        mkdir /tmp/python_package
+        cd /tmp/python_package
+        
+        # [方法一]使用requirements.txt批次下載
+        # 假設您已經將前一步的requirements.txt放在/tmp/底下
+        pip -m install /tmp/requirements.txt
+        
+        # [方法二]手動輸入套件名稱下載
+        pip -m install <套件名稱>
+        
+        # 下載完成後檢視資料夾內有多少.whl安裝檔
+        ll
+```
+
+自行使用FTP軟體取出並放回OMFLOW server。
+
+> 補充: mod\_wsgi會得到tar.gz，安裝方式較為特別，請見離線安裝mod\_wsgi。
+
+**離線安裝python套件**
+
+假設python套件的離線安裝包(.whl)放在此路徑`**/opt/omflow/tmp**`底下
+
+安裝指令:
+
+```bash
+        # 切換到OMFLOW的虛擬環境
+        source /opt/omflow/python/bin/activate
+        
+        # 切換到離線安裝包的檔案路徑底下
+        cd /opt/omflow/tmp
+        
+        # 安裝所有whl
+        pip install *.whl
+```
+
+**離線安裝mod\_wsgi**
+
+安裝指令:
+
+```bash
+        # 切換到OMFLOW的虛擬環境
+        source /opt/omflow/python/bin/activate
+        
+        # 解壓縮mod_wsgi的tar.gz
+        tar zxvf <mod_wsgi的檔案路徑>
+        
+        cd <mod_wsgi解壓縮後的路徑>
+        
+        # 簡易安裝mod_wsgi
+        python setup.py install
+```
+
+#### 注意:
+
+更換完python & django後，要更新OMFLOW版本至1.2.0.0才能成功啟動；之前的版本無法搭配django 4.2使用。
+
+#### 錯誤處理
+
+如果更新完 OMFLOW 後無法啟動服務，請依照「備份與還原」章節將 OMFLOW 進行還原，再重新執行更新步驟。
