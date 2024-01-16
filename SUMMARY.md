@@ -21,6 +21,7 @@
 * [Change data center URL](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md)
 * [Set up PyPI server](3/jian-li-pypi-si-you-si-fu-qi.md)
 * [Upgrade Apache Server](3/upgrade-apache-server.md)
+* [Upgrade Python & Django](3/upgrade-python-and-django.md)
 * [Version Update](3/12.md)
 * [Common error](3/common-error.md)
 * [Technical Support](3/14.md)
