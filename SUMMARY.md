@@ -10,7 +10,7 @@
 * [OMFLOW 版本紀錄](2/4.md)
 * [OMFLOW最新Patch](2/omflow-zui-xin-patch.md)
 
-## 軟體安裝 <a href="#3" id="3"></a>
+## 軟體安裝 <a href="#id-3" id="id-3"></a>
 
 * [安裝在Windows](3/1.md)
 * [安裝在Linux](3/2.md)
@@ -22,11 +22,12 @@
 * [變更資料中心網址](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md)
 * [架設PyPI伺服器](3/jian-li-pypi-si-you-si-fu-qi.md)
 * [更新Apache Server至2.4.XX](3/geng-xin-apache-server-zhi-2.4.xx.md)
+* [更新Python及Django](id-3/10.md)
 * [備份與還原](3/bei-fen-yu-huan-yuan.md)
 * [版本更新](3/ban-ben-geng-xin.md)
 * [常見錯誤](3/chang-jian-cuo-wu.md)
 * [技術支援](3/14.md)
-  
+
 ## 快速上手(Quick Start) <a href="#id-4" id="id-4"></a>
 
 * [初始設定](4/1.md)
