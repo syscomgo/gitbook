@@ -1,10 +1,8 @@
----
-description: OMFLOW版本更新步驟，分為Windows及Linux兩種
----
-
 # 版本更新
 
 ## 版本更新
+
+OMFLOW版本更新步驟，分為Windows及Linux兩種。其中版本號分為四碼，如1.2.0.0。當需要升級版本時，需查看當前OMFLOW前三碼與更新版本是否相同，若有差異如
 
 ### Windows
 
