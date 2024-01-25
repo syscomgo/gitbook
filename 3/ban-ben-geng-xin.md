@@ -5,11 +5,12 @@
 OMFLOW版本更新步驟，分為Windows及Linux兩種。其中版本號分為四碼，如1.2.0.0，其中規則如下：
 
 > 編號規則
-> * 第1、2碼為釋出**重大更新**時會成長的數字  
-> * 第3碼為釋出**功能版**時會成長的數字  
-> * 第4碼為釋出**修正版**時會成長的數字  
+>
+> * 第1、2碼為釋出**重大更新**時會成長的數字
+> * 第3碼為釋出**功能版**時會成長的數字
+> * 第4碼為釋出**修正版**時會成長的數字
 > * 升級時，若當前版本前三碼與更新版本相同可直接更新，如允許 1.1.6.1 > 1.1.6.3
-> * 若不同時，僅能更新至下個功能版，如允許 1.1.6.1 > 1.2.0.0，但不允許  1.1.6.1 > 1.2.0.1
+> * 若不同時，僅能更新至下個功能版，如允許 1.1.6.1 > 1.2.0.0，但不允許 1.1.6.1 > 1.2.0.1
 
 ### Windows
 
@@ -47,20 +48,18 @@ OMFLOW 的 Windows 更新檔可以直接執行，在更新檔按下右鍵後選�
 
 現在你可以繼續使用OMFLOW了！
 
-#### 1.2.0.0注意事項
+#### 1.2.0.0Fix1注意事項
 
-OMFLOW在1.2.0.0版本後將Python版本升級至3.11，若用戶在過去版本額外安裝python套件，更新過程會要求用戶手動安裝Python，以下為相關步驟：
+OMFLOW在1.2.0.0版本後將Python版本升級至3.11，若用戶在過去版本額外安裝Python套件，更新過程會要求用戶手動更新該套件，以下為相關步驟：
 
-1. 下載 `Python3.11 ( 32 Bit ) Windows Installer` 並執行
-2. 選擇 `Customize installation` 自定義安裝路徑
-3. 安裝路徑選擇 `C:\PROGRA~1\OMFLOW Server\Python311` (如安裝路徑錯誤可用複製方式移動資料夾)
-4. 安裝完畢後，可在更新視窗點擊「下一步」進行檢查
-5. 此時更新視窗會檢查比對原Python及Python311套件清單是否相符
-6. 若有缺失套件，以**管理者權限**開啟CMD視窗，並進入Python311資料夾下，在1.2.0.1版本會看到 `requirements.txt` 檔案
-7. 如有網路環境，以 `pip install -r requirements.txt` 指令進行安裝
-8. 或是以 `python.exe -m pip install` 指令針對`requirements.txt`內逐一套件進行安裝
-9. 安裝後點擊下一步進行檢查，以此循環直到無缺失套件
-10. 關閉所有原Python及Python311相關CMD視窗
+1. 請至 `C:\Program Files\OMFLOW Server` 查看 `requirements.txt` 的缺失套件清單
+2. 在相同路徑以**管理者權限**開啟CMD視窗，如底下有Python311則優先進入`cd "C:\Program Files\OMFLOW Server\Python311"`，反之則進入Python資料夾`cd "C:\Program Files\OMFLOW Server\Python"`
+3. 請確保進入的Python版本為3.11
+4. 將 `requirements.txt` 移至此處 `move "..\requirements.txt" .`&#x20;
+5. 開始更新套件，如有網路環境以 `python.exe -m pip install -r requirements.txt` 指令進行安裝
+6. 或是以 `python.exe -m pip install` 指令針對`requirement.txt`內逐一套件進行安裝
+7. 待套件全數安裝後，點擊下一步進行檢查，以此循環直到無缺失套件
+8. 關閉所有原Python及Python311相關CMD視窗
 
 ### Linux
 
