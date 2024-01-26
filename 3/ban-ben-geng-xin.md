@@ -56,8 +56,8 @@ OMFLOW在1.2.0.0版本後將Python版本升級至3.11，若用戶在過去版本
 2. 在相同路徑以**管理者權限**開啟CMD視窗，如底下有Python311則優先進入`cd "C:\Program Files\OMFLOW Server\Python311"`，反之則進入Python資料夾`cd "C:\Program Files\OMFLOW Server\Python"`
 3. 請確保進入的Python版本為3.11
 4. 將 `requirement.txt` 移至此處 `move "..\requirement.txt" .`&#x20;
-5. 開始更新套件，如有網路環境以 `python.exe -m pip install -r requirements.txt` 指令進行安裝
-6. 或是以 `python.exe -m pip install` 指令針對`requirement.txt`內逐一套件進行安裝
+5. 開始更新套件，如有網路環境以 `python.exe -m pip install -r requirement.txt --target=Lib\site-packages` 指令進行安裝
+6. 或是以 `python.exe -m pip install <套件名稱> --target=Lib\site-packages` 指令針對`requirement.txt`內逐一套件進行安裝
 7. 待套件全數安裝後，點擊下一步進行檢查，以此循環直到無缺失套件
 8. 關閉所有原Python及Python311相關CMD視窗
 
