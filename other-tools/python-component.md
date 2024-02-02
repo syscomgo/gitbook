@@ -846,3 +846,146 @@ op_result = result['result']   #執行結果，執行成功則為空字串
 {% hint style="warning" %}
 若要刪除託管圖，應更新主圖資訊解除託管，而非以此方法。
 {% endhint %}
+
+
+
+## 檔案
+
+{% hint style="info" %}
+OMFLOW版本 **1.1.6.3** 後可用
+{% endhint %}
+
+### 1. 上傳至表單
+
+```python
+#匯入
+from omflow.syscom.tools import Files
+
+#宣告一個檔案物件
+file_obj = Files()
+
+#必填參數
+api_path = ''   #表單流程的API路徑
+data_no = ''    #單號
+data_id = ''    #資料編號
+user_id = ''    #上傳人
+
+#準備檔案
+file_set = {}
+# <檔案> 格式請參閱Django官方網站「The ContentFile class」 (https://docs.djangoproject.com/en/4.2/ref/files/file/#the-contentfile-class)
+#以及「UploadedFile class」(https://docs.djangoproject.com/en/4.2/ref/files/uploads/)
+#以下為簡易範例：
+from django.core.files.base import ContentFile
+from django.core.files.uploadedfile import UploadedFile
+
+with open(<檔案路徑>, 'rb', encoding='UTF-8') as f:
+    file_content = f.read()
+new_file = ContentFile(file_content)
+new_file.name = <檔案名稱>  #檔案名稱請務必要填
+this_file = UploadedFile(new_file, new_file.name, None, new_file.size, None)
+#如果上傳的檔案要放在『檔案上傳』內，key為空字串，範例如下：
+file_set[''] = [<檔案>, <檔案>, <檔案>]
+#如果上傳的檔案要放在『檔案欄位』內，key為空欄位ID，範例如下：
+file_set['FORMITM_2'] = [<檔案>, <檔案>, <檔案>]
+
+#上傳
+result = file_obj.upload(file_set, api_path, data_no, data_id, user_id)
+
+#取得回傳
+#回傳為字典，其key等於file_set的key，value為存有file id的陣列
+#範例格式如下：
+{
+    '' : [1,2,3],
+    'FORMITM_2' : [4,5,6]
+}
+```
+
+
+
+### 2. 檔案下載
+
+```python
+#匯入
+from omflow.syscom.tools import Files
+
+#宣告一個檔案物件
+file_obj = Files()
+
+#必填參數
+path = ''   #檔案路徑，此路徑可透過「3.檔案列表」取得
+
+#下載
+result = file_obj.download(path)    #檔案回傳型態為bytes
+```
+
+
+
+### 3. 檔案列表
+
+```python
+#匯入
+from omflow.syscom.tools import Files
+
+#宣告一個檔案物件
+file_obj = Files()
+
+#準備參數
+api_path = ''   #必填，表單流程的API路徑
+data_no = ''    #選填，篩選用，單號
+data_id = ''    #選填，篩選用，資料編號
+to_dict = False #是否將回傳轉為字典型態
+
+#取得列表
+result = file_obj.list(api_path, data_no, data_id, to_dict)
+
+#取得回傳
+#陣列型態
+[
+    {
+        'id' : 1,
+        'file_path' : '',
+        'data_no' : '',
+        'data_id' : '',
+        'file_name' : '',
+        'size' : '', ...
+    }, ...
+]
+#字典型態
+{
+    <單號> : {
+        <資料編號> : [
+            {
+                'id' : 1,
+                'file_path' : '',
+                'data_no' : '',
+                'data_id' : '',
+                'file_name' : '',
+                'size' : '', ...
+            }, ...
+        ]
+    }, ...
+}
+```
+
+
+
+### 4. 檔案刪除
+
+```python
+#匯入
+from omflow.syscom.tools import Files
+
+#宣告一個檔案物件
+file_obj = Files()
+
+#必填參數
+file_path_list = [<檔案路徑>, <檔案路徑>]   #檔案路徑，此路徑可透過「3.檔案列表」取得
+
+#刪除
+result = file_obj.delete(file_path_list)
+
+#取得回傳
+status = result['status']      #狀態True/False
+message = result['message']    #錯誤訊息，成功則為空字串
+```
+
