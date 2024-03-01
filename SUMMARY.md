@@ -1,40 +1,37 @@
 # Table of contents
 
-* [目次](README.md)
+## 紹介 <a href="#1" id="1"></a>
 
-## 紹介 <a href="#2" id="2"></a>
+* [OMFLOW概要](README.md)
+* [OMFLOW エンジン](1/1-02-1.md)
+* [ハードウェアとソフトウェアの要件](1/1-03-1.md)
+* [OMFLOWの最新Patch](1/1-05-1.md)
+* [技術サポート](1/1-06-1.md)
 
-* [OMFLOW概要](2/1.md)
-* [OMFLOW エンジン](2/2.md)
-* [システム要件](2/3.md)
-* [OMFLOW更新履歴](2/4.md)
-* [OMFLOW latest patch](2/omflow-latest-patch.md)
+## インストール <a href="#2" id="2"></a>
 
-## インストール <a href="#3" id="3"></a>
+* [Windowsのインストール](2/2-01-1.md)
+* [Linux版のインストール](2/2-02-1.md)
+* [バックアップと復原](2/2-03-1.md)
+* [バージョンアップ](2/2-04-1.md)
+* [Boosterのインストール](2/2-05-1.md)
+* [Docker](2/2-06-1.md)
+* [オープンソース](2/2-07-1.md)
+* [HTTPSの有効化](2/2-08-1.md)
+* [データセンターのURLを変更する](2/2-09-1.md)
+* [PyPIサーバー設定する](2/2-10-1.md)
+* [Apache Serverの2.4.XXへの更新](2/2-11-1.md)
+* [PythonとDjangoのアップデート](2/2-12-1.md)
+* [技術サポート](2/2-13-1.md)
 
-* [Windows](3/1.md)
-* [Linux](3/2.md)
-* [Boosterのインストール](3/boosternoinsutru.md)
-* [OMFLOW Dashboard](3/omflow-dashboard.md)
-* [Docker](3/3.md)
-* [オープンソース](3/4.md)
-* [HTTPSの有効化](3/5.md)
-* [データセンターのURLを変更する](3/dtasentnourlwosuru.md)
-* [PyPIサーバー設定する](3/pypipuraibtosbwosuru.md)
-* [Apache Serverの2.4.XXへの更新](3/apache-serverno24xxheno.md)
-* [よくある間違い](3/yokuarui.md)
-* [バックアップと復元](3/bakkuapputo.md)
-* [バージョンアップ](3/12.md)
-* [技術サポート](3/sapto.md)
-
-## クイックスタート(Quick Start) <a href="#4" id="4"></a>
+## クイックスタート(Quick Start) <a href="#id-4" id="id-4"></a>
 
 * [初期設定](4/1.md)
 * [ユーザーとグループ](4/2.md)
 * [アプリとプロセスの作成](4/3.md)
 * [デフォルトAPPの更新](4/geng-xin-nei-jian-liu-cheng.md)
 
-## 機能説明書 <a href="#5" id="5"></a>
+## 機能説明書 <a href="#id-5" id="id-5"></a>
 
 * [ホーム](5/1.md)
 * [私のタスク](5/2.md)

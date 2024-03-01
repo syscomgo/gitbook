@@ -1,24 +1,35 @@
-# 目次
+# OMFLOW概要
 
-### 一、目次
+## OMFLOW概要
 
-### 二、紹介
+OMFLOWは、非常に用途の広いプロセスエンジンです。ユーザーが処理手順を入力して定義するためのフォームを自由に設計でき、データフローや自動化されたコマンドの処理にも役立ちます。
 
-&#x20;  [OMFLOW概要](https://doc.omflow.com.tw/v/japan/2/1) / [OMFLOW エンジン](2/2.md) / [システムリクエスト](2/3.md)/ [バージョンレコード](https://doc.omflow.com.tw/v/japan/2/4)
+OMFLOWはサーバーとコレクターに分かれており、サーバーの役割はデータセンター、データの収集と保存、およびプロセスの実行を担当します。 コレクターは、分散コンピューティングのサーバーとして使用できるプロセスであり、定期的に実行するためにディスパッチされます。
 
-### 三、インストール
+一般的に言えば、ユーザーはブラウザーを介してOMFLOWサーバーに接続し、OMFLOWシステム全体を操作し、OMFLOWサーバーでアプリを設計します。
 
-&#x20;   [Windows](https://doc.omflow.com.tw/v/japan/3/1) / [Linux](https://doc.omflow.com.tw/v/japan/3/2) / [Docker](https://doc.omflow.com.tw/v/japan/3/3) / [オープンソース](https://doc.omflow.com.tw/v/japan/3/4) / [HTTPS啟用](https://doc.omflow.com.tw/v/japan/3/5)/[リソースセンターのURLを変更する](3/dtasentnourlwosuru.md)/[ pypiプライベートサーバーを設定する](3/pypipuraibtosbwosuru.md)  /  [よくある間違い](3/yokuarui.md)
+![](https://syscomgo.com/wp-content/uploads/2023/11/OMFLOW\_2-1\_1.png)
 
-### 四、クイックスタート
+OMFLOWサーバーでは、独自のAPPを設計するか、クラウドから当社が作成したAPPをダウンロードして使用できます。APPには複数のフローを含めることができ、フローはフォームとワークフローで構成されます。このように、 ビジネスプロセスを実際のデータまたは自動化されたコマンドと組み合わせます。 もちろん、OMFLOWにはワークスペースの概念が含まれています。APPはいつでもエクスポート、インポート、およびダウンロードできます。リストの操作を行わない限り、システムに影響はありません。
 
-&#x20;   [初期設定](https://doc.omflow.com.tw/v/japan/4/1) / [ユーザーとグループ](https://doc.omflow.com.tw/v/japan/4/2) / [アプリと流れの作成](https://doc.omflow.com.tw/v/japan/4/3)/ [デフォルトAPPの更新](4/geng-xin-nei-jian-liu-cheng.md)
+![](https://syscomgo.com/wp-content/uploads/2023/11/OMFLOW\_2-1\_2.png)
 
-### 五、機能説明書
+コレクターは私たちにとって非常に重要な概念です。OMFLOWはPython言語で開発されているため、プロセスにPythonコードを埋め込むこともできます。プロセス内のPythonコードを実行する場合は、分散操作として設定できます。 これらの操作のアクションは、各コレクターに自動的に分配されます。
 
-&#x20;  [ホーム](https://doc.omflow.com.tw/v/japan/5/1) / 私のタスク / [サービス要求](https://doc.omflow.com.tw/v/japan/5/3) / [サービス管理](https://doc.omflow.com.tw/v/japan/5/4) / [データ収集](https://doc.omflow.com.tw/v/japan/5/5) / [アプリ管理](https://doc.omflow.com.tw/v/japan/5/6) / [Apps](https://doc.omflow.com.tw/v/japan/5/7) / [ユーザー管理](https://doc.omflow.com.tw/v/japan/5/8) /    [システム設定](https://doc.omflow.com.tw/v/japan/5/9) / [内部プロセス](5/10.md)/[レポート](5/bao-gao-shu.md)
+もちろん、名前が示すように、コレクターは外部呼び出しを受け入れてデータをセンターに転送し、必要なデータを取得するためのプロセスをアクティブに実行します。
 
-### 六、API 紹介
+### ソフトウェアダウンロード
 
-[セキュリティコード](https://doc.omflow.com.tw/v/japan/api-jie-shao/an-quan-ma)[ ](https://doc.omflow.com.tw/v/japan/api-jie-shao/an-quan-ma)/ [クイック操作](https://doc.omflow.com.tw/v/japan/api-jie-shao/kuai-su-kai-chan-tui-chan) /[私のタスク](broken-reference) / [フォーム検索](https://doc.omflow.com.tw/v/japan/api-jie-shao/zi-ding-biao-chan)/[イベント](api-jie-shao/ibento.md)/[組織図](api-jie-shao/zu-zhi-tu.md)/[ユーザー](api-jie-shao/yz.md)/[組織](https://doc.omflow.com.tw/v/japan/api-jie-shao/zu-zhi)/[休暇記録](api-jie-shao/wosu.md)
+#### オープンソースバージョンはGitHubからダウンロードできます。
 
+[https://github.com/syscomgo/omflow](https://github.com/syscomgo/omflow)
+
+#### 商用版（無料/エンタープライズ）はSYSCOMGOの公式サイトからダウンロードできます。
+
+[https://syscomgo.com/products/omflow/](https://syscomgo.com/products/omflow/)
+
+### ソフトウェアライセンス
+
+* オープンソースバージョン（GNU General Public License v3.0）。GPLV3のライセンス条項に基づいて、ソースコードを公開および変更できます。
+* 商用バージョンの無料版（無料ライセンス）は、SYSCOMGOのWebサイトからダウンロードできるより機能的なバージョンであり、GPLによって承認されておらず、個人、学術機関、および評価の目的のため無料です。
+* 商用バージョンエンタープライズ版（エンタープライズライセンス）は、SYSCOMGO Webサイトからダウンロードしたより機能的なバージョンであり、商用目的、または企業、組織、政府、教育機関で使用されます。
