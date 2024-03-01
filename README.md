@@ -1,24 +1,35 @@
-# 目錄
+# OMFLOW概觀
 
-## 一、本目錄
+## OMFLOW概觀
 
-## 二、介紹
+OMFLOW 是一個相當泛用的流程引擎，你可以隨意的設計表單讓人填寫並定義處理程序，也可以幫你處理資料流和自動化命令。
 
-[OMFLOW概觀](2/1.md) / [OMFLOW流程引擎](2/2.md) / [軟體及硬體需求](2/3.md) / [版本紀錄](2/4.md)
+OMFLOW 分為 Server 以及 Collector，Server的角色為資料中心，負責收集和儲存數據以及流程執行。 Collector(收集器)則是可以被用來做為 Server 分散運算的角色以及被派送定期定期執行的流程。
 
-## 三、軟體安裝
+一般而言，使用者透過瀏覽器連接OMFLOW Server 操作整個OMFLOW系統，並在OMFLOW Server 上設計App。
 
-[安裝在Windows](3/1.md) / [安裝在Linux](3/2.md) / [使用Docker](3/3.md) / [開源版安裝](3/4.md) / [啟用HTTPS](3/5.md) / [變更資源中心網址](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md) / [建立pypi私有伺服器](3/jian-li-pypi-si-you-si-fu-qi.md) / [常見錯誤](3/chang-jian-cuo-wu.md)
+![](https://syscomgo.com/wp-content/uploads/2023/11/OMFLOW\_2-1\_1.png)
 
-## 四、快速上手
+在OMFLOW Server中，你可以設計自己的APP，也可以自雲端下載我們寫好的APP進行使用，APP裡面可以包含多個FLOW，而FLOW是由表單和工作流程所組成，我們透過這種方式，將業務流程和實際的資料或是自動化命令等進行組合。當然，OMFLOW 包含了工作區的概念，你可以隨時匯出匯入和下載任何的APP，只要你不做上架的動作，對系統不會有任何的影響。
 
-[初始設定](4/1.md) / [人員及組織](4/2.md) / [建立應用、流程](4/3.md) / [更新內建流程](4/geng-xin-nei-jian-liu-cheng.md)
+![](https://syscomgo.com/wp-content/uploads/2023/11/OMFLOW\_2-1\_2.png)
 
-## 五、功能手冊
+Collector是我們一個很重要的概念，OMFLOW 使用 Python語言開發，所以你也可以嵌入 Python 程式碼在流程之中，流程中的 Python 程式碼要被執行時，你可以將他設定為分散式運算，如此這些運算的動作就會自動分散到各個 Collector 中。
 
-[首頁](5/1.md) /[ 我的任務](5/2.md) / [服務請求](5/3.md) / [服務管理](5/4.md) / [資料收集](5/5.md) / [應用管理](5/6.md) / [Apps](5/7.md) / [人員管理](5/8.md) / [系統設定](5/9.md) / [內建流程](5/10.md) / [報表](5/bao-biao.md)
+當然，Collector 顧名思義他也包含了接受外部呼叫將數據傳入中心，以及主動執行流程取得所要的數據。
 
-## 六、API 介紹
+### 軟體下載
 
-[安全碼](api-jie-shao/an-quan-ma.md) / [快速開單、推單](api-jie-shao/kuai-su-kai-chan-tui-chan.md) / [我的任務](api-jie-shao/wo-de-ren-wu.md) / [查詢表單](api-jie-shao/zi-ding-biao-chan.md) / [事件](api-jie-shao/shi-jian.md) / [組織圖 ](api-jie-shao/zu-zhi-tu.md)/ [使用者](api-jie-shao/shi-yong-zhe.md) / [組織](api-jie-shao/zu-zhi.md) / [請假紀錄](api-jie-shao/qing-jia-ji-lu.md)
+#### 開源版本可至GitHub下載
 
+[https://github.com/syscomgo/omflow](https://github.com/syscomgo/omflow)
+
+#### 商業版 免費(Free License) 可至syscomgo下載
+
+[https://syscomgo.com/products/omflow/](https://syscomgo.com/products/omflow/)
+
+### 軟體授權
+
+* 開源版(GNU General Public License v3.0) ，你可以發佈以及修改原始碼 , 在GPL V3的授權條款下.
+* 商業版 免費(Free License) 為自syscomgo網站下載的較多功能版本，這個版本非GPL授權，個人及學術機構與評估用途免費使用.
+* 商業版 企業(Enterprise License) 為自syscomgo網站下載的較多功能版本，用於商業目的或企業，組織，政府或教育機構。
