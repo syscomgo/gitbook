@@ -1,60 +1,64 @@
 # Table of contents
 
-* [Table of Contents](README.md)
+## Introduction <a href="#1" id="1"></a>
 
-## Introduction <a href="#2" id="2"></a>
+* [OMFLOW Overview](README.md)
+* [OMFLOW process engine](1/1-02-1.md)
+* [Software and hardware requirements](1/1-03-1.md)
+* [OMFLOW Latest Patch](1/1-05-1.md)
+* [Support and Services](1/1-06-1.md)
 
-* [OMFLOW Overview](2/1.md)
-* [OMFLOW Engine](2/2.md)
-* [Software and Hardware Requirements](2/3.md)
-* [OMFLOW Patch Record](2/4.md)
-* [OMFLOW latest patch](2/download.md)
+## Software Installation <a href="#2" id="2"></a>
 
-## Software Installation <a href="#3" id="3"></a>
+* [Install on Windows](2/2-01-1.md)
+* [Install on Linux](2/2-02-1.md)
+* [Backup and restore](2/2-03-1.md)
+* [Version Update](2/2-04-1.md)
+* [Install Booster](2/2-05-1.md)
+* [Use Docker](2/2-06-1.md)
+* [Open source version installation](2/2-07-1.md)
+* [Enable HTTPS](2/2-08-1.md)
+* [Change data center URL](2/2-09-1.md)
+* [Set up PyPI server](2/2-10-1.md)
+* [Update Apache Server to 2.4.XX](2/2-11-1.md)
+* [Update Python and Django](2/2-12-1.md)
+* [Common ERROR](2/2-13-1.md)
 
-* [Windows](3/1.md)
-* [Linux](3/2.md)
-* [Booster](3/booster.md)
-* [Docker](3/3.md)
-* [Open Source](3/4.md)
-* [HTTPS](3/5.md)
-* [Change data center URL](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md)
-* [Set up PyPI server](3/jian-li-pypi-si-you-si-fu-qi.md)
-* [Upgrade Apache Server](3/upgrade-apache-server.md)
-* [Upgrade Python & Django](3/upgrade-python-and-django.md)
-* [Version Update](3/12.md)
-* [Common error](3/common-error.md)
-* [Technical Support](3/14.md)
+## Quick Start <a href="#3" id="3"></a>
 
-## Quick Start <a href="#4" id="4"></a>
+* [Initial settings](3/3-01-1.md)
+* [User and Organization](3/3-02-1.md)
+* [Create applications and processes](3/3-03-1.md)
+* [Update built-in process](3/3-04-1.md)
+* [Sign-off mechanism](3/3-06-1.md)
 
-* [Initial Setting](4/1.md)
-* [User and Organization](4/2.md)
-* [Create APPs and Flow](4/3.md)
-* [Update The Default APP](4/geng-xin-nei-jian-liu-cheng.md)
+## Features <a href="#4" id="4"></a>
 
-## Features <a href="#5" id="5"></a>
+* [Front page](4/4-01-1.md)
+* [My Mission](4/4-02-1.md)
+* [Service Request](4/4-03-1.md)
+* [Service Management](4/4-04-1.md)
+* [Data Collection](4/4-05-1.md)
+* [App Management](4/4-06-1.md)
+* [Report](4/4-07-1.md)
+* [Apps](4/4-08-1.md)
+* [Staff Management](4/4-09-1.md)
+* [System Settings](4/4-10-1.md)
+* [Built-in process](4/4-11-1.md)
 
-* [Home](5/1.md)
-* [My Mission](5/2.md)
-* [Service Request](5/3.md)
-* [Service Management](5/4.md)
-* [Data Collection](5/5.md)
-* [Application Management](5/6.md)
-* [APPs](5/7.md)
-* [Staff Management](5/8.md)
-* [System Setting](5/9.md)
-* [Default Flow](5/10.md)
-* [Report](5/bao-biao.md)
+## API <a href="#5" id="5"></a>
 
-## API <a href="#api-jie-shao" id="api-jie-shao"></a>
+* [Security Code](5/5-01-1.md)
+* [Quickly open and push orders](5/5-02-1.md)
+* [My Mission](5/5-03-1.md)
+* [Query Form](5/5-04-1.md)
+* [Event](5/5-05-1.md)
+* [User](5/5-06-1.md)
+* [Department](5/5-07-1.md)
+* [Leave record](5/5-08-1.md)
 
-* [Security](api-jie-shao/an-quan-ma.md)
-* [Create and Update Data](api-jie-shao/kuai-su-kai-chan-tui-chan.md)
-* [My Mission](api-jie-shao/wo-de-ren-wu.md)
-* [Query Form](api-jie-shao/zi-ding-biao-chan.md)
-* [Event](api-jie-shao/shi-jian.md)
-* [Organization](api-jie-shao/zu-zhi-tu.md)
-* [User](api-jie-shao/shi-yong-zhe.md)
-* [Group](api-jie-shao/group.md)
-* [Leave Record](api-jie-shao/qing-jia-ji-lu.md)
+## Other Tools <a href="#6" id="6"></a>
+
+* [Code components](6/6-01-1.md)
+* [Execute independently](6/6-02-1.md)
+* [JAVA tools](6/6-03-1.md)

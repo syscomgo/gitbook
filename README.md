@@ -1,28 +1,35 @@
----
-description: this is translated by machine
----
+# OMFLOW Overview
 
-# Table of Contents
+\#OMFLOW Overview
 
-## 1、table of Contents
+OMFLOW is a very versatile process engine. You can freely design forms for people to fill in and define processing procedures. It can also help you process data flows and automated commands.
 
-## 2、Introduction
+OMFLOW is divided into Server and Collector. The role of Server is the data center, responsible for collecting and storing data and process execution. Collector can be used as a server to perform distributed computing and dispatch processes for regular execution.
 
-[Overview](2/1.md) / [OMFLOW Engine](2/2.md) / [Software and Hardware Requirements](2/3.md) / [OMFLOW Patch Record](2/4.md)
+Generally speaking, users connect to OMFLOW Server through a browser to operate the entire OMFLOW system and design apps on OMFLOW Server.
 
-## 3、Software installation
+![](https://syscomgo.com/wp-content/uploads/2023/11/OMFLOW\_2-1\_1.png)
 
-[Windows](3/1.md) / [Linux](3/2.md) / [Docker](3/3.md) / [Open Source](3/4.md) / [HTTPS](3/5.md) / [Change data center URL](3/bian-geng-zi-liao-zhong-xin-wang-zhi.md) / [Set up pypi private server](3/jian-li-pypi-si-you-si-fu-qi.md) / [Common error](3/common-error.md)
+In OMFLOW Server, you can design your own APP, or you can download the APP we wrote from the cloud and use it. The APP can contain multiple FLOWs, and FLOWs are composed of forms and workflows. In this way, we , combine business processes with actual data or automated commands. Of course, OMFLOW includes the concept of a workspace. You can export, import and download any APP at any time. As long as you do not put it on the shelf, it will not have any impact on the system.
 
-## 4、Quick Start
+![](https://syscomgo.com/wp-content/uploads/2023/11/OMFLOW\_2-1\_2.png)
 
-[Initial Setting](4/1.md) / [User and Organization](4/2.md) / [Create APPs and Flow](4/3.md) / [Update The Default APP](4/geng-xin-nei-jian-liu-cheng.md)
+Collector is a very important concept for us. OMFLOW is developed using Python language, so you can also embed Python code in the process. When the Python code in the process is to be executed, you can set it to distributed computing. In this way, these operations will be automatically distributed to each Collector.
 
-## 5、Features
+Of course, as the name implies, Collector also includes accepting external calls to transfer data to the center, and actively executing processes to obtain the required data.
 
-[Home](5/1.md) / [My Mission](5/2.md) / [Service Request](5/3.md) / [Service Management](5/4.md) /[ Data Collection](5/5.md) / [Application Management](5/6.md) / [APPs](5/7.md) / [Staff Management](5/8.md) / [System Setting](5/9.md) / [Default Flow](5/10.md) / [Report](5/bao-biao.md)
+### Software download
 
-## 6、API
+#### The open source version can be downloaded from GitHub
 
-[Security](api-jie-shao/an-quan-ma.md) / [Create and Update Data](api-jie-shao/kuai-su-kai-chan-tui-chan.md) / [My Mission](api-jie-shao/wo-de-ren-wu.md) / [Custom Form](api-jie-shao/zi-ding-biao-chan.md)/ [Event](api-jie-shao/shi-jian.md)/ [Organization](api-jie-shao/zu-zhi-tu.md)/ [User](api-jie-shao/shi-yong-zhe.md) / [Group](api-jie-shao/group.md) / [Leave Record](api-jie-shao/qing-jia-ji-lu.md)
+[https://github.com/syscomgo/omflow](https://github.com/syscomgo/omflow)
 
+#### The commercial version is free (Free License) and can be downloaded from syscomgo
+
+[https://syscomgo.com/products/omflow/](https://syscomgo.com/products/omflow/)
+
+### Software licensing
+
+* Open source version (GNU General Public License v3.0), you can publish and modify the source code, under the licensing terms of GPL V3.
+* The free commercial version (Free License) is a more functional version downloaded from the syscomgo website. This version is not GPL licensed and can be used free of charge by individuals, academic institutions and evaluation purposes.
+* Commercial Edition Enterprise (Enterprise License) is a more functional version downloaded from the syscomgo website for commercial purposes or enterprises, organizations, governments or educational institutions.
