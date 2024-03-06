@@ -1,14 +1,15 @@
 # Table of contents
 
-## 紹介 <a href="#1" id="1"></a>
+## 紹介 <a href="#id-1" id="id-1"></a>
 
 * [OMFLOW概要](README.md)
 * [OMFLOW エンジン](1/1-02-1.md)
 * [ハードウェアとソフトウェアの要件](1/1-03-1.md)
+* [バージョン履歴](id-1/1-04-1.md)
 * [OMFLOWの最新Patch](1/1-05-1.md)
 * [技術サポート](1/1-06-1.md)
 
-## インストール <a href="#2" id="2"></a>
+## インストール <a href="#id-2" id="id-2"></a>
 
 * [Windowsのインストール](2/2-01-1.md)
 * [Linux版のインストール](2/2-02-1.md)
