@@ -1,14 +1,15 @@
 # Table of contents
 
-## Introduction <a href="#1" id="1"></a>
+## Introduction <a href="#id-1" id="id-1"></a>
 
 * [OMFLOW Overview](README.md)
 * [OMFLOW process engine](1/1-02-1.md)
 * [Software and hardware requirements](1/1-03-1.md)
+* [Patch Record](id-1/1-04-1.md)
 * [OMFLOW Latest Patch](1/1-05-1.md)
 * [Support and Services](1/1-06-1.md)
 
-## Software Installation <a href="#2" id="2"></a>
+## Software Installation <a href="#id-2" id="id-2"></a>
 
 * [Install on Windows](2/2-01-1.md)
 * [Install on Linux](2/2-02-1.md)
@@ -24,7 +25,7 @@
 * [Update Python and Django](2/2-12-1.md)
 * [Common ERROR](2/2-13-1.md)
 
-## Quick Start <a href="#3" id="3"></a>
+## Quick Start <a href="#id-3" id="id-3"></a>
 
 * [Initial settings](3/3-01-1.md)
 * [User and Organization](3/3-02-1.md)
@@ -32,7 +33,7 @@
 * [Update built-in process](3/3-04-1.md)
 * [Sign-off mechanism](3/3-06-1.md)
 
-## Features <a href="#4" id="4"></a>
+## Features <a href="#id-4" id="id-4"></a>
 
 * [Front page](4/4-01-1.md)
 * [My Mission](4/4-02-1.md)
@@ -46,7 +47,7 @@
 * [System Settings](4/4-10-1.md)
 * [Built-in process](4/4-11-1.md)
 
-## API <a href="#5" id="5"></a>
+## API <a href="#id-5" id="id-5"></a>
 
 * [Security Code](5/5-01-1.md)
 * [Quickly open and push orders](5/5-02-1.md)
@@ -57,7 +58,7 @@
 * [Department](5/5-07-1.md)
 * [Leave record](5/5-08-1.md)
 
-## Other Tools <a href="#6" id="6"></a>
+## Other Tools <a href="#id-6" id="id-6"></a>
 
 * [Code components](6/6-01-1.md)
 * [Execute independently](6/6-02-1.md)
