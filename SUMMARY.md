@@ -1,12 +1,11 @@
 # Table of contents
 
-## 軟體安裝 <a href="#2" id="2"></a>
-
 ## 介紹 <a href="#id-1" id="id-1"></a>
 
 * [OMFLOW概觀](README.md)
 * [OMFLOW 流程引擎](1/1-02-1.md)
 * [軟體及硬體需求](1/1-03-1.md)
+* [版本紀錄](id-1/1-04-1.md)
 * [OMFLOW最新Patch](1/1-05-1.md)
 * [軟體支援與服務](1/1-06-1.md)
 
