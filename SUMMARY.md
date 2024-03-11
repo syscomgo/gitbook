@@ -5,7 +5,7 @@
 * [OMFLOW Overview](README.md)
 * [OMFLOW process engine](1/1-02-1.md)
 * [Software and hardware requirements](1/1-03-1.md)
-* [Release Notes](id-1/1-04-1.md)
+* [Release Notes](1/1-04-1.md)
 * [OMFLOW Latest Patch](1/1-05-1.md)
 * [Support and Services](1/1-06-1.md)
 
