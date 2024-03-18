@@ -47,18 +47,6 @@
 * [システム設定](4/4-10-1.md)
 * [内部プロセス](4/4-11-1.md)
 
-## API 紹介 <a href="#api-jie-shao" id="api-jie-shao"></a>
-
-* [セキュリティコード](api-jie-shao/an-quan-ma.md)
-* [クイック操作](api-jie-shao/kuai-su-kai-chan-tui-chan.md)
-* [私のタスク](api-jie-shao/wo-de-ren-wu.md)
-* [フォーム検索](api-jie-shao/zi-ding-biao-chan.md)
-* [イベント](api-jie-shao/ibento.md)
-* [組織図](api-jie-shao/zu-zhi-tu.md)
-* [ユーザー](api-jie-shao/yz.md)
-* [組織](api-jie-shao/zu-zhi.md)
-* [休暇記録](api-jie-shao/wosu.md)
-
 ## API 紹介 <a href="#5" id="5"></a>
 
 * [セキュリティコード](5/5-01-1.md)
