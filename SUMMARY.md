@@ -1,4 +1,4 @@
-# Table of contents
+# 目次
 
 ## 紹介 <a href="#id-1" id="id-1"></a>
 
