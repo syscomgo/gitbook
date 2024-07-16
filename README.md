@@ -18,11 +18,10 @@ Collector是我們一個很重要的概念，OMFLOW 使用 Python語言開發，
 
 ## 軟體下載
 
-### 商業版 免費(Free License) 可至syscomgo下載
+### 商業版可至syscomgo下載
 
 [https://syscomgo.com/products/omflow/](https://syscomgo.com/products/omflow/)
 
 ## 軟體授權
 
-* 商業版 免費(Free License) 為自syscomgo網站下載的較多功能版本，這個版本非GPL授權，個人及學術機構與評估用途免費使用.
 * 商業版 企業(Enterprise License) 為自syscomgo網站下載的較多功能版本，用於商業目的或企業，組織，政府或教育機構。
