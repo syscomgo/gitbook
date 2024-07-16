@@ -20,11 +20,10 @@ Of course, as the name implies, Collector also includes accepting external calls
 
 ### Software download
 
-#### The commercial version is free (Free License) and can be downloaded from syscomgo
+#### The commercial version can be downloaded from syscomgo
 
 [https://syscomgo.com/products/omflow/](https://syscomgo.com/products/omflow/)
 
 ### Software licensing
 
-* The free commercial version (Free License) is a more functional version downloaded from the syscomgo website. This version is not GPL licensed and can be used free of charge by individuals, academic institutions and evaluation purposes.
 * Commercial Edition Enterprise (Enterprise License) is a more functional version downloaded from the syscomgo website for commercial purposes or enterprises, organizations, governments or educational institutions.
